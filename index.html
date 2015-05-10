@@ -93,8 +93,10 @@
             <br /><br /><br />
             <div class="list-group">
                 <div class="list-group-item"  style="background: rgba(255,255,255,0.6); border: 0px;" ng-repeat="termin in controller.termine">
-                    {{termin.venue.name}} <br> {{termin.venue.city}}  
+			<a href='{{termin.venue.url}}'>
+				{{termin.venue.name}} <br> {{termin.venue.city}}  
 				    <em class="pull-right">{{termin.datetime|date:'short'}}</em>
+			</a>
                 </div>
             </div>
             </div>
