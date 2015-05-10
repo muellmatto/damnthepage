@@ -1,0 +1,120 @@
+<!doctype html>
+<html ng-app="damniam">
+
+<head>
+    <title>DAMNiAM</title>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-locale_de-de.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+
+
+    
+<div class = "navbar navbar-default navbar-fixed-top">
+      <div class = "container">
+        <a href ="#/" class = "navbar-brand nav-font">DAMNiAM</a>
+          
+        <button class = "navbar-toggle" data-toggle = "collapse" data-target= ".navHeaderCollapse">
+                <i class="fa fa-bars"></i>
+        </button>
+        
+        <div class = "collapse navbar-collapse navHeaderCollapse">
+          <ul class ="nav navbar-nav navbar-right nav-font">      
+                <li><a href="index.html">news</a></li>
+                <li><a href="band.html">band</a></li>
+                <li class="active"><a href="media.html">media</a></li>
+                <li><a href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">shop</a></li>
+                <li><a href="kontakt.html">contact</a></li>
+                <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="fa fa-heart"></i>
+                <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="https://facebook.com/DAMNIAMBOOK"><i class="fa fa-lg fa-facebook"> facebook </i>  </a></li>
+                        <li><a href="https://instagram.com/damniamofficial/"><i class="fa fa-lg fa-instagram"> instagram </i></a></li>
+                        <li><a href="https://twitter.com/damnthebeat"><i class="fa fa-lg fa-twitter"> twitter </i></a></li>
+                        <li><a href="https://www.youtube.com/user/DAMNiAM/"><i class="fa fa-lg fa-youtube"> youtube </i></a></li>
+                    </ul>
+                </li>
+          </ul>
+        </div>
+        
+    </div>
+</div>
+  
+    
+    
+    
+   
+
+
+
+<div class="container" >
+    	<!-- div class="jumbotron" style="background-image: url('media.jpg'); background-size:100%;  background-position:0px 25%;">
+    		<h1 class="jumbo-font" style="color: white; text-shadow: black 0.1em 0.1em 0.2em">Media</h1>
+    	</div -->
+        <script src="js/instafeed.min.js"></script>
+        <script type="text/javascript">
+       	
+       	var feed = new Instafeed({
+                get: 'user',
+                userId: 328950673,
+                accessToken: '328950673.467ede5.f0004ab84606494dbde9242463601438',
+                limit: 16
+           });
+           feed.run();
+       	     	
+       </script>
+        
+    <div class="row">
+        <div class="col-md-4">
+	<!-- a class="btn btn-primary btn-block" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectPath=/Shops/es121879_monkeyshop/Products/%22DAMNIAM%20%22%22MADAM%20IN%22%22%20Lp%22" role="button">
+		<i class="fa fa-usd">
+		</i> 
+			KAUFEN 
+		<i class="fa fa-usd">
+		</i>
+	</a -->
+            <!-- br / --> <!-- Der Zeilenumbruch trennt button von player -->
+            <!-- iframe style="border: 0; width: 340px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=2384966043/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless>
+                <a href="http://damniam.bandcamp.com/album/madam-in">
+                    MADAM IN by DAMNIAM
+                </a>
+            </iframe -->
+            <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5088854&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+            </iframe>
+        </div>
+        <div class="col-md-8">
+            <div id="instafeed"></div>
+        </div>
+
+    </div>
+        
+        
+        
+       
+</div> 
+    
+   
+  
+            
+            
+
+  
+    
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,29 @@
+body {
+  margin-top: 75px;
+  padding-bottom: 75px;
+}
+
+.nav-font{
+	font-size: 200%;
+    font-family: 'OldPress';
+  /* font-family: 'Love Ya Like A Sister', cursive; */
+  /* font-family: 'Open Sans', sans-serif; */
+  /* font-family: 'Special Elite', cursive; */
+}
+
+.jumbo-font{
+        font-family: 'OldPress';
+  /* font-family: 'Love Ya Like A Sister', cursive; */
+}
+
+.blocksatz {
+    text-align: justify;
+}
+
+@font-face
+{
+font-family: "OldPRess";
+src: local("OldPress"),
+url("Old_Press.ttf")
+format("TrueType")
+}
