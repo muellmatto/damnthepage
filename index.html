@@ -48,7 +48,7 @@
 
 <body>
     
-    <div class = "navbar navbar-default navbar-fixed-top">
+    <div class = "navbar navbar-default navbar-fixed-top nav-style-damniam">
       <div class = "container">
         <a href ="#/" class = "navbar-brand nav-font">DAMNiAM</a>
           
@@ -88,11 +88,10 @@
     <div class="row">
 
         <div class="col-md-6">
-            <div class="jumbotron" style="background-image: url('shows.jpg'); background-size:100%;  background-position:0px 30%;">
+            <div class="jumbotron social-feed-element" style="background-image: url('shows-negated.png'); background-size:100%; border-radius: 0px;">
                 <h1 class="text-right jumbo-font" style="color: white; text-shadow: black 0.1em 0.1em 0.2em">shows</h1>
-            <br /><br /><br />
             <div class="list-group">
-                <div class="list-group-item"  style="background: rgba(255,255,255,0.6); border: 0px;" ng-repeat="termin in controller.termine">
+                <div class="list-group-item"  style="background: rgba(255,255,255,0.4); border: 0px;" ng-repeat="termin in controller.termine">
 			<a href='{{termin.venue.url}}'>
 				{{termin.venue.name}} <br> {{termin.venue.city}}  
 				    <em class="pull-right">{{termin.datetime|date:'short'}}</em>

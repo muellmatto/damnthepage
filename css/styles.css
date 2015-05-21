@@ -21,6 +21,24 @@ a:hover {
 }
 
 
+.style-damniam{
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
+    transition: 0.25s;
+    line-height: 16px;
+    border-radius: 0px;
+    padding: 15px;
+}
+
+.style-damniam:hover{
+    box-shadow: 0 0 20px 0 rgba(10, 10, 10, 0.4);
+}
+.nav-style-damniam{
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
+}
 
 
 
