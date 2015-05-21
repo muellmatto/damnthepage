@@ -29,7 +29,9 @@ a:hover {
     line-height: 16px;
     border-radius: 0px;
     padding: 15px;
+    margin-top: 25px;
 }
+
 
 .style-damniam:hover{
     box-shadow: 0 0 20px 0 rgba(10, 10, 10, 0.4);
