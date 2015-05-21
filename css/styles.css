@@ -22,7 +22,7 @@ a:hover {
 
 
 .style-damniam{
-    background-color: #fff;
+    /* background-color: #fff;*/ /* macht im Jumbotron Probleme :D */
     color: #333;
     box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
     transition: 0.25s;
