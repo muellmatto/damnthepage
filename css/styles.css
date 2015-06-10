@@ -1,7 +1,7 @@
 body {
   margin-top: 75px;
   padding-bottom: 75px;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 
@@ -76,6 +76,7 @@ a:hover {
 /* ---------- Text-Styles ---------- */
 
 .nav-font{
+        font-family: 'OldPress';
 	font-size: 200%;
 }
 
@@ -106,7 +107,8 @@ a:hover {
 .polaroid img {
   border: 10px solid #fff;
   border-bottom: 45px solid #fff;
-  box-shadow: 3px 3px 3px #777;
+  /* box-shadow: 3px 3px 3px #777; */
+  box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
   width: 100%;  /* sonst wird nicht skaliert, seltsam .... */
 }
  
