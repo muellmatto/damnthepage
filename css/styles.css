@@ -25,6 +25,7 @@ a:hover {
 /* ---------- Damniam-Style ---------- */
 
 
+
 .style-damniam{
     color: #333;
     box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
@@ -92,7 +93,7 @@ a:hover {
 
 
 .polaroid {
-  /* position: relative; */ /* evtl für absolute Position von child <p> ??? */
+  position: relative; /* evtl für absolute Position von child <p> ??? */
   margin-bottom: 25px;
 }
 
@@ -120,7 +121,7 @@ a:hover {
   margin-left: 3%;
   font-family: 'Reenie Beanie', cursive;
   font-size: 150%;
-  /* leider alles gerate und ausprobiert */
+  /* leider alles geraten und ausprobiert */
 }
 
 .polaroid:hover{
