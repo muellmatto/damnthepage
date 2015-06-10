@@ -22,7 +22,7 @@ if (typeof Object.create !== 'function') {
             container = $(this),
             template,
             social_networks = ['facebook', 'instagram', 'vk', 'google', 'blogspot', 'twitter'];
-        container.empty().css('display', 'inline-block');
+            container.empty().css('display', 'inline-block');
         //---------------------------------------------------------------------------------
 
         //---------------------------------------------------------------------------------
