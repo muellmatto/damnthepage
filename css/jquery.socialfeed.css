@@ -80,9 +80,13 @@
     color:#666;
     line-height: 20px;
 }
+
+/* unnötig
 .social-feed-element:first-child {
     margin-top: 0;
 }
+*/
+
 .social-feed-element .media-object {
     display: block;
     width:48px;
@@ -109,7 +113,7 @@
     transition: 0.25s;
     -webkit-backface-visibility: hidden;
     margin:-1px;
-    margin-top:25px;
+    margin-bottom:25px;
     background-color: #fff;
     color: #333;
     text-align:left;
