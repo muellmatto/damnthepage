@@ -60,9 +60,7 @@
 
 
 <div class="container" >
-    	<!-- div class="jumbotron" style="background-image: url('media.jpg'); background-size:100%;  background-position:0px 25%;">
-    		<h1 class="jumbo-font" style="color: white; text-shadow: black 0.1em 0.1em 0.2em">Media</h1>
-    	</div -->
+
         <script src="js/instafeed.min.js"></script>
         <script type="text/javascript">
        	
@@ -70,46 +68,56 @@
                 get: 'user',
                 userId: 328950673,
                 accessToken: '328950673.467ede5.f0004ab84606494dbde9242463601438',
-                limit: 16
+                limit: 16,
+                template: '<div class="polaroid col-md-2 col-sm-4 col-xs-6"><a href="{{link}}"><p>{{model.created_time}}</p><img src="{{image}}" /></a><div class="tesafilm"></div></div>',
+                filter: function(image) {
+                    var date = new Date(image.created_time*1000);
+ 
+                    m = date.getMonth();
+                    d = date.getDate();
+                    /* y = date.getFullYear(); */
+ 
+                    var month_names = new Array ( );
+                    month_names[month_names.length] = "Januar";
+                    month_names[month_names.length] = "Februar";
+                    month_names[month_names.length] = "März";
+                    month_names[month_names.length] = "April";
+                    month_names[month_names.length] = "Mai";
+                    month_names[month_names.length] = "Juni";
+                    month_names[month_names.length] = "Juli";
+                    month_names[month_names.length] = "August";
+                    month_names[month_names.length] = "September";
+                    month_names[month_names.length] = "Oktober";
+                    month_names[month_names.length] = "November";
+                    month_names[month_names.length] = "Dezember";
+ 
+                    var thetime = d + '. ' + month_names[m] ;
+ 
+                    image.created_time = thetime;
+ 
+                    return true;
+	           }
            });
            feed.run();
        	     	
        </script>
         
     <div class="row">
-        <div class="col-md-4">
-	<!-- a class="btn btn-primary btn-block" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectPath=/Shops/es121879_monkeyshop/Products/%22DAMNIAM%20%22%22MADAM%20IN%22%22%20Lp%22" role="button">
-		<i class="fa fa-usd">
-		</i> 
-			KAUFEN 
-		<i class="fa fa-usd">
-		</i>
-	</a -->
-            <!-- br / --> <!-- Der Zeilenumbruch trennt button von player -->
-            <!-- iframe style="border: 0; width: 340px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=2384966043/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless>
-                <a href="http://damniam.bandcamp.com/album/madam-in">
-                    MADAM IN by DAMNIAM
-                </a>
-            </iframe -->
-		<div class="style-damniam">
-			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5088854&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
-			</iframe>
-		</div>
-        </div>
-        <div class="col-md-8">
-            <div class="style-damniam" id="instafeed"></div>
+                    <!-- i id="instafeed"></i -->
+
+        <div class="col-md-4 col-sm-6">
+            <div class="style-damniam">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5088854&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+                </iframe>
+            </div>
         </div>
 
-    </div>
-        
-        
-        
-       
-</div> 
+        <div id="instafeed"></div>
+   
+    </div> 
     
    
-  
-            
+</div>
             
 
   
