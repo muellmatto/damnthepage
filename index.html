@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="damniam">
+<html>
 
 <head>
     <title>DAMNiAM</title>
@@ -7,24 +7,16 @@
 
     <!-- Social-feed css -->
     <link href="css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
-    <!-- font-awesome for social network icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
-    
-    
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+ 
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     
-    
-    
-    
-    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular-locale_de-de.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
     <!-- Codebird.js - required for TWITTER -->
-    <script src="js/codebird.js"></script>
+    <!-- script src="js/codebird.js"></script --> <!-- Momentan ohne Twitter -->
     <!-- doT.js for rendering templates -->
     <script src="js/doT.min.js"></script>
     <!-- Moment.js for showing "time ago" -->
@@ -70,25 +62,38 @@
 </div>
     
     
-<div class="container" ng-controller="TermineController as controller">
-    
-    
+<div class="container">
     
     <div class="row">
 
         <div class="col-md-6">
             <div class="jumbotron style-damniam" style="background-image: url('shows-negated.png'); background-size:100%; border-radius: 0px;">
-                <h1 class="text-right jumbo-font" style="color: white; text-shadow: black 0.1em 0.1em 0.2em">shows</h1>
-            <div class="list-group">
-                <div class="list-group-item"  style="background: rgba(255,255,255,0.4); border: 0px;" ng-repeat="termin in controller.termine">
-			<a href='{{termin.venue.url}}'>
-				{{termin.venue.name}} <br> {{termin.venue.city}}  
-				    <em class="pull-right">{{termin.datetime|date:'short'}}</em>
-			</a>
+                <h1 class="text-right jumbo-font" style="color: white; text-shadow: black 0.1em 0.1em 0.2em">
+                        shows
+                </h1>
+                <div class="list-group" id="termine">
+                        <script type="text/javascript">
+                        $.getJSON(
+                              'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?',
+                              function(data)
+                                {
+                                  document.getElementById('termine').innerHTML = null ;
+                                  for (i in data)
+                                    {
+                                        document.getElementById('termine').innerHTML += 
+                                                "<div class='list-group-item' style='background: rgba(255,255,255,0.4); border: 0px;'>"
+                                                        + "<a href='" + data[i].facebook_rsvp_url + "'>" 
+                                                                + data[i].venue.name + "<br>" + data[i].venue.city
+                                                                + "<em class='pull-right'>" + data[i].datetime + "</em>"
+                                                        + "</a>" 
+                                                + "</div>";
+                                     }
+                                }
+                            );
+                        </script>
                 </div>
             </div>
-            </div>
-        </div>
+        </div> <!-- col-md-6 -->
 
         <div class="col-md-6">
             <div class="social-feed-container">
