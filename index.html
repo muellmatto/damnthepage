@@ -80,11 +80,12 @@
                                   document.getElementById('termine').innerHTML = null ;
                                   for (i in data)
                                     {
+					var datum = new Date(Date.parse(data[i].datetime));
                                         document.getElementById('termine').innerHTML += 
                                                 "<div class='list-group-item' style='background: rgba(255,255,255,0.4); border: 0px;'>"
                                                         + "<a href='" + data[i].facebook_rsvp_url + "'>" 
                                                                 + data[i].venue.name + "<br>" + data[i].venue.city
-                                                                + "<em class='pull-right'>" + data[i].datetime + "</em>"
+                                                                + "<em class='pull-right'>" + datum.toLocaleDateString() + "</em>"
                                                         + "</a>" 
                                                 + "</div>";
                                      }
