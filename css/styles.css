@@ -1,7 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+
 body {
   margin-top: 75px;
   padding-bottom: 75px;
   /* background-color: lightgray; */
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400; 
 }
 
 
@@ -77,12 +81,16 @@ a:hover {
 /* ---------- Text-Styles ---------- */
 
 .nav-font{
-        font-family: 'OldPress';
+	font-family: 'PT Sans Narrow', sans-serif;
+        /* font-family: 'OldPress'; */
 	font-size: 200%;
+	font-weight: 700; 
 }
 
 .jumbo-font{
-        font-family: 'OldPress';
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: 700; 
+        /* font-family: 'OldPress'; */
 }
 
 .blocksatz {
@@ -147,11 +155,11 @@ a:hover {
 
 
 /* ---------- FONTS ---------- */
-
+/*
 @font-face
 {
 font-family: "OldPRess";
 src: local("OldPress"),
 url("Old_Press.ttf")
 format("TrueType")
-}
+} */
