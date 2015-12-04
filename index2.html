@@ -1,0 +1,372 @@
+<html>
+	<head>
+		<title>
+			DAMNIAM
+		</title>
+		<meta charset="UTF-8">
+
+		<!--  MDL   -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.lime-indigo.min.css" />
+		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- jquery für Bands in Town -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	</head>
+
+
+	<body>
+		<!-- Style fürs Layout -->
+		<style>
+			.layout-transparent {
+				  background: url('bg.jpg') center / cover;
+			}
+			.layout-transparent .mdl-layout__header,
+			.layout-transparent .mdl-layout__drawer-button {
+  				color: #eaee3f;
+			}
+						
+		/*  Square card  */
+			.demo-card-square.mdl-card {
+				/* width: 320px; */
+				width: auto;
+				height: auto;
+			}
+			.demo-card-square > .mdl-card__title {
+				/* color: #fff; */
+				/* font-family: 'Roboto'; */
+				font-family: 'PT Sans Narrow', sans-serif;
+				text-align: justify;
+				color: black;
+				background:
+					url('text-bg.jpg') center / cover;
+			}
+
+		/*  Gelbe Balken für den Sticker  */
+			.yellow-box {
+				width: 100%;
+				height: 20px;
+				background-color: #eaee3f;
+			}
+			.yellow-bar {
+				width: 100%;
+				height: 5px;
+				background-color: #eaee3f;
+			}
+		</style>
+
+
+		<div class="layout-transparent mdl-layout mdl-js-layout">
+			<header class="mdl-layout__header mdl-layout__header--transparent">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						DAMNIAM
+					</span>
+    				</div>
+			</header>
+			<div class="mdl-layout__drawer">
+				<span class="mdl-layout-title">menu</span>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" target="_blank" href="http://damniam.de">DAMNIAM Website</a>
+					<a class="mdl-navigation__link" href="http://damniam.de/PressKit.zip">Press Kit</a>
+					<a class="mdl-navigation__link" href="mailto:info@damniam.de">CONTACT</a>
+				</nav>
+			</div>
+  			<main class="mdl-layout__content">
+				
+
+
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+						<div class="mdl-card demo-card-square">
+							<div class="mdl-card__title mdl-card--expand">
+								<div style="width: 100%;"> <!-- seltsam, aber nötig -->
+									<div class='yellow-box'></div>
+									<br>
+									<p style='font-size: 400%;'><b>SHOWS</b></p>
+									<div class='yellow-box'></div>
+                                        <!-- Bands in Town -->
+                                                <br>
+											  <table class="mdl-data-table mdl-js-data-table" style='width: 100%'>
+											    <tbody id="termine">
+                                                </tbody>
+                                              </table>
+                                                    <script type="text/javascript">
+                                                    $.getJSON(
+                                                          'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?',
+                                                          function(data)
+                                                            {
+                                                              document.getElementById('termine').innerHTML = null; 
+                                                              for (i in data)
+                                                                {
+                                                                    var datum = new Date(Date.parse(data[i].datetime));
+                                                                    document.getElementById('termine').innerHTML +=
+                                                                           /*  "<div class='yellow-bar'></div>"
+                                                                            + "<a href='" + data[i].facebook_rsvp_url + "'>"
+                                                                            + data[i].venue.name + "<br>" + data[i].venue.city
+                                                                            + "</a>" 
+                                                                            + "<div style='text-align: right'><em>" 
+                                                                            + datum.toLocaleDateString() + "</em></div>"; */
+                                                                            "<tr>"
+                                                                                + "<td class='mdl-data-table__cell--non-numeric'>"
+                                                                                + "<p style='float: left;'>" + data[i].venue.city + "</p>"
+                                                                                + "<p style='float: right;'>" + data[i].venue.name + "</p>"
+                                                                                + "<div style='clear: both;'></div>"
+                                                                                + "<p style='float: left;'>" 
+                                                                                    + "<a href='http://maps.google.com/?q="
+                                                                                        + data[i].venue.latitude
+                                                                                        + ","
+                                                                                        + data[i].venue.longitude
+                                                                                        + "' target='_blank'>"
+                                                                                        +"map"
+                                                                                    + "</a>" 
+                                                                                    + "</p>"
+                                                                                + "<p style='float: right'>"
+                                                                                    + datum.toLocaleDateString()
+                                                                                + "</p>"
+                                                                                + "<div style='clear: both;'></div>"
+                                                                                + "</td>"
+                                                                            + "</tr>";
+                                                                 }
+                                                            }
+                                                        );
+                                                    </script>
+                                    <br>
+                                    <!-- Bans in Town Ende -->
+									<div class='yellow-box'></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+						<div class='mdl-card demo-card-square'>
+							<div class="mdl-card__title mdl-card--expand">
+								<div style="width: 100%;"> <!-- seltsam, aber nötig -->
+									<div class="yellow-box"></div>
+									<br>
+									<p>
+                                    <!-- Iframe Soundcloud-player -->
+											  <table class="mdl-data-table mdl-js-data-table">
+											  <tbody>
+												<tr>
+												  <td class="mdl-data-table__cell--non-numeric">John Lennon</td>
+												  <td class="mdl-data-table__cell--non-numeric">The smart one</td>
+												  <td>40</td>
+												  <td class="mdl-data-table__cell--non-numeric">No</td>
+												</tr>
+												<tr>
+												  <td class="mdl-data-table__cell--non-numeric">Paul McCartney</td>
+												  <td class="mdl-data-table__cell--non-numeric">The cute one</td>
+												  <td>73</td>
+												  <td class="mdl-data-table__cell--non-numeric">Yes</td>
+												</tr>
+												<tr>
+												  <td class="mdl-data-table__cell--non-numeric">George Harrison</td>
+												  <td class="mdl-data-table__cell--non-numeric">The shy one</td>
+												  <td>58</td>
+												  <td class="mdl-data-table__cell--non-numeric">No</td>
+												</tr>
+												<tr>
+												  <td class="mdl-data-table__cell--non-numeric">Ringo Starr</td>
+												  <td class="mdl-data-table__cell--non-numeric">The funny one</td>
+												  <td>74</td>
+												  <td class="mdl-data-table__cell--non-numeric">Yes</td>
+												</tr>
+											  </tbody>
+											</table>
+  
+									</p>
+									<div class="yellow-box"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+								<h2 style="text-align: right;">
+									DAMNIAM 
+								</h2>
+								<div class="yellow-box"></div>
+								<p style="text-align: right;">
+									c/o Sebastian Baldauf <br>
+									Kanalstraße 5 <br>
+									48147 Münster <br>
+									Germany <br>
+									Earth <br>
+									Phone: +49 (0) 15146413840
+								</p>
+								<div class="yellow-box"></div>
+								<br>
+								<p style="text-align: right;">
+									<a href="mailto:info@damniam.de" target="_blank">
+										<button class="mdl-button mdl-js-button mdl-button--raised 
+													mdl-js-ripple-effect mdl-button--colored">
+											info@damniam.de
+										</button>
+									</a>
+								</p>
+								<p style="text-align: right;">
+									<a href="http://www.mad-drunken-monkey.de/" target="_blank">
+										<button class="mdl-button mdl-js-button mdl-button--raised 
+													mdl-js-ripple-effect mdl-button--colored">
+											MAD DRUNKEN MONKEY
+										</button>
+									</a>
+								</p>
+								<p style="text-align: right;">
+									<a href="http://rof-records.blogspot.de/" target="_blank">
+										<button class="mdl-button mdl-js-button mdl-button--raised 
+													mdl-js-ripple-effect mdl-button--colored">
+											RING OF FIRE
+										</button>
+									</a>
+								</p>
+								<div class="yellow-box"></div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+
+					<div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+							<p>
+							Das zweite Album der Münsteraner DAMNIAM liefert alles, was man 
+							von einer guten Poppunkplatte erwartet: Die Songs sind kurz, Tempo 
+							und Spaßfaktor sind hoch, die Melodien sind riesengroß. 11 Songs 
+							in knapp unter 30 Minuten, mit Texten über die wichtigen Dinge im 
+							Leben (Touren, Zwischenmenschliches, Bier). Im Vergleich zum 
+							Debütalbum MADAMIN klingt DAMAGE merklich rauer, die Produktion ist 
+							deutlich erdiger. Weniger Stadion, mehr Jungendzentrum lautet das 
+							Motto, womit das Album sich soundmäßig dem Kerngeschäft der vier 
+							Herrschaften annähert: Die geistige Heimat der Songs sind die Bühnen 
+							zahlloser Hallen, Clubs und AJZs, wo DAMNIAM in den acht Jahren seit 
+							Bandgründung ihr Handwerk perfektioniert haben, in letzter Zeit unter 
+							anderem mit New Found Glory, Donots, All Time Low, Nothington, 
+							Mr. Irish Bastard (Sänger Chris liefert einen Gastbeitrag zum Song 
+							„Leave It All Behind“), Atlas Losing Grip und vielen anderen. Party Hard!
+							</p>
+								<div class="yellow-box"></div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+					<div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+							<p>
+							The sophomore album by German Pop Punkers DAMNIAM contains all the 
+							ingredients of a great Punk record: short songs, high tempo, catchy 
+							hooks and tons of fun. 11 Songs in just under 30 minutes, with lyrics 
+							on the truly important things in life (touring, people, beer). Compared 
+							to debut album MADAMIN, DAMAGE sounds noticeably rougher and less polished. 
+							“Less stadium, more youth centre” seems to be the motto of the release, 
+							thus approaching the band’s core business: The spiritual home of the songs 
+							is on the stages of countless clubs and venues, where DAMNIAM have honed 
+							their craft over the eight years of the band’s existence, opening up for 
+							bands such as New Found Glory, Donots, All Time Low, Nothington, 
+							Mr. Irish Bastard (whose Chris Lennon sings on “Leave It All Behind”), 
+							Atlas Losing Grip and many others. Party Hard!
+							</p>
+								<div class="yellow-box"></div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+					<div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%; position: relative;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+									<img src="logo1_small.png" style="width: 100%"/>
+									<a href="logo1.png" download="logo1.png" title="logo1">
+										<button class="mdl-button mdl-js-button mdl-button--fab 
+												mdl-js-ripple-effect mdl-button--colored"
+												style="position: absolute; 
+													right: 10px; 
+													bottom: 10px;">
+											<i class="material-icons">
+												get_app
+											</i>
+										</button>
+									</a>
+								<div class="yellow-box" style="font-weight: 700;">LOGO 1</div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+					<div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+									<img src="damniam_small.jpg" style="width: 100%"/>
+									<a href="damniam.jpg" download="damniam.jpg" title="damniam">
+										<button class="mdl-button mdl-js-button mdl-button--fab 
+												mdl-js-ripple-effect mdl-button--colored"
+												style="position: absolute; 
+													right: 10px; 
+													bottom: 10px;">
+											<i class="material-icons">
+												get_app
+											</i>
+										</button>
+									</a>
+								<div class="yellow-box" style="font-weight: 700;">DAMNIAM PHOTO</div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+					<div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet'>
+						<div class='mdl-card demo-card-square'>
+							<div class='mdl-card__title mdl-card--expand'>
+							<div style="width: 100%;">  <!-- Textblock -->
+								<div class="yellow-box"></div>
+									<img src="logo2.png" style="width: 100%;">
+									<a href="logo2.png" download="logo2.png" title="logo2">
+										<button class="mdl-button mdl-js-button mdl-button--fab 
+												mdl-js-ripple-effect mdl-button--colored"
+												style="position: absolute; 
+													right: 10px; 
+													bottom: 10px;">
+											<i class="material-icons">
+												get_app
+											</i>
+										</button>
+									</a>
+								<div class="yellow-box" style="font-weight: 700;">LOGO 2</div>
+							</div> <!-- textblock -->
+							</div> <!-- mdl card -->
+						</div>
+					</div>
+
+				</div> <!-- mdl-grid-->
+  			</main>
+		</div>
+
+
+
+
+	</body>
+
+
+</html>
