@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <title>DAMNIAM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/material.damniam.css" \>
+        <link rel="stylesheet" href="css/Material-Icons.css" \>
+        <link rel="stylesheet" href="css/damniam.css" \>
+        <script defer src="js/material.min.js"></script>
+        <!-- jquery für Bands in Town -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script src="js/jquery.socialfeed.js"></script>
+        <script src="js/doT.min.js"></script>
+    </head>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout" style="background: url('bg.jpg') center / cover;">
+
+                        <header class="mdl-layout__header mdl-layout__header--fixed" style="color: black; background: url('img/text-bg.jpg') center / cover;">
+                                <div class="mdl-layout__header-row">
+                                        <!-- Title -->
+                                        <span class="mdl-layout-title mdl-typography--display-1">
+                                                DAMNIAM
+                                        </span>
+                                </div>
+                        </header>
+
+                        <div class="mdl-layout__drawer">
+                                <span class="mdl-layout-title">menu</span>
+                                <nav class="mdl-navigation">
+                                        <a class="mdl-navigation__link" target="_blank" href="http://damniam.de">
+                                            DAMNIAM Website
+                                        </a>
+                                        <a class="mdl-navigation__link" href="http://damniam.de/PressKit.zip">
+                                            Press Kit
+                                        </a>
+                                        <a class="mdl-navigation__link" href="mailto:info@damniam.de">
+                                            CONTACT
+                                        </a>
+                                </nav>
+                        </div>  <!-- drawer -->
+
+                        <main class="mdl-layout__content">
+                        <div class="mdl-grid">
+					        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+
+
+                                <div class="mdl-card damniam-card">
+                                    <div class="mdl-card__title mdl-card--expand">
+                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                            <div class='yellow-box'></div>
+                                            <br>
+                                            <p style='font-size: 400%;'><b>SHOWS</b></p>
+                                            <div class='yellow-box'></div>
+                                            <table class="mdl-data-table mdl-js-data-table" style='width: 100%'>
+                                                <tbody id="termine">
+                                                </tbody>
+                                            </table>
+                                            <div class='yellow-box'></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <script>
+                                data = [
+                                    {
+                                        venue: {
+                                            city: "Stadt1",
+                                            name: "clubA",
+                                            longitude: "50",
+                                            latitude: "50"
+                                        },
+                                        datetime: "1.2.34"
+                                    },
+                                    {
+                                        venue: {
+                                            city: "Stadt2",
+                                            name: "clubB",
+                                            longitude: "50",
+                                            latitude: "50"
+                                        }, 
+                                        datetime: "12.3.2020" 
+                                    }
+                                ];
+
+
+                                $.getJSON( 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?', fillTable );
+
+                                function fillTable(data) {
+                                    document.getElementById('termine').innerHTML = null; 
+                                    for (i in data) {
+                                        var datum = new Date(Date.parse(data[i].datetime));
+                                        document.getElementById('termine').innerHTML +=
+                                                "<tr>"
+                                                    + "<td class='mdl-data-table__cell--non-numeric'>"
+                                                    + "<p style='float: left;'>" + data[i].venue.city + "</p>"
+                                                    + "<p style='float: right;'>" + data[i].venue.name + "</p>"
+                                                    + "<div style='clear: both;'></div>"
+                                                    + "<p style='float: left;'>" 
+                                                        + "<a href='http://maps.google.com/?q="
+                                                            + data[i].venue.latitude
+                                                            + ","
+                                                            + data[i].venue.longitude
+                                                            + "' target='_blank'>"
+                                                            +"map"
+                                                        + "</a>" 
+                                                        + "</p>"
+                                                    + "<p style='float: right'>"
+                                                        + datum.toLocaleDateString()
+                                                    + "</p>"
+                                                    + "<div style='clear: both;'></div>"
+                                                    + "</td>"
+                                                + "</tr>";
+                                     }
+                                }
+                               
+                                // fillTable(data);
+
+                            </script>
+
+                            <div class="social-feed-container"></div>
+
+    <script>
+    $(document).ready(function() {
+        var updateFeed = function() {
+            $('.social-feed-container').socialfeed({
+                // FACEBOOK
+                facebook: {
+                    accounts: ['@damniambook'],
+                    limit: 5,
+                    access_token: '150849908413827|a20e87978f1ac491a0c4a721c961b68c'
+                },
+                // GOOGLEPLUS
+                /* google: {
+                    accounts: queryTags,
+                    limit: 2,
+                    access_token: 'AIzaSyDpNQcIwQf5TcKmI8B0rh3e4OodIywJP14'
+                }, */
+                // Twitter
+                /* twitter: {
+                    accounts: ['@damnthebeat'],
+                    limit: 4,
+                    consumer_key: 'qzRXgkI7enflNJH1lWFvujT2P', // make sure to have your app read-only
+                    consumer_secret: '8e7E7gHuTwyDHw9lGQFO73FcUwz9YozT37lEvZulMq8FXaPl8O', // make sure to have your app read-only
+                },*/
+                // INSTAGRAM
+                instagram: {
+                    accounts: ['@damniamofficial'],
+                    limit: 3,
+                    client_id: '88b4730e0e2c4b2f8a09a6184af2e218'
+                },
+
+                // GENERAL SETTINGS
+                length: 200,
+                show_media: true,
+                // Moderation function - if returns false, template will have class hidden
+                /* moderation: function(content) {
+                    return (content.text) ? content.text.indexOf('fuck') == -1 : true;
+                }, */
+                //update_period: 5000,
+                // When all the posts are collected and displayed - this function is evoked
+                callback: function() {
+                    console.log('all posts are collected');
+                }
+            });
+        };
+
+        updateFeed();
+        /*$('#button-update').click(function() {
+            updateFeed();
+        });*/
+
+    });
+    </script>
+
+
+                        </div> <!-- grid -->
+
+                        </main> 
+        </div> <!-- layout -->
+    </body>
+
+</html>
