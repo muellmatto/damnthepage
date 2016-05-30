@@ -156,8 +156,21 @@
                                     </div>
                                 </div>
                             </div>
+                        
 
-
+                        <script id="gallerytemplate" type="x-tmpl-mustache">
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+                                <div class="mdl-card mdl-shadow--2dp" style="background: url('{{image}}');">
+                                    <div class="mdl-card__title mdl-card--expand">
+                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                        </div>
+                                    </div>
+                                    <div class="mdl-card__actions">
+                                        <span class="demo-card-image__filename">{{datum}}</span>
+                                    </div>
+                                </div>
+                            </div> <!-- cell-->
+                        <script>
                         </div> <!-- media grid -->
                         </main> 
         </div> <!-- layout -->
