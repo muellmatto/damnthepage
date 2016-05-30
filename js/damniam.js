@@ -23,8 +23,8 @@ function fillGrid(data) {
     Mustache.parse(template);   // optional, speeds up future uses
     //console.log(data);
     for (i in data.data) {
+        /*
         var datum = new Date(Date.parse(data.data[i].created_time));
-
         var m = datum.getMonth();
         var d = datum.getDate();
         var month_names = new Array ( );
@@ -41,13 +41,12 @@ function fillGrid(data) {
         month_names[month_names.length] = "November";
         month_names[month_names.length] = "Dezember";
         var datum = d + '. ' + month_names[m] ;
-
+        */
             if( ("message" in data.data[i]) ) {
                 var rendered = Mustache.render(template, {
                                                 image: data.data[i].full_picture,
                                                 link: data.data[i].link,
-                                                message: data.data[i].message,
-                                                datum: datum
+                                                message: data.data[i].message
                                                 }
                                             );
                 $('#grid').append(rendered);
