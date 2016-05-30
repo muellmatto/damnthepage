@@ -38,22 +38,22 @@
                                         <a class="mdl-navigation__link" href="#media">
                                             MEDIA
                                         </a>
-                                        <a class="mdl-navigation__link" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
+                                        <a class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
                                             SHOP
                                         </a>
                                         <a class="mdl-navigation__link" href="#contact">
                                             CONTACT
                                         </a>
-                                        <a class="mdl-navigation__link" href="https://facebook.com/DAMNIAMBOOK">
+                                        <a class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
                                             FACEBOOK
                                         </a>
-                                        <a class="mdl-navigation__link" href="https://instagram.com/damniamofficial/">
+                                        <a class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
                                             INSTAGRAM
                                         </a>
-                                        <a class="mdl-navigation__link" href="https://twitter.com/damnthebeat">
+                                        <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
                                             TWITTER
                                         </a>
-                                        <a class="mdl-navigation__link" href="https://www.youtube.com/user/DAMNiAM/">
+                                        <a class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
                                             YOUTUBE
                                         </a>
                                 </nav>
@@ -61,8 +61,9 @@
 
                         <main class="mdl-layout__content">
                         <div class="mdl-grid" id="grid">
-					        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+					        <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
 
+                            <!-- Termine -->
                                 <div class="mdl-card damniam-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
                                         <div style="width: 100%;"> <!-- seltsam, aber nötig -->
@@ -106,12 +107,32 @@
                             </div> <!-- cell -->
 
 
+                            <!-- sound cloud -->
+                            <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
+                                <div class="mdl-card damniam-card mdl-shadow--2dp">
+                                    <div class="mdl-card__title mdl-card--expand">
+                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                            <div class="yellow-box"></div>
+                                            <br>
+                                            <p>
+                                            <iframe width="100%" height="440" scrolling="no" frameborder="no" 
+                                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=eaee3f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
+                                            </iframe>
+                                            </p>
+                                            <div class="yellow-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- sound clound -->
                         
+
+                        <!-- feed -->
                             <script id="feedtemplate" type="x-tmpl-mustache">
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
+                                <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
                                     <div class="mdl-card damniam-card mdl-shadow--2dp">
 
                                         <div class="mdl-card__title mdl-card--expand">
+                                
                                             <div style="width: 100%;"> <!-- seltsam, aber nötig -->
                                                 <div class='yellow-box'></div>
                                                     <div style="padding: 5px;">
@@ -133,44 +154,31 @@
 
                                     </div>
                                 </div>
-                            </script>
+                            </script>   <!-- feed -->
 
 
                         </div> <!-- grid -->
 
                         <div class="mdl-grid" id="media">
-                            <!-- sound cloud -->
-                            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                <div class="mdl-card damniam-card mdl-shadow--2dp">
-                                    <div class="mdl-card__title mdl-card--expand">
-                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            <div class="yellow-box"></div>
-                                            <br>
-                                            <p>
-                                            <iframe width="100%" height="440" scrolling="no" frameborder="no" 
-                                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=eaee3f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
-                                            </iframe>
-                                            </p>
-                                            <div class="yellow-box"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         
 
-                        <script id="gallerytemplate" type="x-tmpl-mustache">
-                            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                <div class="mdl-card mdl-shadow--2dp" style="background: url('{{image}}');">
-                                    <div class="mdl-card__title mdl-card--expand">
-                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                            <script id="gallerytemplate" type="x-tmpl-mustache">
+
+                                <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone  mdl-cell--8-col-tablet">
+                                <a href='{{link}}' target='_blank'>
+                                    <div class="mdl-card mdl-shadow--2dp">
+                                        <div class="mdl-card__title mdl-card--expand" style="background: url('{{image}}') center / cover;">
+                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                            </div>
+                                        </div>
+                                        <div class="mdl-card__actions" style="background: rgb(234,238,63);">
+                                            <span class="demo-card-image__filename" style="color: white; font-weight: 500;">{{datum}}</span>
                                         </div>
                                     </div>
-                                    <div class="mdl-card__actions">
-                                        <span class="demo-card-image__filename">{{datum}}</span>
-                                    </div>
-                                </div>
-                            </div> <!-- cell-->
-                        <script>
+                                </a>
+                                </div> <!-- cell-->
+
+                            </script>
                         </div> <!-- media grid -->
                         </main> 
         </div> <!-- layout -->
