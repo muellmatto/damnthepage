@@ -4,18 +4,39 @@ function closeMenu() {
     return true;
 }
 
+function datumString(datum) {
+        var m = datum.getMonth();
+        var d = datum.getDate();
+        var month_names = new Array ( );
+        month_names[month_names.length] = "Januar";
+        month_names[month_names.length] = "Februar";
+        month_names[month_names.length] = "März";
+        month_names[month_names.length] = "April";
+        month_names[month_names.length] = "Mai";
+        month_names[month_names.length] = "Juni";
+        month_names[month_names.length] = "Juli";
+        month_names[month_names.length] = "August";
+        month_names[month_names.length] = "September";
+        month_names[month_names.length] = "Oktober";
+        month_names[month_names.length] = "November";
+        month_names[month_names.length] = "Dezember";
+
+        return datum = d + '. ' + month_names[m] ;
+}
+
+
 function fillTable(data) {
     var template = $('#tabletemplate').html();
     Mustache.parse(template);   // optional, speeds up future uses
     document.getElementById('termine').innerHTML = null; 
     for (i in data) {
-        var datum = new Date(Date.parse(data[i].datetime));
+        var datum = datumString(new Date(Date.parse(data[i].datetime)));
             var rendered = Mustache.render(template, {
                                             city: data[i].venue.city,
                                             venuename: data[i].venue.name,
                                             latitude: data[i].venue.latitude,
                                             longitude: data[i].venue.longitude,
-                                            datum: datum.toLocaleDateString()
+                                            datum: datum
                                             }
                                         );
             // document.getElementById('termine').innerHTML += rendered;
@@ -28,30 +49,13 @@ function fillGrid(data) {
     Mustache.parse(template);   // optional, speeds up future uses
     //console.log(data);
     for (i in data.data) {
-        /*
-        var datum = new Date(Date.parse(data.data[i].created_time));
-        var m = datum.getMonth();
-        var d = datum.getDate();
-        var month_names = new Array ( );
-        month_names[month_names.length] = "Januar";
-        month_names[month_names.length] = "Februar";
-        month_names[month_names.length] = "März";
-        month_names[month_names.length] = "April";
-        month_names[month_names.length] = "Mai";
-        month_names[month_names.length] = "Juni";
-        month_names[month_names.length] = "Juli";
-        month_names[month_names.length] = "August";
-        month_names[month_names.length] = "September";
-        month_names[month_names.length] = "Oktober";
-        month_names[month_names.length] = "November";
-        month_names[month_names.length] = "Dezember";
-        var datum = d + '. ' + month_names[m] ;
-        */
+        var datum = datumString(new Date(Date.parse(data.data[i].created_time)));
             if( ("message" in data.data[i]) ) {
                 var rendered = Mustache.render(template, {
                                                 image: data.data[i].full_picture,
                                                 link: data.data[i].link,
-                                                message: data.data[i].message
+                                                message: data.data[i].message,
+                                                datum: datum
                                                 }
                                             );
                 $('#grid').append(rendered);
@@ -60,32 +64,17 @@ function fillGrid(data) {
 }
 
 
+
 function fillGallery(data) {
     var template = $('#gallerytemplate').html();
     Mustache.parse(template);   // optional, speeds up future uses
     for (i in data.data) {
-        var datum = new Date(parseInt(data.data[1].created_time) * 1000);
-        var m = datum.getMonth();
-        var d = datum.getDate();
-        var month_names = new Array ( );
-        month_names[month_names.length] = "Januar";
-        month_names[month_names.length] = "Februar";
-        month_names[month_names.length] = "März";
-        month_names[month_names.length] = "April";
-        month_names[month_names.length] = "Mai";
-        month_names[month_names.length] = "Juni";
-        month_names[month_names.length] = "Juli";
-        month_names[month_names.length] = "August";
-        month_names[month_names.length] = "September";
-        month_names[month_names.length] = "Oktober";
-        month_names[month_names.length] = "November";
-        month_names[month_names.length] = "Dezember";
-        var datum = d + '. ' + month_names[m] ;
-            var rendered = Mustache.render(template, {
-                                            image: data.data[i].images.low_resolution.url,
-                                            link: data.data[i].link,
-                                            datum: datum
-                                            }
+        var datum = datumString(new Date(parseInt(data.data[1].created_time) * 1000));
+        var rendered = Mustache.render(template, {
+                                        image: data.data[i].images.low_resolution.url,
+                                        link: data.data[i].link,
+                                        datum: datum
+                                        }
                                         );
             // document.getElementById('termine').innerHTML += rendered;
             $('#media').append(rendered);
