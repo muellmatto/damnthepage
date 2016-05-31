@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <div class="mdl-layout mdl-js-layout" style="background: url('bg.jpg') center / cover;">
+        <div class="mdl-layout mdl-js-layout" style="background: url('img/bg.jpg') center / cover;">
 
                         <header class="mdl-layout__header mdl-layout__header--transparent">
                                 <div class="mdl-layout__header-row">
@@ -29,14 +29,14 @@
                         <div class="mdl-layout__drawer">
                                 <span class="mdl-layout-title">menu</span>
                                 <nav class="mdl-navigation">
-                                        <a class="mdl-navigation__link" href="#termine">
+                                        <a class="mdl-navigation__link" href="#grid">
                                             NEWS
                                         </a>
                                         <a class="mdl-navigation__link" href="#band">
                                             BAND
                                         </a>
                                         <a class="mdl-navigation__link" href="#media">
-                                            MEDIA
+                                            PICS
                                         </a>
                                         <a class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
                                             SHOP
@@ -159,27 +159,45 @@
 
                         </div> <!-- grid -->
 
+
+                    <!-- band grid -->
+                        <div class="mdl-grid" id="band">
+                            LOREM IPESUM
+                        </div> <!-- band -->
+
+
+
+
+                    <!-- media grid -->
                         <div class="mdl-grid" id="media">
-                        
-
                             <script id="gallerytemplate" type="x-tmpl-mustache">
-
                                 <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone  mdl-cell--8-col-tablet">
                                 <a href='{{link}}' target='_blank'>
-                                    <div class="mdl-card  mdl-shadow--2dp" style="width: auto; height: 250px; background:url('{{image}}') center / cover;">
+                                    <div class="mdl-card  mdl-shadow--2dp"
+                                                    style="width: auto; height: 250px; background:url('{{image}}') center / cover;">
                                         <div class="mdl-card__title mdl-card--expand">
                                             <div style="width: 100%;"> <!-- seltsam, aber nötig -->
                                             </div>
                                         </div>
                                         <div class="mdl-card__actions mdl-card--border" style="background: rgba(0,0,0,0.2);">
-                                            <span class="demo-card-image__filename" style="color: white; font-weight: 500; text-align: right;">{{datum}}</span>
+                                            <span class="demo-card-image__filename" style="color: white; font-weight: 500; text-align: right;">
+                                                {{datum}}
+                                            </span>
                                         </div>
                                     </div>
                                 </a>
                                 </div> <!-- cell-->
-
                             </script>
                         </div> <!-- media grid -->
+
+
+
+                    <!-- contact grid -->
+                        <div class="mdl-grid" id="contact">
+                            LOREM IPESUM
+                        </div> <!-- contact -->
+
+
                         </main> 
         </div> <!-- layout -->
     </body>
