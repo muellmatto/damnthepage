@@ -25,8 +25,8 @@ function datumString(datum) {
 }
 
 
-function fillTable(data) {
-    var template = $('#tabletemplate').html();
+function fillList(data) {
+    var template = $('#listtemplate').html();
     Mustache.parse(template);   // optional, speeds up future uses
     document.getElementById('termine').innerHTML = null; 
     for (i in data) {
@@ -85,7 +85,7 @@ function fillGallery(data) {
 
 $( document ).ready(function() {
 
-    $.getJSON( 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?', fillTable );
+    $.getJSON( 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?', fillList );
     $.getJSON( 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q', fillGrid);
     $.getJSON( 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.467ede5.f0004ab84606494dbde9242463601438&count=24&callback=?', fillGallery );
 
