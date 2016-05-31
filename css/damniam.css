@@ -1,6 +1,7 @@
 .damniam-card.mdl-card {
     width: auto;
     height: auto;
+    margin: 10px;
 }
 .damniam-card > .mdl-card__title {
     /* 
