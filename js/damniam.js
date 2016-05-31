@@ -1,3 +1,7 @@
+function closeMenu() {
+    var layout = document.querySelector('.mdl-layout');
+    layout.MaterialLayout.toggleDrawer();
+}
 
 function fillTable(data) {
     var template = $('#tabletemplate').html();
