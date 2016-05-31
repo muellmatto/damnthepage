@@ -3,13 +3,11 @@
         <title>DAMNIAM</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/material.damniam.css" \>
-        <link rel="stylesheet" href="css/Material-Icons.css" \>
         <link rel="stylesheet" href="css/damniam.css" \>
-        <script defer src="js/material.min.js"></script>
-        <!-- jquery für Bands in Town -->
+        <link rel="stylesheet" href="css/material.damniam.css" \>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
         <script src="js/mustache.min.js"></script>
         <script src="js/damniam.js"></script>
     </head>
@@ -17,43 +15,43 @@
     <body>
         <div class="mdl-layout mdl-js-layout" style="background: url('img/bg.jpg') center / cover;">
 
-                        <header class="mdl-layout__header mdl-layout__header--transparent">
+                        <header class="mdl-layout__header">
                                 <div class="mdl-layout__header-row">
                                         <!-- Title -->
-                                        <span class="mdl-layout-title mdl-typography--display-1">
+                                        <span class="mdl-layout-title">
                                                 DAMNIAM
                                         </span>
                                 </div>
                         </header>
 
                         <div class="mdl-layout__drawer">
-                                <span class="mdl-layout-title">menu</span>
+                                <span class="mdl-layout-title">DAMNIAM</span>
                                 <nav class="mdl-navigation">
-                                        <a class="mdl-navigation__link" href="#grid">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#grid">
                                             NEWS
                                         </a>
-                                        <a class="mdl-navigation__link" href="#band">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#band">
                                             BAND
                                         </a>
-                                        <a class="mdl-navigation__link" href="#media">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#media">
                                             PICS
                                         </a>
-                                        <a class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
                                             SHOP
                                         </a>
-                                        <a class="mdl-navigation__link" href="#contact">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#contact">
                                             CONTACT
                                         </a>
-                                        <a class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
                                             FACEBOOK
                                         </a>
-                                        <a class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
                                             INSTAGRAM
                                         </a>
-                                        <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
                                             TWITTER
                                         </a>
-                                        <a class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
+                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
                                             YOUTUBE
                                         </a>
                                 </nav>
