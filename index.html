@@ -14,9 +14,9 @@
     </head>
 
     <body>
-        <div class="mdl-layout mdl-js-layout" style="background: url('img/bg.jpg') center / cover;">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="background: url('img/bg.jpg') center / cover;">
 
-                        <header class="mdl-layout__header">
+                        <header class="mdl-layout__header  mdl-layout__header--transparent">
                                 <div class="mdl-layout__header-row">
                                         <!-- Title -->
                                         <span class="mdl-layout-title">
@@ -28,31 +28,31 @@
                         <div class="mdl-layout__drawer">
                                 <span class="mdl-layout-title">DAMNIAM</span>
                                 <nav class="mdl-navigation">
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#grid">
+                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#grid">
                                             NEWS
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#band">
+                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#band">
                                             BAND
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#media">
+                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#media">
                                             PICS
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
+                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
                                             SHOP
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" href="#contact">
+                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#contact">
                                             CONTACT
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
+                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
                                             FACEBOOK
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
+                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
                                             INSTAGRAM
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
+                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
                                             TWITTER
                                         </a>
-                                        <a onclick="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
+                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
                                             YOUTUBE
                                         </a>
                                 </nav>
@@ -63,7 +63,7 @@
 					        <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
 
                             <!-- Termine -->
-                                <div class="mdl-card damniam-card mdl-shadow--2dp">
+                                <div class="mdl-card damniam-card">
                                     <div class="mdl-card__title mdl-card--expand">
                                         <div style="width: 100%;"> <!-- seltsam, aber nötig -->
                                             <div class='yellow-box'></div>
@@ -108,7 +108,7 @@
 
                             <!-- sound cloud -->
                             <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
-                                <div class="mdl-card damniam-card mdl-shadow--2dp">
+                                <div class="mdl-card damniam-card">
                                     <div class="mdl-card__title mdl-card--expand">
                                         <div style="width: 100%;"> <!-- seltsam, aber nötig -->
                                             <div class="yellow-box"></div>
@@ -128,7 +128,7 @@
                         <!-- feed -->
                             <script id="feedtemplate" type="x-tmpl-mustache">
                                 <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-phone  mdl-cell--8-col-tablet">
-                                    <div class="mdl-card damniam-card mdl-shadow--2dp">
+                                    <div class="mdl-card damniam-card">
 
                                         <div class="mdl-card__title mdl-card--expand">
                                 
@@ -172,7 +172,7 @@
                             <script id="gallerytemplate" type="x-tmpl-mustache">
                                 <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone  mdl-cell--8-col-tablet">
                                 <a href='{{link}}' target='_blank'>
-                                    <div class="mdl-card  mdl-shadow--2dp"
+                                    <div class="mdl-card"
                                                     style="width: auto; height: 250px; background:url('{{image}}') center / cover;">
                                         <div class="mdl-card__title mdl-card--expand">
                                             <div style="width: 100%;"> <!-- seltsam, aber nötig -->

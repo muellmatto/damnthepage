@@ -1,6 +1,7 @@
 function closeMenu() {
     var layout = document.querySelector('.mdl-layout');
     layout.MaterialLayout.toggleDrawer();
+    return true;
 }
 
 function fillTable(data) {
