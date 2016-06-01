@@ -26,40 +26,23 @@ function datumString(datum) {
 
 
 function fillList(data) {
-    var template = $('#listtemplate').html();
-    Mustache.parse(template);   // optional, speeds up future uses
+    var template = document.getElementById('listtemplate').innerHTML;
     document.getElementById('termine').innerHTML = null; 
     for (i in data) {
         var datum = datumString(new Date(Date.parse(data[i].datetime)));
-            var rendered = Mustache.render(template, {
-                                            city: data[i].venue.city,
-                                            venuename: data[i].venue.name,
-                                            latitude: data[i].venue.latitude,
-                                            longitude: data[i].venue.longitude,
-                                            datum: datum
-                                            }
-                                        );
-            // document.getElementById('termine').innerHTML += rendered;
-            $('#termine').append(rendered);
+            var rendered = template.replace('{{city}}', data[i].venue.city).replace('{{venuename}}',data[i].venue.name).replace('{{latitude}}',data[i].venue.latitude).replace('{{longitude}}',data[i].venue.longitude).replace('{{datum}}', datum);
+            document.getElementById('termine').innerHTML += rendered;
      }
 }
 
 function fillGrid(data) {
-    var template = $('#feedtemplate').html();
-    Mustache.parse(template);   // optional, speeds up future uses
-    //console.log(data);
+    var template = document.getElementById('feedtemplate').innerHTML;
     var k = 0;
     for (i in data.data) {
         var datum = datumString(new Date(Date.parse(data.data[i].created_time)));
             if( ("message" in data.data[i]) && ( k < 10) ) {
-                var rendered = Mustache.render(template, {
-                                                image: data.data[i].full_picture,
-                                                link: data.data[i].link,
-                                                message: data.data[i].message,
-                                                datum: datum
-                                                }
-                                            );
-                $('#grid').append(rendered);
+                var rendered = template.replace('{{image}}',data.data[i].full_picture).replace('{{link}}',data.data[i].link).replace('{{datum}}',datum).replace('{{message}}', data.data[i].message);
+                document.getElementById('grid').innerHTML += rendered;
                 k++;
             };
      }
@@ -68,25 +51,27 @@ function fillGrid(data) {
 
 
 function fillGallery(data) {
-    var template = $('#gallerytemplate').html();
-    Mustache.parse(template);   // optional, speeds up future uses
+        var template = document.getElementById('gallerytemplate').innerHTML;
     for (i in data.data) {
         var datum = datumString(new Date(parseInt(data.data[i].created_time) * 1000));
-        var rendered = Mustache.render(template, {
-                                        image: data.data[i].images.low_resolution.url,
-                                        link: data.data[i].link,
-                                        datum: datum
-                                        }
-                                        );
-            // document.getElementById('termine').innerHTML += rendered;
-            $('#media').append(rendered);
+        var rendered = template.replace('{{image}}',data.data[i].images.low_resolution.url).replace('{{link}}',data.data[i].link).replace('{{datum}}',datum);
+        document.getElementById('media').innerHTML += rendered;
      }
 }
 
-$( document ).ready(function() {
+//$( document ).ready(function() {
 
-    $.getJSON( 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=?', fillList );
-    $.getJSON( 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q', fillGrid);
-    $.getJSON( 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.467ede5.f0004ab84606494dbde9242463601438&count=24&callback=?', fillGallery );
+    var bandsInTown = document.createElement('script');
+    bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
 
-});
+    var facebookFeed = document.createElement('script');
+    facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&callback=fillGrid';
+
+    var instagramGallery = document.createElement('script');
+    instagramGallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=24&callback=fillGallery';
+
+    document.getElementsByTagName('head')[0].appendChild(bandsInTown);
+    document.getElementsByTagName('head')[0].appendChild(facebookFeed);
+    document.getElementsByTagName('head')[0].appendChild(instagramGallery);
+
+//});
