@@ -59,19 +59,17 @@ function fillGallery(data) {
      }
 }
 
-//$( document ).ready(function() {
 
-    var bandsInTown = document.createElement('script');
-    bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
+var bandsInTown = document.createElement('script');
+bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
 
-    var facebookFeed = document.createElement('script');
-    facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&callback=fillGrid';
+var facebookFeed = document.createElement('script');
+facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&callback=fillGrid';
 
-    var instagramGallery = document.createElement('script');
-    instagramGallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=24&callback=fillGallery';
+var instagramGallery = document.createElement('script');
+instagramGallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=24&callback=fillGallery';
 
-    document.getElementsByTagName('head')[0].appendChild(bandsInTown);
-    document.getElementsByTagName('head')[0].appendChild(facebookFeed);
-    document.getElementsByTagName('head')[0].appendChild(instagramGallery);
+document.getElementsByTagName('head')[0].appendChild(bandsInTown);
+document.getElementsByTagName('head')[0].appendChild(facebookFeed);
+document.getElementsByTagName('head')[0].appendChild(instagramGallery);
 
-//});
