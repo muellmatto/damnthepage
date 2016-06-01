@@ -21,7 +21,7 @@ function datumString(datum) {
         month_names[month_names.length] = "November";
         month_names[month_names.length] = "Dezember";
 
-        return datum = d + '. ' + month_names[m] ;
+        return d.toString() + '. ' + month_names[m] ;
 }
 
 
@@ -39,7 +39,9 @@ function fillGrid(data) {
     var template = document.getElementById('feedtemplate').innerHTML;
     var k = 0;
     for (i in data.data) {
+        console.log(data.data[i].created_time);
         var datum = datumString(new Date(Date.parse(data.data[i].created_time)));
+        console.log(datum);
             if( ("message" in data.data[i]) && ( k < 10) ) {
                 var rendered = template.replace('{{image}}',data.data[i].full_picture).replace('{{link}}',data.data[i].link).replace('{{datum}}',datum).replace('{{message}}', data.data[i].message);
                 document.getElementById('grid').innerHTML += rendered;
