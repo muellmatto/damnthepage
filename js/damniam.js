@@ -7,23 +7,37 @@ function closeMenu() {
 }
 
 function datumString(datum) {
-        var m = datum.getMonth();
-        var d = datum.getDate();
-        var month_names = [
-                            "Januar",
-                            "Februar",
-                            "März",
-                            "April",
-                            "Mai",
-                            "Juni",
-                            "Juli",
-                            "August",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Dezember",
-                            ];
-        return d.toString() + '. ' + month_names[m] ;
+        var datumString = '';
+        var now = new Date();
+        var diff = now - datum;
+        if (Math.floor(diff/(1000*60)) == 0) {
+            datumString = Math.floor(diff/(1000)).toString() + 's';
+        } else if (Math.floor(diff/(1000*60*60)) == 0) {
+            datumString = datumString = Math.floor(diff/(1000*60)).toString() + 'min';
+        } else if (Math.floor(diff/(1000*60*60* 24)) == 0) {
+            datumString =  Math.floor(diff/(1000*60*60)).toString() + 'h';
+        } else if ( Math.floor(diff/(1000*60*60* 24)) == 1 ) {
+            datumString = 'gestern';
+        } else {
+            var m = datum.getMonth();
+            var d = datum.getDate();
+            var month_names = [
+                                "Januar",
+                                "Februar",
+                                "März",
+                                "April",
+                                "Mai",
+                                "Juni",
+                                "Juli",
+                                "August",
+                                "September",
+                                "Oktober",
+                                "November",
+                                "Dezember",
+                                ];
+            datumString = d.toString() + '. ' + month_names[m] ;
+        }
+        return datumString;
 }
 
 
@@ -51,7 +65,7 @@ function fillGrid(data) {
         var datum = datumString(
                         new Date(
                             Date.parse(
-                                data.data[i].created_time.substring(0,10) 
+                                data.data[i].created_time.substring(0,19) 
                             )
                         )
                     );
