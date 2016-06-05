@@ -11,11 +11,11 @@ function datumString(datum) {
         var now = new Date();
         var diff = now - datum;
         if (Math.floor(diff/(1000*60)) == 0) {
-            datumString = Math.floor(diff/(1000)).toString() + 's';
+            datumString = 'vor ' + Math.floor(diff/(1000)).toString() + 's';
         } else if (Math.floor(diff/(1000*60*60)) == 0) {
-            datumString = datumString = Math.floor(diff/(1000*60)).toString() + 'min';
+            datumString = 'vor ' + Math.floor(diff/(1000*60)).toString() + 'min';
         } else if (Math.floor(diff/(1000*60*60* 24)) == 0) {
-            datumString =  Math.floor(diff/(1000*60*60)).toString() + 'h';
+            datumString =  'vor ' + Math.floor(diff/(1000*60*60)).toString() + 'h';
         } else if ( Math.floor(diff/(1000*60*60* 24)) == 1 ) {
             datumString = 'gestern';
         } else {
