@@ -9,7 +9,7 @@ function closeMenu() {
 function datumString(datum) {
         var datumString = '';
         var now = new Date();
-        var diff = now - datum;
+        var diff = now.valueOf() - datum.valueOf();
         if (Math.floor(diff/(1000*60)) == 0) {
             datumString = 'vor ' + Math.floor(diff/(1000)).toString() + 's';
         } else if (Math.floor(diff/(1000*60*60)) == 0) {
@@ -61,13 +61,10 @@ function fillGrid(data) {
     var MAX_ENTRIES = 10;
     var k = 0;
     for (var i = 0; ( i < data.data.length ) && ( k < MAX_ENTRIES ); i++) {
-        /* Safari quirk ... m( */
         var datum = datumString(
                         new Date(
-                            Date.parse(
-                                data.data[i].created_time.substring(0,19) 
+                                    parseInt(data.data[i].created_time) * 1000
                             )
-                        )
                     );
         if( "message" in data.data[i] ) {
             var rendered = template
@@ -100,10 +97,11 @@ var bandsInTown = document.createElement('script');
 bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
 
 var facebookFeed = document.createElement('script');
-facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&callback=fillGrid';
+facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fillGrid';
 
 var instagramGallery = document.createElement('script');
 instagramGallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=18&callback=fillGallery';
+
 
 document.getElementsByTagName('head')[0].appendChild(bandsInTown);
 document.getElementsByTagName('head')[0].appendChild(facebookFeed);
