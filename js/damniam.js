@@ -44,8 +44,9 @@ function datumString(datum) {
 function fillList(data) {
     var template = document.getElementById('listtemplate').innerHTML;
     document.getElementById('termine').innerHTML = null; 
-    var jsonLdDate = new Array();
+    // var jsonLdDate = new Array();
     for (var i =0 ;i < data.length; i++) {
+        /*
         jsonLdDate[i] = {};
         jsonLdDate[i]['@context'] = 'http://schema.org';
         jsonLdDate[i]['@type'] = 'MusicEvent';
@@ -55,6 +56,7 @@ function fillList(data) {
         jsonLdDate[i]['location']['@type'] = 'Place';
         jsonLdDate[i]['location']['name'] = data[i].venue.name;
         jsonLdDate[i]['location']['address'] = data[i].venue.city;
+        */
         var datum = datumString(new Date(Date.parse(data[i].datetime)));
         var rendered = template
                             .replace('{{city}}', data[i].venue.city)
@@ -64,10 +66,12 @@ function fillList(data) {
                             .replace('{{datum}}', datum);
         document.getElementById('termine').innerHTML += rendered;
      }
+    /*
     var scriptJsonLd = document.createElement('script');
     scriptJsonLd.type = "application/ld+json";
     scriptJsonLd.innerHTML = JSON.stringify(jsonLdDate);
     document.getElementsByTagName('head')[0].appendChild(scriptJsonLd);
+    */
 }
 
 function fillGrid(data) {
