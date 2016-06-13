@@ -109,7 +109,7 @@ function fillGallery(data) {
 
 
 var bandsInTown = document.createElement('script');
-bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
+bandsInTown.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
 
 var facebookFeed = document.createElement('script');
 facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fillGrid';
