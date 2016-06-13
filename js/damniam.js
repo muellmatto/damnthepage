@@ -55,6 +55,7 @@ function fillList(data) {
         jsonLdDate[i]['location']['@type'] = 'Place';
         jsonLdDate[i]['location']['name'] = data[i].venue.name;
         jsonLdDate[i]['location']['address'] = data[i].venue.city;
+        jsonLdDate[i]['performer'] = 'DAMNIAM';
         var datum = datumString(new Date(Date.parse(data[i].datetime)));
         var rendered = template
                             .replace('{{city}}', data[i].venue.city)
