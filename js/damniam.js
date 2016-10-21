@@ -44,9 +44,8 @@ function datumString(datum) {
 function fillList(data) {
     var template = document.getElementById('listtemplate').innerHTML;
     document.getElementById('termine').innerHTML = null; 
-    // var jsonLdDate = new Array();
+    var jsonLdDate = new Array();
     for (var i =0 ;i < data.length; i++) {
-        /*
         jsonLdDate[i] = {};
         jsonLdDate[i]['@context'] = 'http://schema.org';
         jsonLdDate[i]['@type'] = 'MusicEvent';
@@ -56,7 +55,7 @@ function fillList(data) {
         jsonLdDate[i]['location']['@type'] = 'Place';
         jsonLdDate[i]['location']['name'] = data[i].venue.name;
         jsonLdDate[i]['location']['address'] = data[i].venue.city;
-        */
+        jsonLdDate[i]['performer'] = 'DAMNIAM';
         var datum = datumString(new Date(Date.parse(data[i].datetime)));
         var rendered = template
                             .replace('{{city}}', data[i].venue.city)
@@ -66,12 +65,10 @@ function fillList(data) {
                             .replace('{{datum}}', datum);
         document.getElementById('termine').innerHTML += rendered;
      }
-    /*
     var scriptJsonLd = document.createElement('script');
     scriptJsonLd.type = "application/ld+json";
     scriptJsonLd.innerHTML = JSON.stringify(jsonLdDate);
     document.getElementsByTagName('head')[0].appendChild(scriptJsonLd);
-    */
 }
 
 function fillGrid(data) {
@@ -112,7 +109,7 @@ function fillGallery(data) {
 
 
 var bandsInTown = document.createElement('script');
-bandsInTown.src = 'http://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
+bandsInTown.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
 
 var facebookFeed = document.createElement('script');
 facebookFeed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fillGrid';
