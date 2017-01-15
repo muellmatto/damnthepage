@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/matto
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://damniam.de
+  * I am matto (https://keybase.io/matto) on keybase.
+  * I have a public key ASCuvxkkKobBhn7IIiRwrQAAaz7JzfW7CU18QMKhy3oI7wo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101e1946faaf1877b60fc667710efb01676e5dceee88bf7ff966230da79680f18190a",
+            "host": "keybase.io",
+            "kid": "0120aebf19242a86c1867ec8222470ad00006b3ec9cdf5bb094d7c40c2a1cb7a08ef0a",
+            "uid": "5f67a30496170f5dac29bef7970cee00",
+            "username": "matto"
+        },
+        "service": {
+            "hostname": "damniam.de",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1484486593,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1484486558,
+        "hash": "0bb7fccba43f0fad8b33f04302adaadfc7319f7028990870477a2bc77a2ef26103927615ce5120b17a47b3ea0c1d4b229e2e4896cb189ca000bc66b609dc4501",
+        "seqno": 800683
+    },
+    "prev": "a79e5408c5c296401e2a250125478c79f1f6fa16131d496e51dda43c5b2b9277",
+    "seqno": 39,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgrr8ZJCqGwYZ+yCIkcK0AAGs+yc31uwlNfEDCoct6CO8Kp3BheWxvYWTFAvB7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZTE5NDZmYWFmMTg3N2I2MGZjNjY3NzEwZWZiMDE2NzZlNWRjZWVlODhiZjdmZjk2NjIzMGRhNzk2ODBmMTgxOTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYWViZjE5MjQyYTg2YzE4NjdlYzgyMjI0NzBhZDAwMDA2YjNlYzljZGY1YmIwOTRkN2M0MGMyYTFjYjdhMDhlZjBhIiwidWlkIjoiNWY2N2EzMDQ5NjE3MGY1ZGFjMjliZWY3OTcwY2VlMDAiLCJ1c2VybmFtZSI6Im1hdHRvIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJkYW1uaWFtLmRlIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTgifSwiY3RpbWUiOjE0ODQ0ODY1OTMsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ4NDQ4NjU1OCwiaGFzaCI6IjBiYjdmY2NiYTQzZjBmYWQ4YjMzZjA0MzAyYWRhYWRmYzczMTlmNzAyODk5MDg3MDQ3N2EyYmM3N2EyZWYyNjEwMzkyNzYxNWNlNTEyMGIxN2E0N2IzZWEwYzFkNGIyMjllMmU0ODk2Y2IxODljYTAwMGJjNjZiNjA5ZGM0NTAxIiwic2Vxbm8iOjgwMDY4M30sInByZXYiOiJhNzllNTQwOGM1YzI5NjQwMWUyYTI1MDEyNTQ3OGM3OWYxZjZmYTE2MTMxZDQ5NmU1MWRkYTQzYzViMmI5Mjc3Iiwic2Vxbm8iOjM5LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQELWcU/24x+ORBRFbOmOHwqggtn0b9g6lwZCr6PxE1Mgo5SnNGwKrnDcMDEWU1pBigOeYFoibm/bAplTfctAXgmoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCAEK+XJFe9QW4TEX73NYEYfm5nhs3y5YVRENHZ/kFllG6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/matto
+
+==================================================================
+
