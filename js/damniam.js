@@ -50,6 +50,7 @@ function fillList(data) {
         jsonLdDate[i]['@context'] = 'http://schema.org';
         jsonLdDate[i]['@type'] = 'MusicEvent';
         jsonLdDate[i]['name'] = 'DAMNIAM';
+        jsonLdDate[i]['url'] = data[i].facebook_rsvp_url;
         jsonLdDate[i]['startDate'] = data[i].datetime;
         jsonLdDate[i]['location'] = {};
         jsonLdDate[i]['location']['@type'] = 'Place';
