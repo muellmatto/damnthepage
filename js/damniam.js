@@ -66,6 +66,9 @@ function fillList(data) {
                             .replace('{{datum}}', datum);
         document.getElementById('termine').innerHTML += rendered;
      }
+    if (data.length == 0) {
+        document.getElementById('termine').innerHTML = '<li class="mdl-list__item"><span class="mdl-list__item-primary-content">coming up soon</span></li>';
+    }
     var scriptJsonLd = document.createElement('script');
     scriptJsonLd.type = "application/ld+json";
     scriptJsonLd.innerHTML = JSON.stringify(jsonLdDate);
