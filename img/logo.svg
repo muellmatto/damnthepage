@@ -12,7 +12,7 @@
    viewBox="0 0 617.54394 732.4606"
    height="206.71666mm"
    width="174.28462mm"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
    sodipodi:docname="logo.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -23,15 +23,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="707"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
      id="namedview3341"
      showgrid="false"
      inkscape:zoom="0.71539684"
-     inkscape:cx="277.32089"
+     inkscape:cx="-86.812673"
      inkscape:cy="254.40426"
      inkscape:window-x="0"
-     inkscape:window-y="182"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3346" />
   <defs
@@ -51,6 +51,6 @@
   <path
      inkscape:connector-curvature="0"
      id="path4215-7"
-     style="fill:#eaee3f;fill-opacity:1;fill-rule:evenodd;stroke:#eaee3f;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:#4c98c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
      d="m 456.24657,665.26342 17.1726,0 6.06089,-481.84276 31.3147,94.95434 -11.1117,30.30457 14.1422,7.07107 3.0304,-19.1929 19.1929,-3.03046 -7.071,-19.19289 53.5381,-92.93404 -20.2031,440.42651 19.1929,-1.01015 22.2234,-483.86307 13.1319,-16.16244 -14.1421,-13.13198 -2.0203,11.11167 2.0203,-14.14213 -12.1218,-4.04061 -7.0711,46.46701 -64.6498,108.08633 -38.3858,-131.31983 4.0406,-64.64977 -23.23349,0 4.0406,11.11168 -17.1725,11.11168 11.1116,26.26397 z m -169.70565,62.62946 19.1929,1.01015 -3.03046,-532.35039 102.02541,461.63971 -2.02031,41.41626 12.12183,2.0203 7.07107,30.30458 15.15229,-1.01015 -11.11168,-72.73099 -5.05076,-607.10168 -28.28427,5.05077 9.09137,489.92398 -96.97464,-458.60926 -3.03046,-77.78174 -19.1929,1.01015 -3.03046,-10.10152 -24.24366,5.05076 23.23351,71.72083 z m -177.78685,-554.57375 18.18275,48.48732 1.01015,423.25392 24.24366,1.01015 0,-342.44171 20.20305,70.71068 -7.07107,19.1929 32.32489,-12.12183 48.48732,-135.36045 3.03046,467.70063 19.19289,1.01016 2.02031,-539.42146 8.08122,-17.1726 -15.15229,-12.12183 -20.20305,-2.0203 4.04061,26.26396 -60.60915,158.59395 -38.3858,-114.14723 2.02031,-57.5787 -30.30458,-2.0203 6.06092,11.11167 -21.21321,9.09138 z M 42.084,515.76084 92.59163,392.52223 37.03324,257.16179 Z M 19.86065,616.7761 127.94697,367.26842 l -19.1929,-3.03046 -71.72083,-170.71578 1.01015,-26.26396 -29.29442,0 5.05076,414.16254 -13.13198,20.20305 z" />
 </svg>
