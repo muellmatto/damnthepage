@@ -12,141 +12,129 @@
 
     <body>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header damniam_layout">
-                        <header class="mdl-layout__header  mdl-layout__header--transparent">
-                                <div class="mdl-layout__header-row">
-                                        <!-- Title -->
-                                        <span class="mdl-layout-title" style="font-weight: 900;">
-                                                <img src="img/logo.svg" style="width: auto; height: 64px; transform: rotate(-8deg);" alt="DAMNIAM">
-                                        </span>
+            <header class="mdl-layout__header  mdl-layout__header--transparent">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title damniam_color damniam_title">
+                        DAMNIAM
+                    </span>
+                </div>
+            </header>
+
+            <div class="mdl-layout__drawer damniam_drawer">
+                <span class="mdl-layout-title damniam_title">DAMNIAM</span>
+                <nav class="mdl-navigation">
+                    <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#grid">
+                        NEWS
+                    </a>
+                    <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#band">
+                        BAND
+                    </a>
+                    <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#media">
+                        PICS
+                    </a>
+                    <a onmousedown="return closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
+                        SHOP
+                    </a>
+                    <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#contact">
+                        CONTACT
+                    </a>
+                    <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMOFFICIAL">
+                        FACEBOOK
+                    </a>
+                    <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
+                        INSTAGRAM
+                    </a>
+                    <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damniamofficial">
+                        TWITTER
+                    </a>
+                    <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
+                        YOUTUBE
+                    </a>
+                    <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">
+                        SPOTIFY
+                    </a>
+                </nav>
+            </div>  <!-- drawer -->
+
+            <main class="mdl-layout__content">
+                <div class="mdl-grid" id="grid">
+                    <!-- Termine -->
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
+                            <div class="mdl-card damniam-card">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                        <h4 style="text-align:right;" class="mdl-card__title-text">SHOWS</h4>
+                                        <div class='damniam-box'></div>
+                                        <ul class="mdl-list" id="termine" style="width: 100%;">
+                                            <script id="listtemplate" type="no-brainer-template">
+                                                <li class="mdl-list__item mdl-list__item--three-line">
+                                                    <span class="mdl-list__item-primary-content">
+                                                        <span>{{city}}</span>
+                                                        <span class="mdl-list__item-text-body">{{datum}} @ {{venuename}}</span>
+                                                    </span>
+                                                    <span class="mdl-list__item-secondary-content">
+                                                        <a class="mdl-list__item-secondary-action" href='http://maps.google.com/?q={{latitude}},{{longitude}}' target='_blank'>
+                                                            <i class="material-icons" style="color: black;">place</i>
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                            </script>
+                                        </ul>
+                                    </div>
+                                </div> <!-- card title-->
+                            </div>
+                        </div>
+                    <!-- Termine -->
+                    <!-- sound cloud -->
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
+                            <div class="mdl-card damniam-card">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <div style="width: 100%;"> <!-- seltsam, aber nötig -->
+                                        <br>
+                                        <p>
+                                        <iframe width="100%" height="440" scrolling="no" frameborder="no" 
+                                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=4c98c8&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
+                                        </iframe>
+                                        </p>
+                                        <p>
+                                            <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:6BInGIy0uhn9nZkZbSXlS1&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                                        </p>
+                                    </div>
                                 </div>
-                        </header>
-
-                        <div class="mdl-layout__drawer damniam_drawer">
-                                <span class="mdl-layout-title">DAMNIAM</span>
-                                <nav class="mdl-navigation">
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#grid">
-                                            NEWS
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#band">
-                                            BAND
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#media">
-                                            PICS
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
-                                            SHOP
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#contact">
-                                            CONTACT
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMOFFICIAL">
-                                            FACEBOOK
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
-                                            INSTAGRAM
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damniamofficial">
-                                            TWITTER
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
-                                            YOUTUBE
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">
-                                            SPOTIFY
-                                        </a>
-                                </nav>
-                        </div>  <!-- drawer -->
-
-                        <main class="mdl-layout__content">
-                        <div class="mdl-grid" id="grid">
-
-
-
-
-                            <!-- Termine -->
-					        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                <div class="mdl-card damniam-card">
-                                    <div class="mdl-card__title mdl-card--expand">
-                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            <h4 style="text-align:right;" class="mdl-card__title-text">SHOWS</h4>
-                                            <div class='damniam-box'></div>
-                                            <ul class="mdl-list" id="termine" style="width: 100%;">
-                                                <script id="listtemplate" type="no-brainer-template">
-                                                    <li class="mdl-list__item mdl-list__item--three-line">
-                                                        <span class="mdl-list__item-primary-content">
-                                                            <span>{{city}}</span>
-                                                            <span class="mdl-list__item-text-body">{{datum}} @ {{venuename}}</span>
-                                                        </span>
-                                                        <span class="mdl-list__item-secondary-content">
-                                                            <a class="mdl-list__item-secondary-action" href='http://maps.google.com/?q={{latitude}},{{longitude}}' target='_blank'>
-                                                                <i class="material-icons" style="color: black;">place</i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                </script>
-                                            </ul>
-                                        </div>
-                                    </div> <!-- card title-->
-                                </div> <!-- card -->
-                            </div> <!-- cell -->
-
-
-
-
-
-
-                            <!-- sound cloud -->
+                            </div>
+                        </div>
+                    <!-- sound clound -->
+                    <!-- feed -->
+                        <script id="feedtemplate" type="no-brainer-template">
                             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
                                 <div class="mdl-card damniam-card">
                                     <div class="mdl-card__title mdl-card--expand">
                                         <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            <br>
-                                            <p>
-                                            <iframe width="100%" height="440" scrolling="no" frameborder="no" 
-                                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=4c98c8&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
-                                            </iframe>
-                                            </p>
-                                            <p>
-<iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:6BInGIy0uhn9nZkZbSXlS1&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
-                                            </p>
+                                            <h4 style="text-align:right;" class="mdl-card__title-text">{{datum}}</h4>
+                                            <div class='damniam-box'></div>
+                                                <div style="padding: 5px;">
+                                                    <img src="{{image}}" style="width: 100%;">
+                                                </div>
+                                                <p style="margin-bottom: 0px;">
+                                                    {{message}}
+                                                </p>
+                                                <p style="text-align:right; margin-bottom: 5px;">
+                                                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{link}}" target="_blank">
+                                                        read more
+                                                    </a>
+                                                </p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div> <!-- sound clound -->
-                        
-
-                        <!-- feed -->
-                            <script id="feedtemplate" type="no-brainer-template">
-                                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <h4 style="text-align:right;" class="mdl-card__title-text">{{datum}}</h4>
-                                                <div class='damniam-box'></div>
-                                                    <div style="padding: 5px;">
-                                                        <img src="{{image}}" style="width: 100%;">
-                                                    </div>
-                                                    <p style="margin-bottom: 0px;">
-                                                        {{message}}
-                                                    </p>
-                                                    <p style="text-align:right; margin-bottom: 5px;">
-                                                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{link}}" target="_blank">
-                                                            read more
-                                                        </a>
-                                                    </p>
-                                            </div>
-                                        </div> <!-- title -->
-                                    </div> <!-- card -->
-                                </div> <!-- cell -->
-                            </script>   <!-- feed -->
-
-
-                        </div> <!-- grid -->
+                                    </div> <!-- title -->
+                                </div> <!-- card -->
+                            </div> <!-- cell -->
+                        </script>
+                    <!-- feed -->
+                </div> <!-- grid -->
 
 
                     <!-- band grid -->
                         <div class="mdl-grid" id="band">
-
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
                                     <div class="mdl-card damniam-card">
                                         <div class="mdl-card__title mdl-card--expand">
@@ -163,23 +151,21 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
                                     <div class="mdl-card damniam-card">
                                         <div class="mdl-card__title mdl-card--expand">
                                             <div style="width: 100%;"> <!-- seltsam, aber nötig -->
                                                 <div class='damniam-box'></div>
                                                     <p>
-Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn was anderes kann diese Stadt nicht. Aber keine Sorge, DAMNIAM sind trotzdem 🔨🔪! Total veraltete Infos gibt es übrigens auf Wikipedia, was aber recht egal ist, denn das liest, genau wie diesen Text, eh keiner! Bis zur nächsten Show, met vriendelijke groet DAMNIAM.
+                                                        Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn was anderes kann diese Stadt nicht. Aber keine Sorge, DAMNIAM sind trotzdem 🔨🔪! Total veraltete Infos gibt es übrigens auf Wikipedia, was aber recht egal ist, denn das liest, genau wie diesen Text, eh keiner! Bis zur nächsten Show, met vriendelijke groet DAMNIAM.
                                                     </p>
                                                 <div class='damniam-box'></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                        </div> <!-- band -->
+                        </div>
+                    <!-- band -->
 
 
                     <!-- media grid -->
@@ -202,13 +188,13 @@ Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn 
                                 </a>
                                 </div> <!-- cell-->
                             </script>
-                        </div> <!-- media grid -->
+                        </div>
+                    <!-- media grid -->
 
 
 
                     <!-- contact grid -->
                         <div class="mdl-grid" id="contact">
-
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
                                     <div class="mdl-card damniam-card">
                                         <div class="mdl-card__title mdl-card--expand">
@@ -242,8 +228,6 @@ Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn 
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
                                     <div class="mdl-card damniam-card">
                                         <div class="mdl-card__title mdl-card--expand">

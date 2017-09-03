@@ -12,19 +12,26 @@ $color-accent: $damn_color_rgb;
 // $color-accent-contrast;
 
 @import "material-design-lite";
-@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body , h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
-
 .damniam-card p {
     word-wrap: break-word;
+    font-weight: 100 !important;
 }
-
 .damniam_drawer {
     background: $damniam_color;
     border: 0;
+}
+.damniam_title {
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
+}
+.damniam_color {
+    color: $damniam_color !important;
 }
 .damniam_drawer * {
     color: $damniam_font_color !important;
