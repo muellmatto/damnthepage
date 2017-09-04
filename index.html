@@ -1,332 +1,204 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DAMNIAM</title>
+        <title>TESTPAGE</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/damniam.css" \>
-        <link rel="stylesheet" href="css/material.damniam.min.css" \>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     </head>
-
     <body>
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="background: url('img/bg.jpg') center / cover;">
+        <div class="layout">
+            <div class="head">
+                <div class="menu_icon" id="menu_button">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <span>DAMNIAM</span>
+                <div class="menu" id="menu">
+                    <a href="#news">NEWS</a>
+                    <a href="#band">BAND</a>
+                    <a href="#pics">PICS</a>
+                    <a target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">SHOP</a>
+                    <a href="#contact">CONTACT</a>
+                    <a target="_blank" href="https://facebook.com/DAMNIAMOFFICIAL">FACEBOOK</a>
+                    <a target="_blank" href="https://instagram.com/damniamofficial/">INSTAGRAM</a>
+                    <a target="_blank" href="https://twitter.com/damniamofficial">TWITTER</a>
+                    <a target="_blank" href="https://www.youtube.com/user/DAMNiAM/">YOUTUBE</a>
+                    <a target="_blank" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">SPOTIFY</a>
+                </div>
+            </div>
 
-                        <header class="mdl-layout__header  mdl-layout__header--transparent">
-                                <div class="mdl-layout__header-row">
-                                        <!-- Title -->
-                                        <span class="mdl-layout-title" style="font-weight: 900;">
-                                                <img src="img/logo.svg" style="width: auto; height: 64px; transform: rotate(-8deg);" alt="DAMNIAM">
-                                        </span>
-                                </div>
-                        </header>
-
-                        <div class="mdl-layout__drawer">
-                                <span class="mdl-layout-title">DAMNIAM</span>
-                                <nav class="mdl-navigation">
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#grid">
-                                            NEWS
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#band">
-                                            BAND
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#media">
-                                            PICS
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">
-                                            SHOP
-                                        </a>
-                                        <a onmousedown="return closeMenu()" class="mdl-navigation__link" href="#contact">
-                                            CONTACT
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://facebook.com/DAMNIAMBOOK">
-                                            FACEBOOK
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://instagram.com/damniamofficial/">
-                                            INSTAGRAM
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://twitter.com/damnthebeat">
-                                            TWITTER
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://www.youtube.com/user/DAMNiAM/">
-                                            YOUTUBE
-                                        </a>
-                                        <a onmousedown="closeMenu()" class="mdl-navigation__link" target="_blank" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">
-                                            SPOTIFY
-                                        </a>
-                                </nav>
-                        </div>  <!-- drawer -->
-
-                        <main class="mdl-layout__content">
-                        <div class="mdl-grid" id="grid">
-
-
-
-
-                            <!-- Termine -->
-					        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                <div class="mdl-card damniam-card">
-                                    <div class="mdl-card__title mdl-card--expand">
-                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            <br>
-                                            <p style='font-size: 300%; max'><b>SHOWS</b></p>
-                                            <div class='yellow-box'></div>
-                                            <ul class="mdl-list" id="termine" style="width: 100%;">
-                                                <script id="listtemplate" type="no-brainer-template">
-                                                    <li class="mdl-list__item mdl-list__item--three-line">
-                                                        <span class="mdl-list__item-primary-content">
-                                                            <span>{{city}}</span>
-                                                            <span class="mdl-list__item-text-body">{{datum}} @ {{venuename}}</span>
-                                                        </span>
-                                                        <span class="mdl-list__item-secondary-content">
-                                                            <a class="mdl-list__item-secondary-action" href='http://maps.google.com/?q={{latitude}},{{longitude}}' target='_blank'>
-                                                                <i class="material-icons" style="color: black;">place</i>
-                                                            </a>
-                                                        </span>
-                                                    </li>
-                                                </script>
-                                            </ul>
-                                        </div>
-                                    </div> <!-- card title-->
-                                </div> <!-- card -->
-                            </div> <!-- cell -->
-
-
-
-
-
-
-                            <!-- sound cloud -->
-                            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                <div class="mdl-card damniam-card">
-                                    <div class="mdl-card__title mdl-card--expand">
-                                        <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            <br>
-                                            <p>
-                                            <iframe width="100%" height="440" scrolling="no" frameborder="no" 
-                                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=eaee3f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
-                                            </iframe>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- sound clound -->
-                        
-
-                        <!-- feed -->
-                            <script id="feedtemplate" type="no-brainer-template">
-                                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <h4 style="text-align:right;" class="mdl-card__title-text">{{datum}}</h4>
-                                                <div class='yellow-box'></div>
-                                                    <div style="padding: 5px;">
-                                                        <img src="{{image}}" style="width: 100%;">
-                                                    </div>
-                                                    <p style="margin-bottom: 0px;">
-                                                        {{message}}
-                                                    </p>
-                                                    <p style="text-align:right; margin-bottom: 5px;">
-                                                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{link}}" target="_blank">
-                                                            read more
-                                                        </a>
-                                                    </p>
-                                            </div>
-                                        </div> <!-- title -->
-                                    </div> <!-- card -->
-                                </div> <!-- cell -->
-                            </script>   <!-- feed -->
-
-
-                        </div> <!-- grid -->
-
-
-                    <!-- band grid -->
-                        <div class="mdl-grid" id="band">
-
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-                                                </br>
-                                                <p style='font-size: 300%; max'><b>DAMNIAM</b></p>
-                                                <div class='yellow-box'></div>
-                                                    <div style="padding: 5px;">
-                                                        <img src="img/band.jpg" style="width: 100%;">
-                                                    </div>
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-                                                    <p>
-Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn was anderes kann diese Stadt nicht. Aber keine Sorge, DAMNIAM sind trotzdem 🔨🔪! Total veraltete Infos gibt es übrigens auf Wikipedia, was aber recht egal ist, denn das liest, genau wie diesen Text, eh keiner! Bis zur nächsten Show, met vriendelijke groet DAMNIAM.
-                                                    </p>
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        </div> <!-- band -->
-
-
-                    <!-- media grid -->
-                        <div class="mdl-grid" id="media">
-                            <script id="gallerytemplate" type="no-brainer-template">
-                                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone  mdl-cell--2-col-tablet">
-                                <a href='{{link}}' target='_blank' style="text-decoration: none;">
-                                    <div class="mdl-card"
-                                                    style="width: auto; height: auto; background:url('{{image}}') center center; background-size: inherit;">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                            </div>
-                                        </div>
-                                        <div class="mdl-card__actions mdl-card--border" 
-                                            style="background: rgba(0,0,0,0.2); color: white; font-weight: 900; text-align: right;">
-                                                {{datum}}
-                                            </span>
-                                        </div>
-                                    </div>
+            <div class="content" id="news">
+                <div class="card feed">
+                    <h4>SHOWS</h4>
+                    <hr>
+                    <ul id="termine" style="width: 100%;">
+                        <script id="listtemplate" type="no-brainer-template">
+                            <li>
+                                <h5>{{city}}</h5>
+                                <span>{{datum}} @ {{venuename}}</span>
+                                <a href='http://maps.google.com/?q={{latitude}},{{longitude}}' target='_blank'>
+                                    <div class="location"></div>
                                 </a>
-                                </div> <!-- cell-->
-                            </script>
-                        </div> <!-- media grid -->
+                            </li>
+                        </script>
+                    </ul>
+                </div>
+                <div class="card feed">
+                    <p>
+                        <iframe width="100%" height="440" scrolling="no" frameborder="no" 
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/136507303%3Fsecret_token%3Ds-N1beL&amp;color=4c98c8&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false">
+                        </iframe>
+                            <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:6BInGIy0uhn9nZkZbSXlS1&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                        </p>
+                </div>
+            </div>
+
+            <div style="clear: both;"></div>
+            
+            <div class="content" id="band">
+                <div class="card band_pic">
+                    <hr>
+                    <h4>DAMNIAM</h4>
+                    <hr>
+                    <img src="img/band.jpg">
+                    <hr>
+                </div>
+
+                <div class="card band_text">
+                    <hr>
+                    <p>
+                                                        Pop-Punk aus Münster? Nicht schon wieder! 🙈 Und das schon seit 2007... denn was anderes kann diese Stadt nicht. Aber keine Sorge, DAMNIAM sind trotzdem 🔨🔪! Total veraltete Infos gibt es übrigens auf Wikipedia, was aber recht egal ist, denn das liest, genau wie diesen Text, eh keiner! Bis zur nächsten Show, met vriendelijke groet DAMNIAM.
+                    </p>
+                    <hr>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="content" id="pics">
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="content" id="contact">
+                <div class="card contact">
+                    <hr>
+                    <p>
+                        <strong>Booking</strong><br>
+                        <a href="http://muttis-booking.de/" target="_blank">
+                            <img src="img/mutti.jpg" style="float: right; width: 20%">
+                        </a>
+                        katja@muttis-booking.de<br>
+                        <a href="http://muttis-booking.de/" target="_blank" style="color: black;">
+                            http://www.muttis-booking.de<br>
+                        </a>
+                        www.facebook.com/MuttisBooking<br>
+                        booking@damniam.de
+                    </p>
+                    <hr>
+                    <p>
+                        <strong>Contact:</strong><br>
+                        info@damniam.de<br>
+                        DAMNIAM <br>
+                        c/o Baldauf<br>
+                        Kanalstr. 5<br>
+                        48147 Münster<br>
+                        Germany<br>
+                        Earth<br>
+                    </p>
+                    <hr>
+                </div>
+
+                <div class="card contact">
+                    <hr>
+                    <p>
+                        <strong>Label</strong>
+                    </p>
+                    <hr>
+                    <p>
+                        <strong>MAD DRUNKEN MONKEY</strong><br>
+                        Bernd Schreiber<br>
+                        Schalkestr.5b<br>
+                        44649 Herne<br>
+                        info(at)mad-drunken-monkey.de
+                    </p>
+                    <hr>
+                    <p>
+                        <strong>RING OF FIRE</strong><br>
+                        Claas König<br>
+                        Geiststr. 42<br>
+                        48151 Münster<br>
+                        info(at)rof-records.com
+                    </p>
+                    <button href="files/PressKit.zip">Press Kit</a>
+                </div>
+
+                <div class="card contact">
+                    <hr>
+                    <p>
+                        <strong>Impressum</strong>
+                    </p>
+                    <p>Angaben gemäß § 5 TMG</p>
+                    <p>
+                        Matthias Bergholz <br>
+                        Hohenzollernring 30 <br>
+                        48145 Münster <br>
+                        E-Mail: info at damniam dot de <br>
+                    </p>
+                    <hr>
+                    <a href="https://uberspace.de" target="_blank" style="color: black;">
+                        <img src="img/badge-uberspace.png" style="width: 100%; max-width: 10rem;">
+                    </a>
+                    <hr>
+                </div>
+
+            </div><!-- content -->
+            <div style="clear: both;"></div>
+            
+            
+            <div class="content">
+                <div class="card hafti">
+                    <hr>
+                        <p>
+                            <strong>
+                                Haftungsausschluss (Disclaimer)
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                Haftung für Inhalte
+                            </strong>
+                            </ br>
+                            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                        </p>
+                        <p>
+                            <strong>
+                                Haftung für Links
+                            </strong>
+                            </ br>
+                            Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                        </p>
+                        <p>
+                            <strong>
+                                Urheberrecht
+                            </strong>
+                            </ br>
+                            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                        </p>
+                    <hr>
+                </div>
+            </div>
+            
+            
+            
+            <div style="clear: both;"></div>
 
 
 
-                    <!-- contact grid -->
-                        <div class="mdl-grid" id="contact">
-
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-                                                    <p>
-
-                <strong>Band</strong><br>
-                info(at)damniam.de <br>
-                <strong>Booking</strong><br>
-                booking(at)damniam.de<br>
-<br />
-<strong>Contact:</strong><br>
-DAMNIAM <br>
-c/o Baldauf<br>
-Kanalstr. 5<br>
-48147 Münster<br>
-Germany<br>
-Earth<br>
-
-                                                    </p>
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--4-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-            <p>
-                <strong>Label</strong>
-            </p>
-            <div class="yellow-bar"></div>
-            <p>
-                <strong>MAD DRUNKEN MONKEY</strong><br>
-                Bernd Schreiber<br>
-                Schalkestr.5b<br>
-                44649 Herne<br>
-                info(at)mad-drunken-monkey.de
-            </p>
-                <div class="yellow-bar"></div>
-            <p>
-                <strong>RING OF FIRE</strong><br>
-                Claas König<br>
-                Geiststr. 42<br>
-                48151 Münster<br>
-                info(at)rof-records.com
-            </p>
-                <div class="yellow-bar"></div>
-                <p style="text-align: right; padding-top: 10px;">
-                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="files/PressKit.zip" role="button">Press Kit</a>
-                </p>
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-                                                    <p>
-                <strong>Impressum</strong>
-                                                    </p>
-                <p>Angaben gemäß § 5 TMG</p>
-                <p>
-                    Matthias Bergholz <br>
-                    Hohenzollernring 30 <br>
-                    48145 Münster <br>
-                    E-Mail: info at damniam dot de <br>
-                </p>
-
-
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
 
 
-                                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone  mdl-cell--8-col-tablet">
-                                    <div class="mdl-card damniam-card">
-                                        <div class="mdl-card__title mdl-card--expand">
-                                            <div style="width: 100%;"> <!-- seltsam, aber nötig -->
-                                                <div class='yellow-box'></div>
-
-<p><strong>Haftungsausschluss (Disclaimer)</strong></p>
-<p>
-<strong>Haftung für Inhalte</strong></ br>
-Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-<p><strong>Haftung für Links</strong></ br>
-Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
-<p><strong>Urheberrecht</strong></ br>
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-</p>
-                                                <div class='yellow-box'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                        </div> <!-- contact -->
-
-
-                        </main> 
-        </div> <!-- layout -->
+        </div><!-- layout -->
         <script src="js/damniam.js"></script>
-    </body>
-
+    <body>
 </html>

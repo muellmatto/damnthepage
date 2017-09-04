@@ -1,0 +1,275 @@
+// content
+$layout_width: 90rem;
+// breakpoints
+$max_width_tablet: 65rem;
+$max_width_phone: 40rem;
+// cards
+$card_margin: 1rem;
+$card_padding: 1rem;
+$card_background: rgba(255,255,255,0.77);
+// colors
+$accent_color: rgb(76,152,200);
+$complement_color: white;
+// head
+$head_height: 3rem;
+// ----------------------
+
+@import "normalize";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Fira+Sans');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    color: #323232;
+}
+
+.menu_icon {
+    width: $head_height;
+    height: $head_height;
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: calc(#{$head_height} *7/30);
+    div {
+        background: $accent_color;
+        margin: calc(#{$head_height} / 10) 0;
+        width: 100%;
+        height: calc(#{$head_height} /30);
+        display: block;
+    }
+    &:active {
+        background: $accent_color;
+        div {
+            background: $complement_color;
+        }
+    }
+}
+
+.menu {
+    z-index: 10;
+    // display: none;
+    max-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $card_background;
+    position: fixed;
+    top: $head_height;
+    transition: max-height 1s ease;
+    a {
+        color: $accent_color;
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 3rem;
+        font-weight: 500;
+    }
+    a:active {
+        background: $accent_color;
+        color: $complement_color;
+    }
+}
+
+.layout {
+    background: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+}
+
+.head {
+    z-index: 9;
+    width: 100%;
+    height: $head_height;
+    position: fixed;
+    color: $accent_color;
+    background: $card_background;
+    span {
+        font-size: calc(#{$head_height} *2/3);
+        font-weight: 900;
+        line-height: $head_height;
+        color: $accent_color
+    }
+}
+
+.content {
+    max-width: $layout_width;
+    padding-left: $card_margin;
+    padding-right: $card_margin;
+    margin: auto;
+}
+.content:nth-child(2){
+    padding-top: $head_height;
+}
+.card {
+    float: left;
+    padding: $card_padding;
+    background: $card_background;
+    margin: $card_margin;
+    box-sizing: border-box;
+    img {
+        width: 100%
+    }
+    p {
+        word-wrap: break-word;
+        text-align: justify;
+        // font-weight: 100 !important;
+        line-height: 1.4rem;
+        // word-spacing: -0.1rem;
+        font-size: 0.9rem;
+    }
+    button {
+        float: right;
+        border: 0;
+        background: $accent_color;
+        color: $complement_color;
+        padding: 0.5rem 1rem;
+        border-radius: 0.1rem;
+        text-decoration: none;
+        font-weight: 500;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+    }
+    hr {
+        border: 0;
+        background: $accent_color;
+        width: 100%;
+        height: 1.5rem;
+    }
+    h4 {
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.7rem;
+    }
+    ul {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        list-style: none;
+        li {
+            margin-bottom: 0.5rem;
+            h5 {
+                display: block;
+                font-weight: 300;
+                font-size: 1rem;
+                margin: 0;
+            }
+            span {
+                font-weight: 300;
+                font-size: 0.8rem;
+            }
+            a {
+                float: right;
+                margin-right: $card_margin;
+                text-decoration: none;
+            }
+        }     
+    }
+    iframe {
+        width: 100%;
+    }
+    iframe:nth-child(0n+1) {
+        height: 31rem;
+    }
+}
+.pic {
+    color: pink;
+    padding: 0;
+	position: relative;
+    p {
+		width: 100%;
+		background: rgba(0, 0, 0, 0.2);
+		height: 2rem;
+		font-weight: 900;
+		line-height: 1.9rem;
+		padding-right: 1rem;
+		text-align: right;
+		box-sizing: border-box;
+		color: white;
+		bottom: 0;
+		position: absolute;
+		margin: 0;
+    }
+}
+.hafti {
+    width: 100%;
+}
+
+
+// phone
+@media (max-width: $max_width_phone ) {
+    .feed, .contact, .band-pic, .band-text {
+        width: calc(100% - (2* #{$card_margin}));
+    }
+    .pic {
+        width: calc((100%/2) - (2* #{$card_margin}));
+        height: calc((100vw - 2*#{$card_margin})/2 - (2* #{$card_margin}));
+    }
+}
+// tablet
+@media (min-width: $max_width_phone) and (max-width: $max_width_tablet) {
+    .feed {
+        width: calc(50% - (2* #{$card_margin}));
+    }
+    .feed:nth-child(2n+1) {
+        clear: both;
+    }
+    .pic {
+        width: calc((100%/4) - (2* #{$card_margin}));
+        height: calc((100vw - 2*#{$card_margin})/4 - (2* #{$card_margin}));
+    }
+    .contact {
+        width: calc(100% - (2* #{$card_margin}));
+    }
+    .band-pic, .band-text {
+        width: calc(100% - (2* #{$card_margin}));
+    }
+}
+// big viewport
+@media (min-width: $max_width_tablet) {
+    .feed {
+        margin: $card_margin;
+        width: calc(25% - (2* #{$card_margin}));
+    }
+    .feed:nth-child(4n+1) {
+        clear: both;
+    }
+    .contact {
+        margin: $card_margin;
+        width: calc((100%/3) - (2* #{$card_margin}));
+    }
+    .band_pic {
+        width: calc((100%/3) - (2* #{$card_margin}));
+    }
+    .band_text {
+        width: calc((100%*2/3) - (2* #{$card_margin}));
+    }
+}
+// quirk for sqaured pics
+@media (min-width: $max_width_tablet) and (max-width: $layout_width) {
+    .pic {
+        width: calc((100%/8) - (2* #{$card_margin}));
+        height: calc((100vw - 2*#{$card_margin})/8 - (2* #{$card_margin}));
+    }
+}
+@media (min-width: $layout_width) {
+    .pic {
+        width: calc((100%/8) - (2* #{$card_margin}));
+        height: calc( (70rem - #{$card_margin})/8 - (2* #{$card_margin}));
+    }
+}
+
+
+.location {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: $accent_color;
+    &:after {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0.25rem 0 0 0.25rem;
+        background: $complement_color;
+        position: absolute;
+        border-radius: 50%;
+    }
+}
