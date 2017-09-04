@@ -8,7 +8,7 @@ $card_margin: 1rem;
 $card_padding: 1rem;
 $card_background: rgba(255,255,255,0.77);
 // colors
-$accent_color: rgb(76,152,200);
+$accent_color: rgb(75,182,237);
 $complement_color: rgb(235, 240, 246);
 // head
 $head_height: 3rem;
@@ -91,16 +91,15 @@ $head_height: 3rem;
     height: 100%;
     width: 100%;
     background: url(../img/bg.jpg);
-    background-attachment: fixed;
     background-size: cover;
-    background-position: top;
+    background-position: center;
 }
-.layout {
+/*.layout {
     background: url(../img/bg.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: top;
-}
+}*/
 
 .content {
     max-width: $layout_width;
