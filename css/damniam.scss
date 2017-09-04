@@ -2,14 +2,14 @@
 $layout_width: 90rem;
 // breakpoints
 $max_width_tablet: 65rem;
-$max_width_phone: 40rem;
+$max_width_phone: 35rem;
 // cards
 $card_margin: 1rem;
 $card_padding: 1rem;
 $card_background: rgba(255,255,255,0.77);
 // colors
 $accent_color: rgb(76,152,200);
-$complement_color: white;
+$complement_color: rgb(235, 240, 246);
 // head
 $head_height: 3rem;
 // ----------------------
@@ -21,6 +21,23 @@ $head_height: 3rem;
 * {
     font-family: 'Roboto', sans-serif;
     color: #323232;
+    box-sizing: border-box;
+}
+
+.head {
+    z-index: 9;
+    width: 100%;
+    height: $head_height;
+    position: fixed;
+    color: $accent_color;
+    background: $complement_color;
+    box-shadow: 0 0 1rem 0rem #4c98c8;
+    span {
+        font-size: calc(#{$head_height} *2/3);
+        font-weight: 900;
+        line-height: $head_height;
+        color: $accent_color
+    }
 }
 
 .menu_icon {
@@ -28,7 +45,7 @@ $head_height: 3rem;
     height: $head_height;
     float: left;
     overflow: hidden;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     padding: calc(#{$head_height} *7/30);
     div {
         background: $accent_color;
@@ -51,7 +68,7 @@ $head_height: 3rem;
     max-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    background: $card_background;
+    background: $complement_color;
     position: fixed;
     top: $head_height;
     transition: max-height 1s ease;
@@ -75,36 +92,22 @@ $head_height: 3rem;
     background-position: top;
 }
 
-.head {
-    z-index: 9;
-    width: 100%;
-    height: $head_height;
-    position: fixed;
-    color: $accent_color;
-    background: $card_background;
-    span {
-        font-size: calc(#{$head_height} *2/3);
-        font-weight: 900;
-        line-height: $head_height;
-        color: $accent_color
-    }
-}
-
 .content {
     max-width: $layout_width;
     padding-left: $card_margin;
     padding-right: $card_margin;
     margin: auto;
-}
-.content:nth-child(2){
-    padding-top: $head_height;
+    &:nth-child(2){
+        padding-top: $head_height;
+    }
+
 }
 .card {
     float: left;
     padding: $card_padding;
     background: $card_background;
     margin: $card_margin;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     img {
         width: 100%
     }
@@ -140,7 +143,7 @@ $head_height: 3rem;
     }
     ul {
         width: 100%;
-        box-sizing: border-box;
+        // box-sizing: border-box;
         padding: 0;
         list-style: none;
         li {
@@ -181,7 +184,7 @@ $head_height: 3rem;
 		line-height: 1.9rem;
 		padding-right: 1rem;
 		text-align: right;
-		box-sizing: border-box;
+		// box-sizing: border-box;
 		color: white;
 		bottom: 0;
 		position: absolute;

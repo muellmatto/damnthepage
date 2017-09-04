@@ -17,25 +17,20 @@ function toggle_menu() {
     // alert(menu_visible);
 }
 document.getElementById("menu_button").addEventListener("click", toggle_menu);
+document.getElementById("menu").addEventListener("mousedown", toggle_menu);
 
-function closeMenu() {
-    var layout = document.querySelector('.mdl-layout');
-    layout.MaterialLayout.toggleDrawer();
-    return true;
-}
-
-function datumString(datum) {
-        var datumString = '';
+function date_to_string(datum) {
+        var datum_string = '';
         var now = new Date();
         var diff = now.valueOf() - datum.valueOf();
         if (Math.floor(diff/(1000*60)) == 0) {
-            datumString = 'vor ' + Math.floor(diff/(1000)).toString() + 's';
+            datum_string = 'vor ' + Math.floor(diff/(1000)).toString() + 's';
         } else if (Math.floor(diff/(1000*60*60)) == 0) {
-            datumString = 'vor ' + Math.floor(diff/(1000*60)).toString() + 'min';
+            datum_string = 'vor ' + Math.floor(diff/(1000*60)).toString() + 'min';
         } else if (Math.floor(diff/(1000*60*60* 24)) == 0) {
-            datumString =  'vor ' + Math.floor(diff/(1000*60*60)).toString() + 'h';
+            datum_string =  'vor ' + Math.floor(diff/(1000*60*60)).toString() + 'h';
         } else if ( Math.floor(diff/(1000*60*60* 24)) == 1 ) {
-            datumString = 'gestern';
+            datum_string = 'gestern';
         } else {
             var m = datum.getMonth();
             var d = datum.getDate();
@@ -53,13 +48,12 @@ function datumString(datum) {
                                 "November",
                                 "Dezember",
                                 ];
-            datumString = d.toString() + '. ' + month_names[m] ;
+            datum_string = d.toString() + '. ' + month_names[m] ;
         }
-        return datumString;
+        return datum_string;
 }
 
-
-function fillList(data) {
+function fill_list(data) {
     var template = document.getElementById('listtemplate').innerHTML;
     document.getElementById('termine').innerHTML = null; 
     var jsonLdDate = new Array();
@@ -75,7 +69,7 @@ function fillList(data) {
         jsonLdDate[i]['location']['name'] = data[i].venue.name;
         jsonLdDate[i]['location']['address'] = data[i].venue.city;
         jsonLdDate[i]['performer'] = 'DAMNIAM';
-        var datum = datumString(new Date(Date.parse(data[i].datetime)));
+        var datum = date_to_string(new Date(Date.parse(data[i].datetime)));
         var rendered = template
                             .replace('{{city}}', data[i].venue.city)
                             .replace('{{venuename}}',data[i].venue.name)
@@ -106,7 +100,7 @@ function fill_feed(data) {
     var MAX_ENTRIES = 10;
     var k = 0;
     for (var i = 0; ( i < data.data.length ) && ( k < MAX_ENTRIES ); i++) {
-        var datum = datumString(
+        var datum = date_to_string(
                         new Date(
                                     parseInt(data.data[i].created_time) * 1000
                             )
@@ -123,8 +117,6 @@ function fill_feed(data) {
      }
 }
 
-
-
 function fill_gallery(data) {
     var template = `
                     <a href='{{link}}' target='_blank' style="text-decoration: none;">
@@ -137,7 +129,7 @@ function fill_gallery(data) {
                     </a>
                     `;
     for (var i = 0; i < data.data.length; i++) {
-        var datum = datumString(new Date(parseInt(data.data[i].created_time) * 1000));
+        var datum = date_to_string(new Date(parseInt(data.data[i].created_time) * 1000));
         var rendered = template
                             .replace('{{image}}',data.data[i].images.low_resolution.url)
                             .replace('{{link}}',data.data[i].link)
@@ -147,8 +139,8 @@ function fill_gallery(data) {
 }
 
 
-var bandsInTown = document.createElement('script');
-bandsInTown.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fillList';
+var bands_in_town = document.createElement('script');
+bands_in_town.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fill_list';
 
 var facebook_feed = document.createElement('script');
 facebook_feed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fill_feed';
@@ -157,7 +149,7 @@ var instagram_gallery = document.createElement('script');
 instagram_gallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&callback=fill_gallery';
 
 
-document.getElementsByTagName('head')[0].appendChild(bandsInTown);
+document.getElementsByTagName('head')[0].appendChild(bands_in_town);
 document.getElementsByTagName('head')[0].appendChild(facebook_feed);
 document.getElementsByTagName('head')[0].appendChild(instagram_gallery);
 
