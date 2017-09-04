@@ -197,6 +197,16 @@ textarea {
     background: #4c98c8;
     color: #ebf0f6; }
 
+.bg-img {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background: url(../img/bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top; }
+
 .layout {
   background: url(../img/bg.jpg);
   background-attachment: fixed;
