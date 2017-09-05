@@ -201,7 +201,7 @@ $head_height: 3rem;
     }
 }
 .hafti {
-    width: 100%;
+    width: calc(100% - 2* #{$card_margin});
 }
 
 
