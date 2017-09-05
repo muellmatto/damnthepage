@@ -39,9 +39,10 @@ $head_height: 3rem;
         color: $accent_color;
         padding-left: 1rem;
         padding-right: 1rem;
-        &:active {
+        &:active, &:hover {
             background: $accent_color;
             color: $complement_color;
+            cursor: pointer;
         }
     }
 }
@@ -61,10 +62,11 @@ $head_height: 3rem;
         text-decoration: none;
         padding: 0.6rem 6rem 0.6rem 3rem;
         font-weight: 500;
-    }
-    a:active {
-        background: $accent_color;
-        color: $complement_color;
+        &:active, &:hover {
+            background: $accent_color;
+            color: $complement_color;
+            cursor: pointer;
+        }
     }
 }
 

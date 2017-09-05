@@ -162,9 +162,10 @@ textarea {
     color: #4bb6ed;
     padding-left: 1rem;
     padding-right: 1rem; }
-    .head span:active {
+    .head span:active, .head span:hover {
       background: #4bb6ed;
-      color: #ebf0f6; }
+      color: #ebf0f6;
+      cursor: pointer; }
 
 .menu {
   z-index: 10;
@@ -181,9 +182,10 @@ textarea {
     text-decoration: none;
     padding: 0.6rem 6rem 0.6rem 3rem;
     font-weight: 500; }
-  .menu a:active {
-    background: #4bb6ed;
-    color: #ebf0f6; }
+    .menu a:active, .menu a:hover {
+      background: #4bb6ed;
+      color: #ebf0f6;
+      cursor: pointer; }
 
 .bg-img {
   position: fixed;
