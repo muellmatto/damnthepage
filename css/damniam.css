@@ -159,24 +159,12 @@ textarea {
     font-size: calc(3rem *2/3);
     font-weight: 900;
     line-height: 3rem;
-    color: #4bb6ed; }
-
-.menu_icon {
-  width: 3rem;
-  height: 3rem;
-  float: left;
-  overflow: hidden;
-  padding: calc(3rem *7/30); }
-  .menu_icon div {
-    background: #4bb6ed;
-    margin: calc(3rem / 10) 0;
-    width: 100%;
-    height: calc(3rem /30);
-    display: block; }
-  .menu_icon:active {
-    background: #4bb6ed; }
-    .menu_icon:active div {
-      background: #ebf0f6; }
+    color: #4bb6ed;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+    .head span:active {
+      background: #4bb6ed;
+      color: #ebf0f6; }
 
 .menu {
   z-index: 10;
@@ -191,7 +179,7 @@ textarea {
     color: #4bb6ed;
     display: block;
     text-decoration: none;
-    padding: 0.5rem 3rem;
+    padding: 0.6rem 6rem 0.6rem 3rem;
     font-weight: 500; }
   .menu a:active {
     background: #4bb6ed;

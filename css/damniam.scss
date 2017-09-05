@@ -36,35 +36,18 @@ $head_height: 3rem;
         font-size: calc(#{$head_height} *2/3);
         font-weight: 900;
         line-height: $head_height;
-        color: $accent_color
-    }
-}
-
-.menu_icon {
-    width: $head_height;
-    height: $head_height;
-    float: left;
-    overflow: hidden;
-    // box-sizing: border-box;
-    padding: calc(#{$head_height} *7/30);
-    div {
-        background: $accent_color;
-        margin: calc(#{$head_height} / 10) 0;
-        width: 100%;
-        height: calc(#{$head_height} /30);
-        display: block;
-    }
-    &:active {
-        background: $accent_color;
-        div {
-            background: $complement_color;
+        color: $accent_color;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &:active {
+            background: $accent_color;
+            color: $complement_color;
         }
     }
 }
 
 .menu {
     z-index: 10;
-    // display: none;
     max-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -76,7 +59,7 @@ $head_height: 3rem;
         color: $accent_color;
         display: block;
         text-decoration: none;
-        padding: 0.5rem 3rem;
+        padding: 0.6rem 6rem 0.6rem 3rem;
         font-weight: 500;
     }
     a:active {
