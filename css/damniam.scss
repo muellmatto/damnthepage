@@ -18,6 +18,7 @@ $head_height: 3rem;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Fira+Sans');
 
+
 * {
     font-family: 'Roboto', sans-serif;
     color: #323232;
@@ -32,14 +33,15 @@ $head_height: 3rem;
     color: $accent_color;
     background: $complement_color;
     box-shadow: 0 0 1rem 0rem #4c98c8;
-    span {
+    & > .menu_button {
         font-size: calc(#{$head_height} *2/3);
+        width: calc(5* #{$head_height});
         font-weight: 900;
         line-height: $head_height;
         color: $accent_color;
         padding-left: 1rem;
         padding-right: 1rem;
-        &:active, &:hover {
+        &:active {
             background: $accent_color;
             color: $complement_color;
             cursor: pointer;
@@ -49,6 +51,7 @@ $head_height: 3rem;
 
 .menu {
     z-index: 10;
+    width: calc(5* #{$head_height});
     max-height: 0;
     overflow-y: auto;
     overflow-x: hidden;

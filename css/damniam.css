@@ -155,20 +155,22 @@ textarea {
   color: #4bb6ed;
   background: #ebf0f6;
   box-shadow: 0 0 1rem 0rem #4c98c8; }
-  .head span {
+  .head > .menu_button {
     font-size: calc(3rem *2/3);
+    width: calc(5* 3rem);
     font-weight: 900;
     line-height: 3rem;
     color: #4bb6ed;
     padding-left: 1rem;
     padding-right: 1rem; }
-    .head span:active, .head span:hover {
+    .head > .menu_button:active {
       background: #4bb6ed;
       color: #ebf0f6;
       cursor: pointer; }
 
 .menu {
   z-index: 10;
+  width: calc(5* 3rem);
   max-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
