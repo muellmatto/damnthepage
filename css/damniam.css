@@ -227,7 +227,7 @@ textarea {
     text-align: justify;
     line-height: 1.4rem;
     font-size: 0.9rem; }
-  .card button {
+  .card .button {
     float: right;
     border: 0;
     background: #4bb6ed;

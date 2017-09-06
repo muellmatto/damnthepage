@@ -94,7 +94,7 @@ function fill_feed(data) {
                         <hr>
                         <img src="{{image}}">
                         <p>{{message}}</p>
-                        <button href="{{link}}">READ MORE</button>
+                        <a class="button" target="_blank"  href="{{link}}">READ MORE</a>
                     </div>
                     `;
     var MAX_ENTRIES = 10;
