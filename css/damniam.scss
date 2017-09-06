@@ -1,28 +1,39 @@
-// content
+// #content
 $layout_width: 90rem;
-// breakpoints
+// #breakpoints
 $max_width_tablet: 65rem;
 $max_width_phone: 35rem;
-// cards
-$card_margin: 1rem;
+// #cards
+// $card_margin: 1rem;
+$card_margin: 1.5rem;
 $card_padding: 1rem;
-$card_background: rgba(255,255,255,0.77);
-// colors
+// $card_background: rgba(255,255,255,0.77);
+$card_background: rgba(235,240,246,0.77);
+$card_border_radius: 0.5rem;
+// #pics
+$pic_border_radius: 1.1rem;
+$pic_shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, .2);
+// $pic_shadow: box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgb(75, 182, 237); 
+// #colors
 $accent_color: rgb(75,182,237);
 $complement_color: rgb(235, 240, 246);
-// head
+$font_color: rgb(50,50,50);
+// #head
 $head_height: 3rem;
 // ----------------------
 
 @import "normalize";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto|Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300');
 
 
 * {
-    font-family: 'Roboto', sans-serif;
-    color: #323232;
+    // font-family: 'Roboto', sans-serif;
+    //font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: $font_color;
     box-sizing: border-box;
+    font-weight: 300;
 }
 
 .head {
@@ -34,13 +45,17 @@ $head_height: 3rem;
     background: $complement_color;
     box-shadow: 0 0 1rem 0rem #4c98c8;
     & > .menu_button {
+        // font-family: 'Roboto', sans-serif;
         font-size: calc(#{$head_height} *2/3);
         width: calc(5* #{$head_height});
-        font-weight: 900;
+        // font-weight: 900;
         line-height: $head_height;
         color: $accent_color;
         padding-left: 1rem;
         padding-right: 1rem;
+        &:hover {
+            cursor: pointer;
+        }
         &:active {
             background: $accent_color;
             color: $complement_color;
@@ -64,7 +79,7 @@ $head_height: 3rem;
         display: block;
         text-decoration: none;
         padding: 0.6rem 6rem 0.6rem 3rem;
-        font-weight: 500;
+        // font-weight: 900;
         &:active, &:hover {
             background: $accent_color;
             color: $complement_color;
@@ -104,6 +119,8 @@ $head_height: 3rem;
     padding: $card_padding;
     background: $card_background;
     margin: $card_margin;
+    border-radius: $card_border_radius;
+    overflow: hidden;
     // box-sizing: border-box;
     img {
         width: 100%
@@ -111,7 +128,7 @@ $head_height: 3rem;
     p {
         word-wrap: break-word;
         text-align: justify;
-        // font-weight: 100 !important;
+        // font-weight: 100;
         line-height: 1.4rem;
         // word-spacing: -0.1rem;
         font-size: 0.9rem;
@@ -124,7 +141,7 @@ $head_height: 3rem;
         padding: 0.5rem 1rem;
         border-radius: 0.1rem;
         text-decoration: none;
-        font-weight: 500;
+        // font-weight: 900;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
     }
     hr {
@@ -135,7 +152,6 @@ $head_height: 3rem;
     }
     h4 {
         margin: 0;
-        font-weight: 300;
         font-size: 1.7rem;
     }
     ul {
@@ -147,12 +163,10 @@ $head_height: 3rem;
             margin-bottom: 0.5rem;
             h5 {
                 display: block;
-                font-weight: 300;
                 font-size: 1rem;
                 margin: 0;
             }
             span {
-                font-weight: 300;
                 font-size: 0.8rem;
             }
             a {
@@ -170,18 +184,18 @@ $head_height: 3rem;
     }
 }
 .pic {
-    color: pink;
     padding: 0;
 	position: relative;
+    border-radius: $pic_border_radius;
+    box-shadow: $pic_shadow;
     p {
 		width: 100%;
 		background: rgba(0, 0, 0, 0.2);
-		height: 2rem;
-		font-weight: 900;
+		// height: 2rem;
 		line-height: 1.9rem;
+        font-size: 0.8rem;
 		padding-right: 1rem;
 		text-align: right;
-		// box-sizing: border-box;
 		color: white;
 		bottom: 0;
 		position: absolute;
@@ -252,7 +266,7 @@ $head_height: 3rem;
 @media (min-width: $layout_width) {
     .pic {
         width: calc((100%/8) - (2* #{$card_margin}));
-        height: calc( (70rem - #{$card_margin})/8 - (2* #{$card_margin}));
+        height: calc( (#{$layout_width} - (2* #{$card_margin}))/8 - (2* #{$card_margin}));
     }
 }
 
