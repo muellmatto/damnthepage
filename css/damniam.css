@@ -221,8 +221,7 @@ textarea {
   border-radius: 0.1rem;
   overflow: hidden; }
   .card img {
-    width: 100%;
-    opacity: 0.5; }
+    width: 100%; }
   .card p {
     word-wrap: break-word;
     text-align: justify;
@@ -269,7 +268,6 @@ textarea {
 .pic {
   padding: 0;
   position: relative;
-  border-radius: 1.1rem;
   box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2); }
   .pic p {
     width: 100%;

@@ -10,7 +10,6 @@ $card_padding: 1rem;
 $card_background: rgba(235,240,246,0.77);
 $card_border_radius: 0.1rem;
 // #pics
-$pic_border_radius: 1.1rem;
 $pic_shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, .2);
 // #colors
 $accent_color: rgb(75,182,237);
@@ -116,7 +115,6 @@ $head_height: 3rem;
     // box-sizing: border-box;
     img {
         width: 100%;
-        opacity: 0.5;
     }
     p {
         word-wrap: break-word;
@@ -179,7 +177,6 @@ $head_height: 3rem;
 .pic {
     padding: 0;
 	position: relative;
-    border-radius: $pic_border_radius;
     box-shadow: $pic_shadow;
     p {
 		width: 100%;
