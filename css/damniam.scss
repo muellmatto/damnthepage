@@ -1,19 +1,17 @@
 // #content
 $layout_width: 90rem;
+$content_padding: 0rem;
 // #breakpoints
 $max_width_tablet: 65rem;
 $max_width_phone: 35rem;
 // #cards
-// $card_margin: 1rem;
-$card_margin: 1.5rem;
+$card_margin: 1rem;
 $card_padding: 1rem;
-// $card_background: rgba(255,255,255,0.77);
 $card_background: rgba(235,240,246,0.77);
-$card_border_radius: 0.5rem;
+$card_border_radius: 0.1rem;
 // #pics
 $pic_border_radius: 1.1rem;
 $pic_shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, .2);
-// $pic_shadow: box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgb(75, 182, 237); 
 // #colors
 $accent_color: rgb(75,182,237);
 $complement_color: rgb(235, 240, 246);
@@ -25,15 +23,15 @@ $head_height: 3rem;
 @import "normalize";
 
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300');
-
+@import url('https://fonts.googleapis.com/css?family=Voltaire');
 
 * {
-    // font-family: 'Roboto', sans-serif;
-    //font-family: 'Fira Sans', sans-serif;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    //font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-family: 'Voltaire', sans-serif;
+    font-weight: 400;
     color: $font_color;
     box-sizing: border-box;
-    font-weight: 300;
 }
 
 .head {
@@ -43,16 +41,13 @@ $head_height: 3rem;
     position: fixed;
     color: $accent_color;
     background: $complement_color;
-    box-shadow: 0 0 1rem 0rem #4c98c8;
-    & > .menu_button {
-        // font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 1rem 0rem $accent_color;
+    &  .menu_button {
         font-size: calc(#{$head_height} *2/3);
         width: calc(5* #{$head_height});
-        // font-weight: 900;
         line-height: $head_height;
         color: $accent_color;
         padding-left: 1rem;
-        padding-right: 1rem;
         &:hover {
             cursor: pointer;
         }
@@ -79,7 +74,7 @@ $head_height: 3rem;
         display: block;
         text-decoration: none;
         padding: 0.6rem 6rem 0.6rem 3rem;
-        // font-weight: 900;
+        font-size: calc(#{$head_height} / 2);
         &:active, &:hover {
             background: $accent_color;
             color: $complement_color;
@@ -106,8 +101,8 @@ $head_height: 3rem;
 
 .content {
     max-width: $layout_width;
-    padding-left: $card_margin;
-    padding-right: $card_margin;
+    padding-left: $content_padding;
+    padding-right: $content_padding;
     margin: auto;
     &:nth-child(2){
         padding-top: $head_height;
@@ -123,7 +118,8 @@ $head_height: 3rem;
     overflow: hidden;
     // box-sizing: border-box;
     img {
-        width: 100%
+        width: 100%;
+        opacity: 0.5;
     }
     p {
         word-wrap: break-word;
@@ -260,13 +256,13 @@ $head_height: 3rem;
 @media (min-width: $max_width_tablet) and (max-width: $layout_width) {
     .pic {
         width: calc((100%/8) - (2* #{$card_margin}));
-        height: calc((100vw - 2*#{$card_margin})/8 - (2* #{$card_margin}));
+        height: calc((100vw - 2*#{$content_padding})/8 - (2* #{$card_margin}));
     }
 }
 @media (min-width: $layout_width) {
     .pic {
         width: calc((100%/8) - (2* #{$card_margin}));
-        height: calc( (#{$layout_width} - (2* #{$card_margin}))/8 - (2* #{$card_margin}));
+        height: calc( (#{$layout_width} - (2* #{$content_padding}))/8 - (2* #{$card_margin}));
     }
 }
 
