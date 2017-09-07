@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300");
-@import url("https://fonts.googleapis.com/css?family=Voltaire");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -144,9 +143,8 @@ textarea {
     -webkit-appearance: none; }
 
 * {
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 300;
-  font-family: 'Voltaire', sans-serif;
-  font-weight: 400;
   color: #323232;
   box-sizing: border-box; }
 
