@@ -88,15 +88,13 @@ function fill_list(data) {
 }
 
 function fill_feed(data) {
-    var template = `
-                    <div class="card feed">
-                        <h4>{{datum}}</h4>
-                        <hr>
-                        <img src="{{image}}">
-                        <p>{{message}}</p>
-                        <a class="button" target="_blank"  href="{{link}}">READ MORE</a>
-                    </div>
-                    `;
+    var template = '<div class="card feed">'
+                   +'   <h4>{{datum}}</h4> '
+                   +'     <hr>'
+                   +'     <img src="{{image}}">'
+                   +'    <p>{{message}}</p>'
+                   +'     <a class="button" target="_blank"  href="{{link}}">READ MORE</a>'
+                   +' </div>';
     var MAX_ENTRIES = 10;
     var k = 0;
     for (var i = 0; ( i < data.data.length ) && ( k < MAX_ENTRIES ); i++) {
@@ -118,16 +116,14 @@ function fill_feed(data) {
 }
 
 function fill_gallery(data) {
-    var template = `
-                    <a href='{{link}}' target='_blank' style="text-decoration: none;">
-                        <div class="card pic"
-                                style="background:url('{{image}}') center center; background-size: inherit;">
-                            <p>
-                                {{datum}}
-                            </p>
-                        </div>
-                    </a>
-                    `;
+    var template = ' <a href="{{link}}" target="_blank" style="text-decoration: none;">'
+                  +'      <div class="card pic"'
+                  +'              style="background:url(\'{{image}}\') center center; background-size: inherit;">'
+                  +'          <p>'
+                  +'              {{datum}}'
+                  +'          </p>'
+                  +'      </div>'
+                  +'  </a>';
     for (var i = 0; i < data.data.length; i++) {
         var datum = date_to_string(new Date(parseInt(data.data[i].created_time) * 1000));
         var rendered = template
