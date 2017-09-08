@@ -140,12 +140,21 @@ function fill_gallery(data) {
 
 
 var bands_in_town = document.createElement('script');
+bands_in_town.setAttribute('async', '');
+bands_in_town.setAttribute('defer', '');
+bands_in_town.setAttribute('type', 'text/javascript');
 bands_in_town.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fill_list';
 
 var facebook_feed = document.createElement('script');
+facebook_feed.setAttribute('async', '');
+facebook_feed.setAttribute('defer', '');
+facebook_feed.setAttribute('type', 'text/javascript');
 facebook_feed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=16&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fill_feed';
 
 var instagram_gallery = document.createElement('script');
+instagram_gallery.setAttribute('async', '');
+instagram_gallery.setAttribute('defer', '');
+instagram_gallery.setAttribute('type', 'text/javascript');
 instagram_gallery.src = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&callback=fill_gallery';
 
 
