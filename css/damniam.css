@@ -199,12 +199,6 @@ textarea {
   background-size: cover;
   background-position: center; }
 
-/*.layout {
-    background: url(../img/bg.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: top;
-}*/
 .content {
   max-width: 90rem;
   padding-left: 0rem;
