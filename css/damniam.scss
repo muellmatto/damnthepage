@@ -202,6 +202,9 @@ $head_height: 3rem;
     } @else {
         width: calc(100% / #{$cols} - (2* #{$card_margin}));
     }
+    &:nth-child( #{ceil($cols)}n + #{$col_offset}  ) {
+        clear: left;
+    }
 }
 
 // phone

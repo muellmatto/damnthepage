@@ -302,51 +302,81 @@ textarea {
 @media (max-width: 35rem) {
   .contact, .band_pic, .band_text, .feed, .band_pic, .band_text {
     width: calc(100% / 1 - (2* 1rem)); }
+    .contact:nth-child(1n + 1), .band_pic:nth-child(1n + 1), .band_text:nth-child(1n + 1), .feed:nth-child(1n + 1), .band_pic:nth-child(1n + 1), .band_text:nth-child(1n + 1) {
+      clear: left; }
 
   .pic {
     width: calc((100vw - 2*0rem)/2 - (2* 1rem));
-    height: calc((100vw - 2*0rem)/2 - (2* 1rem)); } }
+    height: calc((100vw - 2*0rem)/2 - (2* 1rem)); }
+    .pic:nth-child(2n + 1) {
+      clear: left; } }
 @media (min-width: 35rem) and (max-width: 65rem) {
   .feed {
     width: calc(100% / 2 - (2* 1rem)); }
+    .feed:nth-child(2n + 1) {
+      clear: left; }
 
   .band_pic, .band_text {
     width: calc(100% / 2 - (2* 1rem)); }
+    .band_pic:nth-child(2n + 1), .band_text:nth-child(2n + 1) {
+      clear: left; }
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
+    .contact:nth-child(3n + 2) {
+      clear: left; }
 
   .pic {
     width: calc((100vw - 2*0rem)/4 - (2* 1rem));
-    height: calc((100vw - 2*0rem)/4 - (2* 1rem)); } }
+    height: calc((100vw - 2*0rem)/4 - (2* 1rem)); }
+    .pic:nth-child(4n + 0) {
+      clear: left; } }
 @media (min-width: 65rem) and (max-width: 90rem) {
   .feed {
     width: calc(100% / 4 - (2* 1rem)); }
+    .feed:nth-child(4n + 1) {
+      clear: left; }
 
   .band_pic {
     width: calc(100% / 1.5 - (2* 1rem)); }
+    .band_pic:nth-child(2n + 0) {
+      clear: left; }
 
   .band_text {
     width: calc(100% / 3 - (2* 1rem)); }
+    .band_text:nth-child(3n + 0) {
+      clear: left; }
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
+    .contact:nth-child(3n + 0) {
+      clear: left; }
 
   .pic {
     width: calc((100vw - 2*0rem)/8 - (2* 1rem));
-    height: calc((100vw - 2*0rem)/8 - (2* 1rem)); } }
+    height: calc((100vw - 2*0rem)/8 - (2* 1rem)); }
+    .pic:nth-child(8n + 0) {
+      clear: left; } }
 @media (min-width: 90rem) {
   .feed {
     width: calc(100% / 4 - (2* 1rem)); }
+    .feed:nth-child(4n + 1) {
+      clear: left; }
 
   .band_pic {
     width: calc(100% / 1.5 - (2* 1rem)); }
+    .band_pic:nth-child(2n + 0) {
+      clear: left; }
 
   .band_text {
     width: calc(100% / 3 - (2* 1rem)); }
+    .band_text:nth-child(3n + 0) {
+      clear: left; }
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
+    .contact:nth-child(3n + 0) {
+      clear: left; }
 
   .pic {
     width: calc((100%/8) - (2* 1rem));
