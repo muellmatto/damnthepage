@@ -308,7 +308,7 @@ textarea {
   .pic {
     width: calc((100vw - 2*0rem)/2 - (2* 1rem));
     height: calc((100vw - 2*0rem)/2 - (2* 1rem)); }
-    .pic:nth-child(2n + 1) {
+    .pic:nth-child(2n + 0) {
       clear: left; } }
 @media (min-width: 35rem) and (max-width: 65rem) {
   .feed {
@@ -323,7 +323,7 @@ textarea {
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
-    .contact:nth-child(3n + 2) {
+    .contact:nth-child(3n + 1) {
       clear: left; }
 
   .pic {
@@ -349,7 +349,7 @@ textarea {
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
-    .contact:nth-child(3n + 0) {
+    .contact:nth-child(3n + 1) {
       clear: left; }
 
   .pic {
@@ -375,7 +375,7 @@ textarea {
 
   .contact {
     width: calc(100% / 3 - (2* 1rem)); }
-    .contact:nth-child(3n + 0) {
+    .contact:nth-child(3n + 1) {
       clear: left; }
 
   .pic {

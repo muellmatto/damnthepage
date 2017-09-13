@@ -210,13 +210,13 @@ $head_height: 3rem;
 // phone
 @media (max-width: $max_width_phone ) {
     .contact, .band_pic, .band_text, .feed, .band_pic, .band_text {@include grid(1,1, false);}
-    .pic {@include grid(2,1, true)}
+    .pic {@include grid(2,0, true)}
 }
 // tablet
 @media (min-width: $max_width_phone) and (max-width: $max_width_tablet) {
     .feed {@include grid(2,1, false);}
     .band_pic, .band_text { @include grid(2, 1);}
-    .contact { @include grid(3,2);}
+    .contact { @include grid(3,1);}
     .pic {@include grid(4,0, true)}
 }
 // big viewport
@@ -224,7 +224,7 @@ $head_height: 3rem;
     .feed {@include grid(4,1, false);}
     .band_pic { @include grid(3/2);}
     .band_text { @include grid(3);}
-    .contact { @include grid(3);}
+    .contact { @include grid(3,1);}
     .pic {@include grid(8,0, true)}
 }
 // huge viewport
@@ -232,7 +232,7 @@ $head_height: 3rem;
     .feed {@include grid(4,1, false);}
     .band_pic { @include grid(3/2);}
     .band_text { @include grid(3);}
-    .contact { @include grid(3);}
+    .contact { @include grid(3,1);}
     .pic { 
         width: calc((100%/8) - (2* #{$card_margin}));
        // quirk for squared pics
