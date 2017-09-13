@@ -20,6 +20,7 @@ $head_height: 3rem;
 // ----------------------
 
 @import "normalize";
+@import "location_icon";
 
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300');
 
@@ -94,6 +95,7 @@ $head_height: 3rem;
     padding-left: $content_padding;
     padding-right: $content_padding;
     margin: auto;
+    clear: both;
     &:nth-child(2){
         padding-top: $head_height;
     }
@@ -182,86 +184,55 @@ $head_height: 3rem;
 }
 .hafti {
     width: calc(100% - 2* #{$card_margin});
+    p {
+        font-size: 0.5rem;
+        line-height: 0.7rem;
+    }
+    hr {
+        height: 0.2rem;
+    }
 }
 
+
+
+@mixin grid($cols:4, $col_offset:0, $is_sqared:false) {
+    @if $is_sqared {
+        width: calc((100vw - 2*#{$content_padding})/#{$cols} - (2* #{$card_margin}));
+        height: calc((100vw - 2*#{$content_padding})/#{$cols} - (2* #{$card_margin}));
+    } @else {
+        width: calc(100% / #{$cols} - (2* #{$card_margin}));
+    }
+}
 
 // phone
 @media (max-width: $max_width_phone ) {
-    .feed, .contact, .band-pic, .band-text {
-        width: calc(100% - (2* #{$card_margin}));
-    }
-    .pic {
-        width: calc((100%/2) - (2* #{$card_margin}));
-        height: calc((100vw - 2*#{$card_margin})/2 - (2* #{$card_margin}));
-    }
+    .contact, .band_pic, .band_text, .feed, .band_pic, .band_text {@include grid(1,1, false);}
+    .pic {@include grid(2,1, true)}
 }
 // tablet
 @media (min-width: $max_width_phone) and (max-width: $max_width_tablet) {
-    .feed {
-        width: calc(50% - (2* #{$card_margin}));
-    }
-    .feed:nth-child(2n+1) {
-        clear: both;
-    }
-    .pic {
-        width: calc((100%/4) - (2* #{$card_margin}));
-        height: calc((100vw - 2*#{$card_margin})/4 - (2* #{$card_margin}));
-    }
-    .contact {
-        width: calc(100% - (2* #{$card_margin}));
-    }
-    .band-pic, .band-text {
-        width: calc(100% - (2* #{$card_margin}));
-    }
+    .feed {@include grid(2,1, false);}
+    .band_pic, .band_text { @include grid(2, 1);}
+    .contact { @include grid(3,2);}
+    .pic {@include grid(4,0, true)}
 }
 // big viewport
-@media (min-width: $max_width_tablet) {
-    .feed {
-        margin: $card_margin;
-        width: calc(25% - (2* #{$card_margin}));
-    }
-    .feed:nth-child(4n+1) {
-        clear: both;
-    }
-    .contact {
-        margin: $card_margin;
-        width: calc((100%/3) - (2* #{$card_margin}));
-    }
-    .band_pic {
-        width: calc((100%/3) - (2* #{$card_margin}));
-    }
-    .band_text {
-        width: calc((100%*2/3) - (2* #{$card_margin}));
-    }
-}
-// quirk for sqaured pics
 @media (min-width: $max_width_tablet) and (max-width: $layout_width) {
-    .pic {
-        width: calc((100%/8) - (2* #{$card_margin}));
-        height: calc((100vw - 2*#{$content_padding})/8 - (2* #{$card_margin}));
-    }
+    .feed {@include grid(4,1, false);}
+    .band_pic { @include grid(3/2);}
+    .band_text { @include grid(3);}
+    .contact { @include grid(3);}
+    .pic {@include grid(8,0, true)}
 }
+// huge viewport
 @media (min-width: $layout_width) {
-    .pic {
+    .feed {@include grid(4,1, false);}
+    .band_pic { @include grid(3/2);}
+    .band_text { @include grid(3);}
+    .contact { @include grid(3);}
+    .pic { 
         width: calc((100%/8) - (2* #{$card_margin}));
-        height: calc( (#{$layout_width} - (2* #{$content_padding}))/8 - (2* #{$card_margin}));
-    }
-}
-
-
-.location {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    background: $accent_color;
-    &:after {
-        content: '';
-        width: 0.5rem;
-        height: 0.5rem;
-        margin: 0.25rem 0 0 0.25rem;
-        background: $complement_color;
-        position: absolute;
-        border-radius: 50%;
-    }
+       // quirk for squared pics
+       height: calc( (#{$layout_width} - (2* #{$content_padding}))/8 - (2* #{$card_margin}));
+    } 
 }
