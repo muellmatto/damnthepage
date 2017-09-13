@@ -54,7 +54,13 @@ function date_to_string(datum) {
 }
 
 function fill_list(data) {
-    var template = document.getElementById('listtemplate').innerHTML;
+    var template =   '<li>'
+                    +'    <h5>{{city}}</h5>'
+                    +'    <span>{{datum}} @ {{venuename}}</span>'
+                    +'    <a href=\'http://maps.google.com/?q={{latitude}},{{longitude}}\' target=\'_blank\'>'
+                    +'        <div class="location"></div>'
+                    +'    </a>'
+                    +'</li>';
     document.getElementById('termine').innerHTML = null; 
     var jsonLdDate = new Array();
     for (var i =0 ;i < data.length; i++) {
