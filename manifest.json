@@ -1,0 +1,13 @@
+{
+  "name": "DAMNIAM",
+  "short_name": "DMNM",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#4bb6ed",
+  "description": " -> DAMNIAM <- ",
+  "icons": [{
+    "src": "img/favicon-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
