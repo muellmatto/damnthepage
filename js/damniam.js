@@ -151,7 +151,7 @@ var facebook_feed = document.createElement('script');
 facebook_feed.setAttribute('async', '');
 facebook_feed.setAttribute('defer', '');
 facebook_feed.setAttribute('type', 'text/javascript');
-facebook_feed.src = 'https://graph.facebook.com/v2.6/35075947587/posts?fields=full_picture,message,link,created_time&limit=20&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fill_feed';
+facebook_feed.src = 'https://graph.facebook.com/v2.10/35075947587/posts?fields=full_picture,message,link,created_time&limit=20&access_token=1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q&date_format=U&callback=fill_feed';
 
 var instagram_gallery = document.createElement('script');
 instagram_gallery.setAttribute('async', '');
