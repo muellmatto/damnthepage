@@ -302,6 +302,17 @@ textarea {
   .hafti hr {
     height: 0.2rem; }
 
+.notify {
+  width: calc(100% - 2* 1rem);
+  background: pink;
+  font-size: 1rem;
+  line-height: 1.9rem; }
+  .notify em {
+    font-style: normal;
+    font-size: 1.4rem; }
+  .notify a {
+    text-decoration: none; }
+
 @media (max-width: 35rem) {
   .contact, .band_pic, .band_text, .feed, .band_pic, .band_text {
     width: calc(100% / 1 - (2* 1rem)); }

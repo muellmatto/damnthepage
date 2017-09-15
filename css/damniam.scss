@@ -196,6 +196,19 @@ $head_height: 3rem;
         height: 0.2rem;
     }
 }
+.notify {
+    width: calc(100% - 2* #{$card_margin});
+    background: pink;
+    font-size: 1rem;
+    line-height: 1.9rem;
+    em {
+        font-style: normal;
+        font-size: 1.4rem;
+    }
+    a {
+        text-decoration: none;
+    }
+}
 
 
 
