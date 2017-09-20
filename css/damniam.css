@@ -193,7 +193,8 @@ textarea {
   background: #eaf1f9;
   position: fixed;
   top: 3rem;
-  transition: max-height 1s ease; }
+  transition: max-height 1s ease;
+  box-shadow: 0.2rem 0.2rem 1rem -0.2rem #4a97cb; }
   .menu a {
     color: #4a97cb;
     display: block;

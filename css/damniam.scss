@@ -66,6 +66,7 @@ $head_height: 3rem;
     position: fixed;
     top: $head_height;
     transition: max-height 1s ease;
+    box-shadow: 0.2rem 0.2rem 1rem -0.2rem #4a97cb;
     a {
         color: $accent_color;
         display: block;
