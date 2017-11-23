@@ -163,6 +163,9 @@ textarea {
   color: #323232;
   box-sizing: border-box; }
 
+strong {
+  font-weight: bold; }
+
 .head {
   z-index: 9;
   width: 100%;

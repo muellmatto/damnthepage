@@ -30,7 +30,9 @@ $head_height: 3rem;
     color: $font_color;
     box-sizing: border-box;
 }
-
+strong{
+    font-weight: bold;
+}
 .head {
     z-index: 9;
     width: 100%;
