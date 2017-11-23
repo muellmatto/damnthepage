@@ -243,6 +243,8 @@ strong {
     font-size: 0.9rem; }
   .card .button {
     float: right;
+    clear: right;
+    margin-bottom: 1rem;
     border: 0;
     background: #4a97cb;
     color: #eaf1f9;

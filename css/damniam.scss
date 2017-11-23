@@ -122,6 +122,8 @@ strong{
     }
     .button {
         float: right;
+        clear: right;
+        margin-bottom: 1rem;
         border: 0;
         background: $accent_color;
         color: $complement_color;
