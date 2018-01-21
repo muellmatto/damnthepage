@@ -161,6 +161,9 @@ strong{
                 font-size: 0.8rem;
             }
             a {
+                text-decoration: none;
+            }
+            .location {
                 float: right;
                 margin-right: $card_margin;
                 text-decoration: none;

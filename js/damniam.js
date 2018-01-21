@@ -56,8 +56,12 @@ function date_to_string(datum) {
 function fill_list(data) {
     var template =   '<li>'
                     +'    <h5>{{city}}</h5>'
-                    +'    <span>{{datum}} @ {{venuename}}</span>'
-                    +'    <a href=\'http://maps.google.com/?q={{latitude}},{{longitude}}\' target=\'_blank\'>'
+                    +'    <span>'
+                    +'        <a href=\'{{url}}\' rel=\'noopener\' target=\'_blank\'>'
+                    +'            {{datum}} @ {{venuename}}'
+                    +'        </a>'
+                    +'    </span>'
+                    +'    <a href=\'http://maps.google.com/?q={{latitude}},{{longitude}}\' rel=\'noopener\' target=\'_blank\'>'
                     +'        <div class="location"></div>'
                     +'    </a>'
                     +'</li>';
@@ -68,7 +72,7 @@ function fill_list(data) {
         jsonLdDate[i]['@context'] = 'http://schema.org';
         jsonLdDate[i]['@type'] = 'MusicEvent';
         jsonLdDate[i]['name'] = 'DAMNIAM';
-        jsonLdDate[i]['url'] = data[i].facebook_rsvp_url;
+        jsonLdDate[i]['url'] = data[i].url; // will be .url in api v3 -> https://rest.bandsintown.com
         jsonLdDate[i]['startDate'] = data[i].datetime;
         jsonLdDate[i]['location'] = {};
         jsonLdDate[i]['location']['@type'] = 'Place';
@@ -78,6 +82,7 @@ function fill_list(data) {
         var datum = date_to_string(new Date(Date.parse(data[i].datetime)));
         var rendered = template
                             .replace('{{city}}', data[i].venue.city)
+                            .replace('{{url}}', data[i].url)
                             .replace('{{venuename}}',data[i].venue.name)
                             .replace('{{latitude}}',data[i].venue.latitude)
                             .replace('{{longitude}}',data[i].venue.longitude)
@@ -145,7 +150,7 @@ var bands_in_town = document.createElement('script');
 bands_in_town.setAttribute('async', '');
 bands_in_town.setAttribute('defer', '');
 bands_in_town.setAttribute('type', 'text/javascript');
-bands_in_town.src = 'https://api.bandsintown.com/artists/damniam/events.json?api_version=2.0&app_id=damniam_website&callback=fill_list';
+bands_in_town.src = 'https://rest.bandsintown.com/artists/damniam/events?app_id=damniam_website&callback=fill_list';
 
 var facebook_feed = document.createElement('script');
 facebook_feed.setAttribute('async', '');
