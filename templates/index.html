@@ -25,22 +25,25 @@
                         <a href="#news">NEWS</a>
                         <a href="#band">BAND</a>
                         <a href="#pics">PICS</a>
-                        <a target="_blank" href="http://shop.mad-drunken-monkey.de/epages/es121879.sf/de_DE/?ObjectID=145037&ViewAction=FacetedSearchProducts&SearchString=damniam">SHOP</a>
+                        <a target="_blank"
+                            href="https://de.kingsroadmerch.com/mad-drunken-monkey-records/search/?search=damniam">
+                            SHOP
+                        </a>
                         <a href="#contact">CONTACT</a>
                         <hr>
-                        <a target="_blank" href="https://facebook.com/DAMNIAMOFFICIAL">FACEBOOK</a>
-                        <a target="_blank" href="https://instagram.com/damniamofficial/">INSTAGRAM</a>
-                        <a target="_blank" href="https://twitter.com/damniamofficial">TWITTER</a>
-                        <a target="_blank" href="https://www.youtube.com/user/DAMNiAM/">YOUTUBE</a>
-                        <a target="_blank" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">SPOTIFY</a>
-                        <a target="_blank" href="https://damniam.bandcamp.com/">BANDCAMP</a>
+                        <a target="_blank" rel="noopener" href="https://facebook.com/DAMNIAMOFFICIAL">FACEBOOK</a>
+                        <a target="_blank" rel="noopener" href="https://instagram.com/damniamofficial/">INSTAGRAM</a>
+                        <a target="_blank" rel="noopener" href="https://twitter.com/damniamofficial">TWITTER</a>
+                        <a target="_blank" rel="noopener" href="https://www.youtube.com/user/DAMNiAM/">YOUTUBE</a>
+                        <a target="_blank" rel="noopener" href="https://open.spotify.com/artist/6BInGIy0uhn9nZkZbSXlS1">SPOTIFY</a>
+                        <a target="_blank" rel="noopener" href="https://damniam.bandcamp.com/">BANDCAMP</a>
                     </div>
                 </div>
             </div>
 
             <div class="content" id="news">
                 {% include 'bandsintown.html' %}
-                {% include 'player.html' %}
+                {% include 'player_alt.html' %}
                 {% include 'fb.html' %}
             </div>
 
@@ -50,7 +53,7 @@
                     <hr>
                     <h4>DAMNIAM</h4>
                     <hr>
-                    <img src="img/band.jpg" alt="DAMNIAM">
+                    <img src="{{ url_for('static', filename='band.jpg') }}" alt="DAMNIAM">
                     <hr>
                 </div>
 
@@ -64,6 +67,7 @@
             </div>
 
             <div class="content" id="pics">
+                {% include 'instagram.html' %}
             </div>
 
             <div class="content" id="contact">
@@ -135,8 +139,8 @@
                         48151 Münster<br>
                         info(at)rof-records.com
                     </p>
-                    <a class="button" href="files/DAMNIAM PressKit.zip">Press Kit</a>
-                    <a class="button" href="files/DAMNIAM Technical Rider.pdf">Technical Rider</a>
+                    <a class="button" href="{{ url_for('static', filename='DAMNIAM PressKit.zip') }}">Press Kit</a>
+                    <a class="button" href="{{ url_for('static', filename='DAMNIAM Technical Rider.pdf') }}">Technical Rider</a>
                     <hr>
                 </div>
 
@@ -148,13 +152,13 @@
                     <p>Angaben gemäß § 5 TMG</p>
                     <p>
                         Matthias Bergholz <br>
-                        Hohenzollernring 30 <br>
-                        48145 Münster <br>
+                        Elisabethstraße 10 <br>
+                        44139 Dortmund <br>
                         E-Mail: info at damniam dot de <br>
                     </p>
                     <hr>
                     <a href="https://uberspace.de" target="_blank" style="color: black;">
-                        <img src="img/badge-uberspace.png" alt="uberspace logo" style="width: 100%; max-width: 10rem;">
+                        <img src="{{ url_for('static', filename='badge-uberspace.png') }}" alt="uberspace logo" style="width: 100%; max-width: 10rem;">
                     </a>
                     <hr>
                 </div>
@@ -195,6 +199,6 @@
                 </div>
             </div>
         </div><!-- layout -->
-        <script async defer src="js/damniam.js"></script>
+        <script async defer src="{{ url_for('static', filename='damniam.js') }}"></script>
     </body>
 </html>

@@ -1,0 +1,10 @@
+{% for img in images %}
+    <a href="{{ img.link }}" target="_blank" style="text-decoration: none;">
+        <div class="card pic"
+             style="background:url('{{ img.images.low_resolution.url }}') center center; background-size: inherit;">
+            <p>
+                {{ created_time }}
+            </p>
+        </div>
+    </a>
+{% endfor %}

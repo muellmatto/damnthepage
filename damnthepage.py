@@ -38,7 +38,10 @@ def get_dates():
         for date in dates:
             date['datetime'] = build_date_str(date['datetime'])
         return dates
-            
+
+def get_images():
+    with urlopen('https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&date_format=U') as req:
+        return from_json(req.read().decode())['data']
 
 def get_list_of_posts():
     def get_post(id):
@@ -61,7 +64,8 @@ damn = Flask(__name__)
 def damnthepage():
     return render_template('index.html',
             posts=get_list_of_posts(),
-            dates=get_dates())
+            dates=get_dates(),
+            images=get_images())
 
 
 if __name__ == '__main__':
