@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -157,6 +156,9 @@ textarea {
     position: absolute;
     border-radius: 50%; }
 
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  src: url("/static/FiraSansCondensed-Light.ttf") format("truetype"); }
 * {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 300;
