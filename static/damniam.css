@@ -237,7 +237,8 @@ strong {
   border-radius: 0.1rem;
   overflow: hidden; }
   .card img {
-    width: 100%; }
+    width: 100%;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2); }
   .card p {
     word-wrap: break-word;
     text-align: justify;
