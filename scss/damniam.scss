@@ -124,8 +124,8 @@ strong{
     }
     .button {
         float: right;
-        clear: right;
         margin-bottom: 1rem;
+        margin-left: 1rem;
         border: 0;
         background: $accent_color;
         color: $complement_color;
@@ -147,6 +147,7 @@ strong{
     h4 {
         margin: 0;
         font-size: 1.7rem;
+        clear: right;
     }
     ul {
         width: 100%;

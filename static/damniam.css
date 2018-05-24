@@ -245,8 +245,8 @@ strong {
     font-size: 0.9rem; }
   .card .button {
     float: right;
-    clear: right;
     margin-bottom: 1rem;
+    margin-left: 1rem;
     border: 0;
     background: #4a97cb;
     color: #eaf1f9;
@@ -264,7 +264,8 @@ strong {
     height: 1.5rem; }
   .card h4 {
     margin: 0;
-    font-size: 1.7rem; }
+    font-size: 1.7rem;
+    clear: right; }
   .card ul {
     width: 100%;
     padding: 0;
