@@ -69,5 +69,5 @@ def damnthepage():
 
 
 if __name__ == '__main__':
-    damn.run(host='0.0.0.0', port=64006, debug=True)
+    damn.run(host='0.0.0.0', port=64005, debug=True)
 
