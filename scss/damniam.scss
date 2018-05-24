@@ -88,7 +88,7 @@ strong{
     z-index: -1;
     height: 100%;
     width: 100%;
-    background: url(../img/bg.jpg);
+    background: url(/static/bg.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -166,6 +166,7 @@ strong{
             .location {
                 float: right;
                 margin-right: $card_margin;
+                margin-top: -1rem;
                 text-decoration: none;
             }
         }     

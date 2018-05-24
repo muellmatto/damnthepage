@@ -72,7 +72,7 @@ function fill_list(data) {
         jsonLdDate[i]['@context'] = 'http://schema.org';
         jsonLdDate[i]['@type'] = 'MusicEvent';
         jsonLdDate[i]['name'] = 'DAMNIAM';
-        jsonLdDate[i]['url'] = data[i].url; // will be .url in api v3 -> https://rest.bandsintown.com
+        jsonLdDate[i]['url'] = data[i].url;
         jsonLdDate[i]['startDate'] = data[i].datetime;
         jsonLdDate[i]['location'] = {};
         jsonLdDate[i]['location']['@type'] = 'Place';
