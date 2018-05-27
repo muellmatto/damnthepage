@@ -68,6 +68,7 @@ strong{
     overflow-y: auto;
     overflow-x: hidden;
     background: $complement_color;
+    border-radius: $card_border_radius;
     position: fixed;
     top: $head_height;
     transition: max-height 1s ease;

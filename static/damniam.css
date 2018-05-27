@@ -197,6 +197,7 @@ strong {
   overflow-y: auto;
   overflow-x: hidden;
   background: #eaf1f9;
+  border-radius: 0.6rem;
   position: fixed;
   top: 3rem;
   transition: max-height 1s ease;
