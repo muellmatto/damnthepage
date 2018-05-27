@@ -34,18 +34,17 @@ def build_date_str(dt, year=False):
 
 def build_jsonld(dates):
     jsonld = []
-    j_proto = { '@context' : 'http://schema.org',
-                '@type' : 'MusicEvent',
-                'name': 'DAMNIAM',
-                'performer': 'DAMNIAM',
-                'location': { '@type': 'Place' }
-                }
     for date in dates:
-        j = j_proto.copy()
+        j = { '@context' : 'http://schema.org',
+                    '@type' : 'MusicEvent',
+                    'name': 'DAMNIAM',
+                    'performer': 'DAMNIAM',
+                    'location': { '@type': 'Place' }
+                    }
         j['location']['name'] = date['venue']['name']
         j['location']['address'] = date['venue']['city']
         j['url'] = date['url']
-        j['datetime'] = date['raw_datetime']
+        j['startDate'] = date['raw_datetime']
         jsonld.append(j)
     return jsonld
 
