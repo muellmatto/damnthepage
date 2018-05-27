@@ -43,6 +43,7 @@ strong{
     color: $accent_color;
     background: $complement_color;
     box-shadow: 0 0 1rem 0rem $accent_color;
+    border-radius: 0 0 $card_border_radius $card_border_radius;
     &  .menu_button {
         font-size: calc(#{$head_height} *2/3);
         width: calc(5* #{$head_height});
@@ -132,7 +133,7 @@ strong{
         background: $accent_color;
         color: $complement_color;
         padding: 0.5rem 1rem;
-        border-radius: 0.1rem;
+        border-radius: $card_border_radius;
         text-decoration: none;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
         &+hr {
@@ -145,6 +146,7 @@ strong{
         background: $accent_color;
         width: 100%;
         height: 1.5rem;
+        border-radius: $card_border_radius;
     }
     h4 {
         margin: 0;
