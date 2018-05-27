@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
+from datetime import datetime
 from urllib.request import urlopen
 from json import loads as from_json
 
 import facebook
-from flask import Flask, render_template
-
+from flask import Flask, render_template, jsonify
 
 
 
@@ -61,8 +61,16 @@ def get_dates():
 
 
 def get_images():
+    def time_mapper(img):
+        stamp = int(img['created_time'])
+        iso_date = datetime.fromtimestamp(stamp).isoformat()
+        img['created_time'] = build_date_str(iso_date)
+        print(img['created_time'])
+        return img
     with urlopen('https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&date_format=U') as req:
-        return from_json(req.read().decode())['data']
+        data = from_json(req.read().decode())['data']
+        return list(map(time_mapper, data))
+        
 
 def get_list_of_posts():
     def get_post(id):
@@ -90,6 +98,27 @@ def damnthepage():
             dates=dates,
             jsonld = jsonld,
             images=get_images())
+
+
+@damn.route('/rest/feed')
+def rest_feed():
+    return jsonify(get_list_of_posts())
+
+@damn.route('/rest/gallery')
+def rest_gallery():
+    return jsonify(get_images())
+
+
+@damn.route('/testing')
+def testings():
+    dates = get_dates()
+    jsonld = build_jsonld(dates)
+    return render_template('index_js.html',
+            dates=dates,
+            jsonld = jsonld)
+
+
+
 
 
 if __name__ == '__main__':
