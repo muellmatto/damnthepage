@@ -234,8 +234,9 @@ strong {
   padding: 1rem;
   background: rgba(234, 241, 249, 0.77);
   margin: 1rem;
-  border-radius: 0.1rem;
-  overflow: hidden; }
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: 0.1rem 0.1rem 1rem 0rem black; }
   .card img {
     width: 100%;
     box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2); }
