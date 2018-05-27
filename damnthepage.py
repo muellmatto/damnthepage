@@ -32,12 +32,33 @@ def build_date_str(dt, year=False):
         return "{}. {}".format(d[2][:2].lstrip("0"), month_names[int(d[1])])
 
 
+def build_jsonld(dates):
+    jsonld = []
+    j_proto = { '@context' : 'http://schema.org',
+                '@type' : 'MusicEvent',
+                'name': 'DAMNIAM',
+                'performer': 'DAMNIAM',
+                'location': { '@type': 'Place' }
+                }
+    for date in dates:
+        j = j_proto.copy()
+        j['location']['name'] = date['venue']['name']
+        j['location']['address'] = date['venue']['city']
+        j['url'] = date['url']
+        j['datetime'] = date['raw_datetime']
+        jsonld.append(j)
+    return jsonld
+
+
 def get_dates():
     with urlopen('https://rest.bandsintown.com/artists/damniam/events?app_id=damniam_website') as req:
         dates = from_json(req.read().decode())
         for date in dates:
+            date['raw_datetime'] = date['datetime']
             date['datetime'] = build_date_str(date['datetime'])
         return dates
+
+
 
 def get_images():
     with urlopen('https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&date_format=U') as req:
@@ -62,9 +83,12 @@ damn = Flask(__name__)
 
 @damn.route('/')
 def damnthepage():
+    dates = get_dates()
+    jsonld = build_jsonld(dates)
     return render_template('index.html',
             posts=get_list_of_posts(),
-            dates=get_dates(),
+            dates=dates,
+            jsonld = jsonld,
             images=get_images())
 
 
