@@ -70,7 +70,7 @@ strong{
     position: fixed;
     top: $head_height;
     transition: max-height 1s ease;
-    box-shadow: 0.2rem 0.2rem 1rem -0.2rem #4a97cb;
+    box-shadow: 0.2rem 0.2rem 1rem -0.2rem $accent_color;
     a {
         color: $accent_color;
         display: block;
@@ -113,7 +113,7 @@ strong{
     margin: $card_margin;
     border-radius: $card_border_radius;
     overflow: hidden;
-    box-shadow: 0.1rem 0.1rem 1rem 0rem black;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem $accent_color;
     img {
         width: 100%;
         box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2);

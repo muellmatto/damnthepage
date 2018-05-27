@@ -236,7 +236,7 @@ strong {
   margin: 1rem;
   border-radius: 0.6rem;
   overflow: hidden;
-  box-shadow: 0.1rem 0.1rem 1rem 0rem black; }
+  box-shadow: 0.1rem 0.1rem 1rem 0rem #4a97cb; }
   .card img {
     width: 100%;
     box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2); }
