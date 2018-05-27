@@ -64,7 +64,6 @@ def get_images():
         stamp = int(img['created_time'])
         iso_date = datetime.fromtimestamp(stamp).isoformat()
         img['created_time'] = build_date_str(iso_date)
-        print(img['created_time'])
         return img
     with urlopen('https://api.instagram.com/v1/users/self/media/recent/?access_token=328950673.93e3299.50f6a823351144fa89ff552524d343c6&count=16&date_format=U') as req:
         data = from_json(req.read().decode())['data']
@@ -88,7 +87,7 @@ def get_list_of_posts():
 
 damn = Flask(__name__)
 
-@damn.route('/')
+@damn.route('/no_js')
 def damnthepage():
     dates = get_dates()
     jsonld = build_jsonld(dates)
@@ -108,7 +107,7 @@ def rest_gallery():
     return jsonify(get_images())
 
 
-@damn.route('/testing')
+@damn.route('/')
 def testings():
     dates = get_dates()
     jsonld = build_jsonld(dates)
