@@ -28,7 +28,7 @@ function fill_feed(data) {
                    +'     <hr>'
                    +'     <img src="{{image}}">'
                    +'    <p>{{message}}</p>'
-                   +'     <a class="button" target="_blank"  href="{{link}}">READ MORE</a>'
+                   +'     <a class="button" rel="noopener" target="_blank"  href="{{link}}">READ MORE</a>'
                    +' </div>';
     for (let d of data) {
         var rendered = template
@@ -41,7 +41,7 @@ function fill_feed(data) {
 }
 
 function fill_gallery(data) {
-    var template = ' <a href="{{link}}" target="_blank" style="text-decoration: none;">'
+    var template = ' <a href="{{link}}" rel="noopener" target="_blank" style="text-decoration: none;">'
                   +'      <div class="card pic"'
                   +'              style="background:url(\'{{image}}\') center center; background-size: inherit;">'
                   +'          <p>'
