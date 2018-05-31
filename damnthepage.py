@@ -4,7 +4,7 @@ from urllib.request import urlopen
 from json import loads as from_json
 
 import facebook
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, url_for
 
 
 
@@ -88,7 +88,7 @@ def get_list_of_posts():
 damn = Flask(__name__)
 
 @damn.route('/no_js')
-def damnthepage():
+def damnthepage_nojs():
     dates = get_dates()
     jsonld = build_jsonld(dates)
     return render_template('index.html',
@@ -108,7 +108,7 @@ def rest_gallery():
 
 
 @damn.route('/')
-def testings():
+def damnthepage():
     dates = get_dates()
     jsonld = build_jsonld(dates)
     return render_template('index_js.html',
@@ -116,7 +116,22 @@ def testings():
             jsonld = jsonld)
 
 
-
+@damn.route('/manifest.json')
+def serve_manifest():
+    manifest = { 
+            "name": "DAMNIAM",
+            "short_name": "DMNM",
+            "start_url": url_for('damnthepage'),
+            "display": "standalone",
+            "background_color": "#4bb6ed",
+            "description": " -> DAMNIAM <- ",
+            "icons": [{
+                "src": url_for('static', filename = "favicon-192.png"),
+                "sizes": "192x192",
+                "type": "image/png"
+                }]
+            }
+    return jsonify(manifest)
 
 
 if __name__ == '__main__':
