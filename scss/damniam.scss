@@ -32,6 +32,9 @@ $head_height: 3rem;
     color: $font_color;
     box-sizing: border-box;
 }
+a {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="font-size: 45;"><text y="40" x="-5">🔪</text></svg>') 45 50, auto;
+}
 strong{
     font-weight: bold;
 }
