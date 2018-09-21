@@ -45,6 +45,7 @@ $head_height: 3rem;
 */
 @font-face {
     font-family: 'Quicksand';
+    font-display: swap;
     src: url("/static/Quicksand-Light.woff") format("woff"),
         url("/static/Quicksand-Light.ttf") format("truetype");
 }
