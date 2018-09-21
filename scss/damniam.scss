@@ -8,7 +8,7 @@ $max_width_phone: 35rem;
 $card_margin: 1rem;
 $card_padding: 1rem;
 $card_background: rgba(234,241,249,0.77);
-$card_border_radius: 0.6rem;
+$card_border_radius: 0.8rem;
 // #pics
 $pic_shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, .2);
 // #colors
@@ -21,13 +21,35 @@ $head_height: 3rem;
 
 @import "normalize";
 @import "location_icon";
-
+/*
+@font-face {
+    font-family: 'Bonoveno';
+    src: url("/static/BonvenoCF-Light.woff") format("woff"),
+        url("/static/BonvenoCF-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Caviar';
+    src: url("/static/CaviarDreams.woff") format("woff"),
+        url("/static/CaviarDreams.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Jost';
+    src: url("/static/Jost-300-Light.woff") format("woff"),
+        url("/static/Jost-300-Light.otf") format("opentype");
+}
 @font-face {
     font-family: 'Fira Sans Condensed';
-    src: url("/static/FiraSansCondensed-Light.ttf") format("truetype");
+    src: url("/static/FiraSansCondensed-Light.woff") format("woff"),
+        url("/static/FiraSansCondensed-Light.ttf") format("truetype");
+}
+*/
+@font-face {
+    font-family: 'Quicksand';
+    src: url("/static/Quicksand-Light.woff") format("woff"),
+        url("/static/Quicksand-Light.ttf") format("truetype");
 }
 * {
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     color: $font_color;
     box-sizing: border-box;
@@ -73,7 +95,7 @@ strong{
     background: $complement_color;
     border-radius: $card_border_radius;
     position: fixed;
-    top: $head_height;
+    top: calc(#{$head_height}*1.1);
     transition: max-height 1s ease;
     box-shadow: 0.2rem 0.2rem 1rem -0.2rem $accent_color;
     a {
@@ -128,6 +150,7 @@ strong{
         text-align: justify;
         line-height: 1.4rem;
         font-size: 0.9rem;
+        white-space: pre-line;
     }
     .button {
         float: right;
@@ -149,7 +172,7 @@ strong{
         border: 0;
         background: $accent_color;
         width: 100%;
-        height: 1.5rem;
+        height: 0.3rem;
         border-radius: $card_border_radius;
     }
     h4 {
@@ -163,6 +186,7 @@ strong{
         list-style: none;
         li {
             margin-bottom: 0.5rem;
+            margin-right: 1rem;
             h5 {
                 display: block;
                 font-size: 1rem;
@@ -176,8 +200,9 @@ strong{
             }
             .location {
                 float: right;
-                margin-right: $card_margin;
-                margin-top: -1rem;
+                // margin-right: $card_margin;
+                margin-right: -1rem;
+                margin-top: -2rem;
                 text-decoration: none;
             }
         }     

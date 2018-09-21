@@ -157,11 +157,33 @@ textarea {
     position: absolute;
     border-radius: 50%; }
 
+/*
 @font-face {
-  font-family: 'Fira Sans Condensed';
-  src: url("/static/FiraSansCondensed-Light.ttf") format("truetype"); }
+    font-family: 'Bonoveno';
+    src: url("/static/BonvenoCF-Light.woff") format("woff"),
+        url("/static/BonvenoCF-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Caviar';
+    src: url("/static/CaviarDreams.woff") format("woff"),
+        url("/static/CaviarDreams.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Jost';
+    src: url("/static/Jost-300-Light.woff") format("woff"),
+        url("/static/Jost-300-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Fira Sans Condensed';
+    src: url("/static/FiraSansCondensed-Light.woff") format("woff"),
+        url("/static/FiraSansCondensed-Light.ttf") format("truetype");
+}
+*/
+@font-face {
+  font-family: 'Quicksand';
+  src: url("/static/Quicksand-Light.woff") format("woff"), url("/static/Quicksand-Light.ttf") format("truetype"); }
 * {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   color: #323232;
   box-sizing: border-box; }
@@ -180,7 +202,7 @@ strong {
   color: #4a97cb;
   background: #eaf1f9;
   box-shadow: 0 0 1rem 0rem #4a97cb;
-  border-radius: 0 0 0.6rem 0.6rem; }
+  border-radius: 0 0 0.8rem 0.8rem; }
   .head .menu_button {
     font-size: calc(3rem *2/3);
     width: calc(5* 3rem);
@@ -201,9 +223,9 @@ strong {
   overflow-y: auto;
   overflow-x: hidden;
   background: #eaf1f9;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   position: fixed;
-  top: 3rem;
+  top: calc(3rem*1.1);
   transition: max-height 1s ease;
   box-shadow: 0.2rem 0.2rem 1rem -0.2rem #4a97cb; }
   .menu a {
@@ -240,7 +262,7 @@ strong {
   padding: 1rem;
   background: rgba(234, 241, 249, 0.77);
   margin: 1rem;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   overflow: hidden;
   box-shadow: 0.1rem 0.1rem 1rem 0rem #4a97cb; }
   .card img {
@@ -250,7 +272,8 @@ strong {
     word-wrap: break-word;
     text-align: justify;
     line-height: 1.4rem;
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+    white-space: pre-line; }
   .card .button {
     float: right;
     margin-bottom: 1rem;
@@ -259,7 +282,7 @@ strong {
     background: #4a97cb;
     color: #eaf1f9;
     padding: 0.5rem 1rem;
-    border-radius: 0.6rem;
+    border-radius: 0.8rem;
     text-decoration: none;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
     .card .button + hr {
@@ -269,8 +292,8 @@ strong {
     border: 0;
     background: #4a97cb;
     width: 100%;
-    height: 1.5rem;
-    border-radius: 0.6rem; }
+    height: 0.3rem;
+    border-radius: 0.8rem; }
   .card h4 {
     margin: 0;
     font-size: 1.7rem;
@@ -280,7 +303,8 @@ strong {
     padding: 0;
     list-style: none; }
     .card ul li {
-      margin-bottom: 0.5rem; }
+      margin-bottom: 0.5rem;
+      margin-right: 1rem; }
       .card ul li h5 {
         display: block;
         font-size: 1rem;
@@ -291,8 +315,8 @@ strong {
         text-decoration: none; }
       .card ul li .location {
         float: right;
-        margin-right: 1rem;
-        margin-top: -1rem;
+        margin-right: -1rem;
+        margin-top: -2rem;
         text-decoration: none; }
   .card iframe {
     width: 100%; }
