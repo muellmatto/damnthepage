@@ -136,6 +136,12 @@ def serve_manifest():
             }
     return jsonify(manifest)
 
+@damn.route('/dates')
+def dates_ascii():
+    dates = get_dates()
+    l = [d['datetime'] +' - '+ d['venue']['city']+' @ '+ d['venue']['name'] for d in dates]
+    return "\n".join(l)
+
 
 if __name__ == '__main__':
     damn.run(host='0.0.0.0', port=64005, debug=True)

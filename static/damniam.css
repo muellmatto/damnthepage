@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -180,12 +181,16 @@ textarea {
 */
 @font-face {
   font-family: 'Quicksand';
+  font-display: swap;
   src: url("/static/Quicksand-Light.woff") format("woff"), url("/static/Quicksand-Light.ttf") format("truetype"); }
 * {
   font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   color: #323232;
   box-sizing: border-box; }
+
+a {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="font-size: 45;"><text y="40" x="-5">🔪</text></svg>') 45 50, auto; }
 
 strong {
   font-weight: bold; }
