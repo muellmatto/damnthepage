@@ -4,9 +4,12 @@ from urllib.request import urlopen
 from json import loads as from_json
 
 import facebook
-from flask import Flask, render_template, jsonify, url_for
-
-
+from flask import (
+        Flask,
+        render_template,
+        jsonify,
+        url_for
+        )
 
 # ---------------------
 # FB GRAPH
