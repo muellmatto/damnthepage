@@ -54,9 +54,10 @@ $head_height: 3rem;
     font-weight: 300;
     color: $font_color;
     box-sizing: border-box;
+    cursor: url('/static/cursor.png'), auto;
 }
 a {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="font-size: 45;"><text y="40" x="-5">🔪</text></svg>') 45 50, auto;
+    cursor: url('/static/cursor2.png') 68 20, auto;
 }
 strong{
     font-weight: bold;
@@ -77,12 +78,12 @@ strong{
         color: $accent_color;
         padding-left: 1rem;
         &:hover {
-            cursor: pointer;
+            cursor: url('/static/cursor2.png') 68 20, auto;
         }
         &:active {
             background: $accent_color;
             color: $complement_color;
-            cursor: pointer;
+            cursor: url('/static/cursor2.png') 68 20, auto;
         }
     }
 }
@@ -108,7 +109,7 @@ strong{
         &:active, &:hover {
             background: $accent_color;
             color: $complement_color;
-            cursor: pointer;
+            cursor: url('/static/cursor2.png') 68 20, auto;
         }
     }
 }
@@ -205,6 +206,9 @@ strong{
                 margin-right: -1rem;
                 margin-top: -1rem;
                 text-decoration: none;
+                &:hover {
+                    cursor: url('/static/cursor2.png') 68 20, auto;
+                }
             }
         }     
     }
