@@ -103,7 +103,8 @@ def damnthepage_nojs():
 
 @damn.route('/rest/feed')
 def rest_feed():
-    return jsonify(get_list_of_posts())
+    return jsonify([])
+    #return jsonify(get_list_of_posts())
 
 @damn.route('/rest/gallery')
 def rest_gallery():
