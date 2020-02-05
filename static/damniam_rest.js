@@ -26,13 +26,18 @@ function fill_feed(data) {
     var template = '<div class="card feed">'
                    +'   <h4>{{datum}}</h4> '
                    +'     <hr>'
-                   +'     <img src="{{image}}">'
+                   +'     {{image}}'
                    +'    <p>{{message}}</p>'
                    +'     <a class="button" rel="noopener" target="_blank"  href="{{link}}">READ MORE</a>'
                    +' </div>';
     for (let d of data) {
+        if (d.hasOwnProperty('full_picture')) {
+            var image = '<img src="{{image}}">'.replace('{{image}}', d.full_picture);
+        } else {
+            var image = '';
+        }
         var rendered = template
-                            .replace('{{image}}',d.full_picture)
+                            .replace('{{image}}', image)
                             .replace('{{link}}',d.link)
                             .replace('{{datum}}',d.created_time)
                             .replace('{{message}}', d.message);
