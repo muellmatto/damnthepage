@@ -3,7 +3,6 @@ from datetime import datetime
 from urllib.request import urlopen
 from json import loads as from_json
 
-import facebook
 from flask import (
         Flask,
         render_template,
@@ -74,14 +73,7 @@ def get_images():
         
 
 def get_list_of_posts():
-    def get_post(id):
-        post = graph.get_object(id=id, fields='full_picture,message,link,created_time')
-        post['created_time'] = build_date_str( post['created_time'] )
-        return post
-    graph = facebook.GraphAPI(access_token='1280679008628028|iSLmie0AppAKj2yWz3zx2TN8C4Q', version='2.12')
-    posts_response = graph.get_connections('35075947587', 'posts')
-    data = posts_response['data'][:10]
-    return [get_post(p['id']) for p in data]
+    return []
 
 
 # ---------------------
@@ -103,8 +95,7 @@ def damnthepage_nojs():
 
 @damn.route('/rest/feed')
 def rest_feed():
-    return jsonify([])
-    #return jsonify(get_list_of_posts())
+    return jsonify(get_list_of_posts())
 
 @damn.route('/rest/gallery')
 def rest_gallery():
