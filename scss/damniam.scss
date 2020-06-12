@@ -8,7 +8,7 @@ $max_width_phone: 35rem;
 $card_margin: 1rem;
 $card_padding: 1rem;
 $card_background: rgba(234,241,249,0.77);
-$card_border_radius: 0.8rem;
+$card_border_radius: 0;
 // #pics
 $pic_shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, .2);
 // #colors
@@ -68,7 +68,9 @@ strong{
     height: $head_height;
     position: fixed;
     color: $accent_color;
-    background: $complement_color;
+    // background: $complement_color;
+    background: $card_background;
+    backdrop-filter: blur(4px);
     box-shadow: 0 0 1rem 0rem $accent_color;
     border-radius: 0 0 $card_border_radius $card_border_radius;
     &  .menu_button {
@@ -129,7 +131,8 @@ strong{
     padding-left: $content_padding;
     padding-right: $content_padding;
     margin: auto;
-    clear: both;
+    // use pictures to fill the gap
+    // clear: both;
     &:nth-child(2){
         padding-top: $head_height;
     }
@@ -143,6 +146,7 @@ strong{
     border-radius: $card_border_radius;
     overflow: hidden;
     box-shadow: 0.1rem 0.1rem 1rem 0rem $accent_color;
+    backdrop-filter: blur(4px);
     img {
         width: 100%;
         box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
@@ -225,9 +229,8 @@ strong{
     box-shadow: $pic_shadow;
     p {
 		width: 100%;
-		background: rgba(0, 0, 0, 0.2);
 		line-height: 1.9rem;
-        font-size: 0.8rem;
+        font-weight: bold;
 		padding-right: 1rem;
 		text-align: right;
 		color: white;
