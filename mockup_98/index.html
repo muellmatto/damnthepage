@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>DAMNIAM</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#4a97cb">
+
+        <link rel="shortcut icon" href="https://damniam.de/static/favicon.ico">
+        <link rel="stylesheet" href="./damn.css">
+
+        <link rel="icon" type="image/png" href="https://damniam.de/static/favicon-96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://damniam.de/static/favicon-192.png" sizes="192x192">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://damniam.de/static/apple-touch-icon.png">
+        <link rel="manifest" href="https://damniam.de/manifest.json">
+    </head>
+    <body>
+        <main>
+
+            <template id="content_bandpicture">
+                <img src="band.jpg" alt="DAMNIAM">
+            </template>
+            <template id="content_bandtext">
+                <p>
+                    Man sieht es den Milchgesichtern nicht an, aber DAMNIAM gibt es seit mittlerweile zehn Jahren. Pünktlich zum Jubiläum gibt es das dritte Album Planet Piss. Die im Hamburger Hertzwerk-Studio bei Olman Wiebe (u.a. Captain Planet, Smile and Burn, ZSK) entstandene Platte lotet das Soundspektrum der Band noch weiter aus: Die Punkrocknummern sind räudiger, die Ohrwürmer eingängiger, die ruhigen Songs gänsehautiger, ohne dabei den Trademark-Sound der Band zu verlieren. Die insgesamt abwechslungsreicheren Songs wurden bereits ausgiebig live getestet, zuletzt unter anderem als Support für Teenage Bottlerocket, Satanic Surfers und the Buzzcocks. Nachdem das letzte Album der Münsteraner hinsichtlich der Texte mehrheitlich gut gelaunt war, thematisiert Planet Piss eine Gesellschaft zwischen digitaler Selbstdarstellung, neoliberalem Leistungsdruck und politischem Rechtsruck. Da hilft dann manchmal nur Bier.
+                </p>
+            </template>
+            <template id="window_template">
+				<article class="window">
+                    <h2><span class="title"></span><div class="close">🞩</div></h2>
+                    <section>
+                    </section>
+				</article>
+            </template>
+            <nav>
+                <input type="checkbox" id="menu_checkbox">
+                <label id="menu_button" for="menu_checkbox">
+                    DMNM
+                </label>
+                <ul>
+                    <a href="#">
+                        <li>
+                            Music
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            Music
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            Music
+                        </li>
+                    </a>
+                    <a href="#" id="link_bandpicture">
+                        <li>
+                            damiam.jpg
+                        </li>
+                    </a>
+                    <a href="#" id="link_bandtext">
+                        <li>
+                            damniam.txt
+                        </li>
+                    </a>
+                    <hr>
+                    <a>
+                        <li>
+                            Herrunterfahren
+                        </li>
+                    </a>
+                </ul>
+				<div id="clock">12:05</div>
+            </nav>
+        </main>
+        <script src="./damn.js"></script>
+    </body>
+</html>
