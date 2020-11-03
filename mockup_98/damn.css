@@ -53,26 +53,27 @@ main > nav {
     user-select: none;
     z-index: 1000;
 }
-main > nav > ul {
+main > nav > #startmenu {
     max-height: 0;
     overflow: hidden;
+    position: fixed;
 }
-nav > ul li {
+nav > #startmenu li {
     padding: 0.5rem;
     padding: 0.5rem;
 }
-nav > ul li::first-letter {
+nav > #startmenu li::first-letter {
     Text-decoration: underline;
 }
-nav > ul li:hover {
+nav > #startmenu li:hover {
     background: var(--color_highlight);
     color: var(--color_font_highlight);
 }
-nav > ul > a {
+nav > #startmenu > a {
     color: var(--color_font);
     text-decoration: none;
 }
-nav > ul > hr {
+nav > #startmenu > hr {
     border-top: 0.1rem solid black;
     border-left: 0.1rem solid black;
     border-right: 0.1rem solid white;
@@ -82,7 +83,7 @@ nav > ul > hr {
 #menu_checkbox {
     display: none;
 }
-#menu_checkbox:checked ~ ul::before {
+#menu_checkbox:checked ~ #startmenu::before {
     content: "DAMNIAM";
     font-weight: bold;
     display: block;
@@ -94,8 +95,7 @@ nav > ul > hr {
     transform-origin: 0% 100%;
     transform: rotate(-90deg);
 }
-#menu_checkbox:checked ~ ul {
-    position: fixed;
+#menu_checkbox:checked ~ #startmenu {
     bottom: 1.8rem;
     left: 0.1rem;
     background: var(--color_background);
@@ -117,6 +117,7 @@ nav > ul > hr {
     border-left: 0.15rem solid white;
     border-right: 0.15rem solid black;
     border-bottom: 0.15rem solid black;
+    overflow-y: auto;
 }
 #menu_button {
     line-height: 1.4rem;
@@ -134,6 +135,36 @@ nav > ul > hr {
     border-right: 0.15rem solid white;
     border-bottom: 0.15rem solid white;
 }
+#taskbar {
+    flex-grow: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+#taskbar li {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    line-height: 1.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-top: 0.15rem solid white;
+    border-left: 0.15rem solid white;
+    border-right: 0.15rem solid black;
+    border-bottom: 0.15rem solid black;
+}
+#taskbar li:active:hover {
+    border-top: 0.15rem solid black;
+    border-left: 0.15rem solid black;
+    border-right: 0.15rem solid white;
+    border-bottom: 0.15rem solid white;
+}
+#taskbar li.focused {
+    border-top: 0.15rem solid black;
+    border-left: 0.15rem solid black;
+    border-right: 0.15rem solid white;
+    border-bottom: 0.15rem solid white;
+}
 #clock {
     line-height: 1.4rem;
     padding-left: 0.5rem;
@@ -145,17 +176,23 @@ nav > ul > hr {
 }
 article {
     position: fixed;
-    display: block;
+    display: flex;
+    flex-direction: column;
     top: 10%;
     left: 10%;
     min-width: 5rem;
     min-height: 7rem;
+    max-width: 80%;
+    max-height: 80%;
     background: var(--color_main);
     padding: 0rem;
     border-top: 0.15rem solid white;
     border-left: 0.15rem solid white;
     border-right: 0.15rem solid black;
     border-bottom: 0.15rem solid black;
+}
+article > section {
+    overflow-y: auto;
 }
 article > h2 {
     background: var(--color_highlight);
