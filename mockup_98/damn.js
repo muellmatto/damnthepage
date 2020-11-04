@@ -51,6 +51,15 @@ function add_window(id, title, htmlFragment) {
                 self_tmp.offsetTop - e.clientY
             ];
         };
+        new_window.querySelector("h2").ontouchstart = function (e) {
+            var self_tmp = document.querySelector("#"+id).getElementsByTagName('h2')[0];
+            var touch = e.touches[0];
+            var mouseEvent = new MouseEvent("mousedown", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            self_tmp.dispatchEvent(mouseEvent);
+        }
         windows.set(id, new_window);
         main.appendChild(new_window);
         window_with_focus = document.querySelector("#"+id);
@@ -113,22 +122,36 @@ function close_window(id) {
     }
 }
 /*
-    windows
+    windows and function calls
 */
+var computer_template = document.querySelector("#computer_template").content;
+document.querySelector("#link_computer").onclick = function () {
+    add_window("computer_files", "computer", computer_template);
+    var band_text = document.querySelector("#content_bandtext").content;
+    document.querySelector("#link_bandtext").onclick = function () {
+        add_window("band_txt", "damniam.txt", band_text);
+    }
 
-var band_text = document.querySelector("#content_bandtext").content;
-document.querySelector("#link_bandtext").onclick = function () {
-    add_window("band_txt", "damniam.txt", band_text);
+    var band_picture = document.querySelector("#content_bandpicture").content;
+    document.querySelector("#link_bandpicture").onclick = function () {
+        add_window("band_picture", "damiam.jpg", band_picture);
+    }
+}
+document.querySelector("#link_computer2").onclick = document.querySelector("#link_computer").onclick;
+
+
+var band_contact = document.querySelector("#content_contact").content;
+document.querySelector("#link_bandcontact").onclick = function () {
+    add_window("contact", "contact", band_contact);
 }
 
-var band_picture = document.querySelector("#content_bandpicture").content;
-document.querySelector("#link_bandpicture").onclick = function () {
-    add_window("band_picture", "damiam.jpg", band_picture);
+var band_music = document.querySelector("#content_music").content;
+document.querySelector("#link_music").onclick = function () {
+    add_window("music", "winamp", band_music);
 }
 
-var test_win = document.querySelector("#content_test").content;
-document.querySelector("#link_test").onclick = function () {
-    add_window("test", "oi oi oi", test_win);
+document.querySelector("#link_herunterfahren").onclick = function () {
+    raise_blue_screen();
 }
 /*
     window movement
@@ -163,3 +186,22 @@ document.addEventListener('mousemove', function(event) {
         window_with_focus.style.top  = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);
+/* touchscreens */
+document.addEventListener("touchend", function (e) {
+    var mouseEvent = new MouseEvent("mouseup", {});
+    document.dispatchEvent(mouseEvent);
+}, false);
+document.addEventListener("touchmove", function (e) {
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    document.dispatchEvent(mouseEvent);
+}, false);
+/* blue screen */
+    function raise_blue_screen() {
+    var blue_screen = document.querySelector("#blue_screen_template").content;
+    main.innerHTML = ''
+    main.appendChild(blue_screen);
+}

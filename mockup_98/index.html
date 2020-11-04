@@ -18,8 +18,51 @@
     </head>
     <body>
         <main>
-            <template id="content_test">
-                <p>WURST</p>
+            <div id="link_computer">
+                <img src="computer.png" />
+                <p>Computer</p>
+            </div>
+            <template id="computer_template">
+                <div id="link_bandpicture">
+                    <img src="gimp.png" />
+                    <p>damniam.bmp</p>
+                </div>
+                <div id="link_bandtext">
+                    <img src="text-x-generic.png" />
+                    <p>damniam.txt</p>
+                </div>
+            </template>
+            <template id="blue_screen_template">
+                <div id="blue_screen">
+                    <h1>
+                        DAMNIAM
+                    </h1>
+                    <h2>
+                    Der schwere Ausnahmefehler DMMN ist an der Adresse https://damniam.de aufgetreten. Starten Sie die Seite neu.
+                    </h2>
+                </div>
+            </template>
+            <template id="content_music">
+				<iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=3473053238/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/planet-piss">Planet Piss by DAMNIAM</a></iframe>
+            </template>
+            <template id="content_contact">
+                <p>
+                    <strong>Booking</strong><br>
+                    <a href="mailto:booking@damniam.de">
+                        booking@damniam.de
+                    </a>
+                </p>
+                <hr>
+                <p>
+                    <strong>Contact:</strong><br>
+                    info@damniam.de<br>
+                    DAMNIAM <br>
+                    c/o Baldauf<br>
+                    Kanalstr. 5<br>
+                    48147 Münster<br>
+                    Germany<br>
+                    Earth<br>
+                </p>
             </template>
             <template id="content_bandpicture">
                 <img src="band.jpg" alt="DAMNIAM">
@@ -31,7 +74,7 @@
             </template>
             <template id="window_template">
 				<article class="window">
-                    <h2><span class="title"></span><div class="close">🞩</div></h2>
+                    <h2><span class="title"></span><div class="close">X</div></h2>
                     <section>
                     </section>
 				</article>
@@ -47,30 +90,25 @@
                             Music
                         </li>
                     </a>
-                    <a href="#">
+                    <a href="#" id="link_music">
                         <li>
-                            Music
+                            Winamp
                         </li>
                     </a>
-                    <a href="#" id="link_test">
+                    <a href="#" id="link_bandcontact">
                         <li>
-                            TEST
+                            Contact
                         </li>
                     </a>
-                    <a href="#" id="link_bandpicture">
+                    <a href="#" id="link_computer2">
                         <li>
-                            damiam.jpg
-                        </li>
-                    </a>
-                    <a href="#" id="link_bandtext">
-                        <li>
-                            damniam.txt
+                            Computer
                         </li>
                     </a>
                     <hr>
-                    <a>
+                    <a href="#" id="link_herunterfahren">
                         <li>
-                            Herrunterfahren
+                            Herunterfahren
                         </li>
                     </a>
                 </ul>
