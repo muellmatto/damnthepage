@@ -24,6 +24,9 @@
     --color_background: #57a8a8;
     --color_highlight: #000080;
 }
+html {
+    font-size: 18px;
+}
 * {
     box-sizing: border-box;
     cursor: url('cursor.png'), default;
@@ -31,7 +34,9 @@
 body {
     margin: 0;
     font-family: "Pixelated MS Sans Serif", Arial;
-    font-size: 11px;
+    font-size: 0.7rem;
+    background-color: var(--color_background);
+    overscroll-behavior: none;
 }
 main {
     width: 100vw;
