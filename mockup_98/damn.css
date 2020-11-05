@@ -286,4 +286,20 @@ article img {
     align-self: center;
 }
 
+
+#diablo_exe iframe {
+    width: 320px;
+    height: 220px;
+}
+@media (min-width: 800px) {
+    #diablo_exe iframe {
+        width: 600px;
+        height: 400px;
+    }
+}
+@media (min-width: 1200px) {
+    #diablo_exe iframe {
+        width: 1100px;
+        height: 660px;
+    }
 }
