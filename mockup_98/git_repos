@@ -1,0 +1,12 @@
+https://github.com/muan/emoji-minesweeper.git
+https://github.com/gabrielecirulli/2048.git
+https://github.com/mitallast/diablo-js
+https://github.com/1j01/jspaint.git
+
+
+# diablo css hotfixes: 
+canvas 
+    transform-origin: 0% 0%;
+    transform: scale(0.33);
+page
+	/* width: 980px; */

@@ -18,6 +18,18 @@
     </head>
     <body>
         <main>
+            <template id="diablo_template">
+                <iframe style="border: 0; width: 330px; height: 220px;" src="diablo-js/index.html" seamless><p>rundll32.exe not found</p></iframe>
+            </template>
+            <template id="minesweeper_template">
+                <iframe style="border: 0; width: 320px; height: 420px;" src="emoji-minesweeper/index.html" seamless><p>rundll32.exe not found</p></iframe>
+            </template>
+            <template id="game2048_template">
+                <iframe style="border: 0; width: 320px; height: 480px;" src="2048/index.html" seamless><p>rundll32.exe not found</p></iframe>
+            </template>
+            <template id="jspaint_template">
+                <iframe style="border: 0; width: 300px; height: 400px;" src="jspaint/index.html" seamless><p>rundll32.exe not found</p></iframe>
+            </template>
             <div id="link_computer">
                 <img src="computer.png" />
                 <p>Computer</p>
@@ -85,14 +97,14 @@
                     DMNM
                 </label>
                 <ul id="startmenu">
-                    <a href="#">
-                        <li>
-                            Music
-                        </li>
-                    </a>
                     <a href="#" id="link_music">
                         <li>
                             Winamp
+                        </li>
+                    </a>
+                    <a href="#" id="link_paint">
+                        <li>
+                            Paint
                         </li>
                     </a>
                     <a href="#" id="link_bandcontact">
@@ -103,6 +115,21 @@
                     <a href="#" id="link_computer2">
                         <li>
                             Computer
+                        </li>
+                    </a>
+                    <a href="#" id="link_minesweeper">
+                        <li>
+                            Minesweeper
+                        </li>
+                    </a>
+                    <a href="#" id="link_diablo">
+                        <li>
+                            Diablo
+                        </li>
+                    </a>
+                    <a href="#" id="link_game2048">
+                        <li>
+                            2048
                         </li>
                     </a>
                     <hr>

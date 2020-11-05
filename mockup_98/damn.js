@@ -150,6 +150,24 @@ document.querySelector("#link_music").onclick = function () {
     add_window("music", "winamp", band_music);
 }
 
+var ms_paint_exe = document.querySelector("#jspaint_template").content;
+document.querySelector("#link_paint").onclick = function () {
+    add_window("paint", "paint.exe", ms_paint_exe);
+}
+
+var diablo_exe = document.querySelector("#diablo_template").content;
+document.querySelector("#link_diablo").onclick = function () {
+    add_window("diablo_exe", "diablo.exe", diablo_exe);
+}
+var minesweeper_exe = document.querySelector("#minesweeper_template").content;
+document.querySelector("#link_minesweeper").onclick = function () {
+    add_window("minesweeper", "minesweeper.exe", minesweeper_exe);
+}
+var game2048 = document.querySelector("#game2048_template").content;
+document.querySelector("#link_game2048").onclick = function () {
+    add_window("game2048", "2048.exe", game2048);
+}
+
 document.querySelector("#link_herunterfahren").onclick = function () {
     raise_blue_screen();
 }
