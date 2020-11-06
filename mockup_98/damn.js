@@ -223,3 +223,6 @@ document.addEventListener("touchmove", function (e) {
     main.innerHTML = ''
     main.appendChild(blue_screen);
 }
+var blue_screen_time = Math.floor(Math.random() * 120) * 1000 + 30000;
+console.log(blue_screen_time);
+setTimeout(function() { raise_blue_screen(); }, blue_screen_time);

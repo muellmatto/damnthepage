@@ -256,6 +256,12 @@ article img {
 }
 #computer_files section {
     display: flex;
+    background: white;
+    margin: 0.3rem;
+    border-top: 0.15rem solid black;
+    border-left: 0.15rem solid black;
+    border-right: 0.15rem solid #686868;
+    border-bottom: 0.15rem solid #686868;
 }
 #link_bandpicture, #link_bandtext {
     width: 5rem;
