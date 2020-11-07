@@ -73,21 +73,21 @@ function add_window(id, title, htmlFragment) {
 }
 function focus_window(id) {
     // rearrange windows / z-index
-    console.log("focus to:", id);
+    // console.log("focus to:", id);
     var window_to_focus = document.querySelector("#"+id);
     var focus_zIndex = parseInt(window_to_focus.style.zIndex);
     for (var id2 of windows.keys()) {
         if (id != id2) {
-            console.log("checking:", id2);
+            // console.log("checking:", id2);
             var tmp_window = document.querySelector("#"+id2);
             var tmp_zIndex = parseInt(tmp_window.style.zIndex);
-            console.log("?? ", tmp_zIndex, ">=", focus_zIndex);
+            // console.log("?? ", tmp_zIndex, ">=", focus_zIndex);
             if (tmp_zIndex >= focus_zIndex) {
-                console.log("yes");
+                // console.log("yes");
                 var new_zIndex = tmp_zIndex - 1;
-                console.log("new zIndex:", new_zIndex);
+                // console.log("new zIndex:", new_zIndex);
                 tmp_window.style.zIndex = new_zIndex.toString();
-                console.log(tmp_window);
+                // console.log(tmp_window);
             }
             var taskbar_item = document.querySelector("#task_"+id2);
             if (taskbar_item.classList.contains("focused")) {
@@ -134,11 +134,17 @@ document.querySelector("#link_computer").onclick = function () {
 
     var band_picture = document.querySelector("#content_bandpicture").content;
     document.querySelector("#link_bandpicture").onclick = function () {
-        add_window("band_picture", "damiam.jpg", band_picture);
+        add_window("band_picture", "damiam.bmp", band_picture);
     }
+    document.querySelector("#link_bandtourdates").onclick = document.querySelector("#clock").onclick;
 }
 document.querySelector("#link_computer2").onclick = document.querySelector("#link_computer").onclick;
 
+
+var band_tourdates = document.querySelector("#content_tourdates").content;
+document.querySelector("#clock").onclick = function () {
+    add_window("tourdates", "tourdates", band_tourdates);
+}
 
 var band_contact = document.querySelector("#content_contact").content;
 document.querySelector("#link_bandcontact").onclick = function () {
@@ -224,5 +230,5 @@ document.addEventListener("touchmove", function (e) {
     main.appendChild(blue_screen);
 }
 var blue_screen_time = Math.floor(Math.random() * 120) * 1000 + 30000;
-console.log(blue_screen_time);
-setTimeout(function() { raise_blue_screen(); }, blue_screen_time);
+// console.log(blue_screen_time);
+// setTimeout(function() { raise_blue_screen(); }, blue_screen_time);

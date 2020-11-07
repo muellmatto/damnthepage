@@ -30,10 +30,6 @@
             <template id="jspaint_template">
                 <iframe style="border: 0; width: 300px; height: 400px;" src="jspaint/index.html" seamless><p>rundll32.exe not found</p></iframe>
             </template>
-            <div id="link_computer">
-                <img src="computer.png" />
-                <p>Computer</p>
-            </div>
             <template id="computer_template">
                 <div id="link_bandpicture">
                     <img src="gimp.png" />
@@ -42,6 +38,10 @@
                 <div id="link_bandtext">
                     <img src="text-x-generic.png" />
                     <p>damniam.txt</p>
+                </div>
+                <div id="link_bandtourdates">
+                    <img src="text-x-generic.png" />
+                    <p>tourdates(1).txt</p>
                 </div>
             </template>
             <template id="blue_screen_template">
@@ -53,6 +53,9 @@
                     Der schwere Ausnahmefehler DMMN ist an der Adresse https://damniam.de aufgetreten. Starten Sie die Seite neu.
                     </h2>
                 </div>
+            </template>
+            <template id="content_tourdates">
+                <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a class="bit-widget-initializer" data-artist-name="Damniam" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#a0a1a1" data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-display-start-time="false" data-link-text-color="#FFFFFF" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
             </template>
             <template id="content_music">
 				<iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=3473053238/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/planet-piss">Planet Piss by DAMNIAM</a></iframe>
@@ -89,7 +92,7 @@
                 <img src="band.jpg" alt="DAMNIAM">
             </template>
             <template id="content_bandtext">
-                <p>
+                <p contenteditable="true">
                     Man sieht es den Milchgesichtern nicht an, aber DAMNIAM gibt es seit mittlerweile zehn Jahren. Pünktlich zum Jubiläum gibt es das dritte Album Planet Piss. Die im Hamburger Hertzwerk-Studio bei Olman Wiebe (u.a. Captain Planet, Smile and Burn, ZSK) entstandene Platte lotet das Soundspektrum der Band noch weiter aus: Die Punkrocknummern sind räudiger, die Ohrwürmer eingängiger, die ruhigen Songs gänsehautiger, ohne dabei den Trademark-Sound der Band zu verlieren. Die insgesamt abwechslungsreicheren Songs wurden bereits ausgiebig live getestet, zuletzt unter anderem als Support für Teenage Bottlerocket, Satanic Surfers und the Buzzcocks. Nachdem das letzte Album der Münsteraner hinsichtlich der Texte mehrheitlich gut gelaunt war, thematisiert Planet Piss eine Gesellschaft zwischen digitaler Selbstdarstellung, neoliberalem Leistungsdruck und politischem Rechtsruck. Da hilft dann manchmal nur Bier.
                 </p>
             </template>
@@ -100,6 +103,10 @@
                     </section>
 				</article>
             </template>
+            <div id="link_computer">
+                <img src="computer.png" />
+                <p>Computer</p>
+            </div>
             <nav>
                 <input type="checkbox" id="menu_checkbox">
                 <label id="menu_button" for="menu_checkbox">
