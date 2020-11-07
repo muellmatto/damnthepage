@@ -39,6 +39,8 @@ function add_window(id, title, htmlFragment) {
         new_window.querySelector("article").id = id;
         /* zIndex + 1 , htmlFragment is added later! */
         new_window.querySelector("article").style.zIndex = windows.size + 1;
+        new_window.querySelector("article").style.top = Math.floor(Math.random()*12).toString() + '%';
+        new_window.querySelector("article").style.left = Math.floor(Math.random()*12).toString() + '%';
         new_window.querySelector(".title").textContent = title;
         new_window.querySelector("section").appendChild(htmlFragment.cloneNode(true));
         new_window.querySelector(".close").onclick = function () { close_window(id) };
@@ -124,13 +126,17 @@ function close_window(id) {
 /*
     windows and function calls
 */
+var band_text = document.querySelector("#content_bandtext").content;
+document.querySelector("#link_bandtext1").onclick = function () {
+    add_window("band_txt", "damniam.txt", band_text);
+}
+document.querySelector("#link_bandtext2").onclick = document.querySelector("#link_bandtext1").onclick;
+document.querySelector("#link_bandtext3").onclick = document.querySelector("#link_bandtext1").onclick;
+
 var computer_template = document.querySelector("#computer_template").content;
 document.querySelector("#link_computer").onclick = function () {
     add_window("computer_files", "computer", computer_template);
-    var band_text = document.querySelector("#content_bandtext").content;
-    document.querySelector("#link_bandtext").onclick = function () {
-        add_window("band_txt", "damniam.txt", band_text);
-    }
+    document.querySelector("#link_bandtext4").onclick = document.querySelector("#link_bandtext1").onclick;
 
     var band_picture = document.querySelector("#content_bandpicture").content;
     document.querySelector("#link_bandpicture").onclick = function () {
@@ -151,11 +157,32 @@ document.querySelector("#link_bandcontact").onclick = function () {
     add_window("contact", "contact", band_contact);
 }
 
-var band_music = document.querySelector("#content_music").content;
-document.querySelector("#link_music").onclick = function () {
-    add_window("music", "winamp", band_music);
+// music
+var band_music_planetpiss = document.querySelector("#content_music_planetpiss").content;
+document.querySelector("#link_music_planetpiss2").onclick = function () {
+    add_window("music_planetpiss", "winamp - PLANET PISS", band_music_planetpiss);
 }
 
+var download_folder = document.querySelector("#download_folder_template").content;
+document.querySelector("#link_download_folder").onclick = function () {
+    add_window("download_folder", "downloads", download_folder);
+    document.querySelector("#link_music_planetpiss1").onclick = document.querySelector("#link_music_planetpiss2").onclick;
+
+    var band_music_damage = document.querySelector("#content_music_damage").content;
+    document.querySelector("#link_music_damage").onclick = function () {
+        add_window("music_damage", "winamp - DAMAGE", band_music_damage);
+    }
+
+    var band_music_madamin = document.querySelector("#content_music_madamin").content;
+    document.querySelector("#link_music_madamin").onclick = function () {
+        add_window("music_madamin", "winamp - MADAMIN", band_music_madamin);
+    }
+
+    document.querySelector("#link_download_zip").onclick = function () {
+        start_virus();
+    }
+}
+// shit
 var ms_paint_exe = document.querySelector("#jspaint_template").content;
 document.querySelector("#link_paint").onclick = function () {
     add_window("paint", "paint.exe", ms_paint_exe);
@@ -228,6 +255,27 @@ document.addEventListener("touchmove", function (e) {
     var blue_screen = document.querySelector("#blue_screen_template").content;
     main.innerHTML = ''
     main.appendChild(blue_screen);
+}
+function start_virus () {
+    function add_colored_box () {
+        var colored_box = document.createElement('div');
+        colored_box.style.cssText = "position: fixed; width: 0.5rem; height: 0.5rem; border-radius: 100%; z-index:1000";
+        var pos_top = Math.floor(Math.random()*100).toString() + "%";
+        var pos_left = Math.floor(Math.random()*100).toString() + "%";
+        colored_box.style.background = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
+        colored_box.style.top = pos_top;
+        colored_box.style.left = pos_left;
+        main.appendChild(colored_box);
+    }
+    // main.style.transition = "transform 10s ease-in";
+    // main.style.transform = "rotate(360deg)";
+    main.style.animation = "shake 0.5s";
+    main.style.animationIterationCount = "8";
+    var virus = setInterval(add_colored_box, 10);
+    setTimeout(function () {
+        clearInterval(virus);
+        raise_blue_screen();
+    }, 4000)
 }
 var blue_screen_time = Math.floor(Math.random() * 120) * 1000 + 30000;
 // console.log(blue_screen_time);

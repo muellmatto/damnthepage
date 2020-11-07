@@ -8,13 +8,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#4a97cb">
 
-        <link rel="shortcut icon" href="https://damniam.de/static/favicon.ico">
-        <link rel="stylesheet" href="./damn.css">
+        <link rel="shortcut icon" href="./static/favicon.ico">
+        <link rel="stylesheet" href="./static/damn.css">
 
-        <link rel="icon" type="image/png" href="https://damniam.de/static/favicon-96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="https://damniam.de/static/favicon-192.png" sizes="192x192">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://damniam.de/static/apple-touch-icon.png">
-        <link rel="manifest" href="https://damniam.de/manifest.json">
+        <link rel="icon" type="image/png" href="./static/favicon-96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="./static/favicon-192.png" sizes="192x192">
+        <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
     </head>
     <body>
         <main>
@@ -31,17 +30,35 @@
                 <iframe style="border: 0; width: 300px; height: 400px;" src="jspaint/index.html" seamless><p>rundll32.exe not found</p></iframe>
             </template>
             <template id="computer_template">
-                <div id="link_bandpicture">
-                    <img src="gimp.png" />
+                <div class="launcher_icon" id="link_bandpicture">
+                    <img src="icons/gimp.png" />
                     <p>damniam.bmp</p>
                 </div>
-                <div id="link_bandtext">
-                    <img src="text-x-generic.png" />
+                <div class="launcher_icon" id="link_bandtext4">
+                    <img src="icons/accessories-text-editor.png" />
                     <p>damniam.txt</p>
                 </div>
-                <div id="link_bandtourdates">
-                    <img src="text-x-generic.png" />
-                    <p>tourdates(1).txt</p>
+                <div class="launcher_icon" id="link_bandtourdates">
+                    <img src="icons/time-admin.png" />
+                    <p>tourdates</p>
+                </div>
+            </template>
+            <template id="download_folder_template">
+                <div class="launcher_icon" id="link_music_planetpiss1">
+                    <img src="static/planet_piss.jpg" />
+                    <p>PLANET PISS</p>
+                </div>
+                <div class="launcher_icon" id="link_music_damage">
+                    <img src="static/damage.jpg" />
+                    <p>DAMAGE</p>
+                </div>
+                <div class="launcher_icon" id="link_music_madamin">
+                    <img src="static/madamin.jpg" />
+                    <p>MADAMIN</p>
+                </div>
+                <div class="launcher_icon" id="link_download_zip">
+                    <img src="icons/package-x-generic.png" />
+                    <p>download.zip</p>
                 </div>
             </template>
             <template id="blue_screen_template">
@@ -57,8 +74,14 @@
             <template id="content_tourdates">
                 <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a class="bit-widget-initializer" data-artist-name="Damniam" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#a0a1a1" data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-display-start-time="false" data-link-text-color="#FFFFFF" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
             </template>
-            <template id="content_music">
-				<iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=3473053238/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/planet-piss">Planet Piss by DAMNIAM</a></iframe>
+            <template id="content_music_planetpiss">
+				<iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=3473053238/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/planet-piss">Planet Piss by DAMNIAM</a></iframe>
+            </template>
+            <template id="content_music_damage">
+                <iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=139271135/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/damage">DAMAGE by DAMNIAM</a></iframe>
+            </template>
+            <template id="content_music_madamin">
+                <iframe style="border: 0; width: 300px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=2384966043/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://damniam.bandcamp.com/album/madam-in">MADAM IN by DAMNIAM</a></iframe>
             </template>
             <template id="content_contact">
                 <p>
@@ -89,7 +112,7 @@
                 </p>
             </template>
             <template id="content_bandpicture">
-                <img src="band.jpg" alt="DAMNIAM">
+                <img src="static/band.jpg" alt="DAMNIAM">
             </template>
             <template id="content_bandtext">
                 <p contenteditable="true">
@@ -103,9 +126,26 @@
                     </section>
 				</article>
             </template>
-            <div id="link_computer">
-                <img src="computer.png" />
+            <!-- desktop icons -->
+            <div class="launcher_icon" id="link_computer">
+                <img src="icons/computer.png" />
                 <p>Computer</p>
+            </div>
+            <div class="launcher_icon" id="link_bandtext1">
+                <img src="icons/x-office-document.png" />
+                <p>Bandinfo.txt</p>
+            </div>
+            <div class="launcher_icon" id="link_bandtext2">
+                <img src="icons/x-office-document.png" />
+                <p>Bandinfo (1).txt</p>
+            </div>
+            <div class="launcher_icon" id="link_bandtext3">
+                <img src="icons/x-office-document.png" />
+                <p>Bandinfo neu.txt</p>
+            </div>
+            <div class="launcher_icon" id="link_download_folder">
+                <img src="icons/user-home.svg" />
+                <p>Downloads</p>
             </div>
             <nav>
                 <input type="checkbox" id="menu_checkbox">
@@ -113,7 +153,7 @@
                     DMNM
                 </label>
                 <ul id="startmenu">
-                    <a href="#" id="link_music">
+                    <a href="#" id="link_music_planetpiss2">
                         <li>
                             Winamp
                         </li>
@@ -160,6 +200,6 @@
 				<div id="clock">12:05</div>
             </nav>
         </main>
-        <script src="./damn.js"></script>
+        <script src="./static/damn.js"></script>
     </body>
 </html>
