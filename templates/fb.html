@@ -1,9 +1,0 @@
-{% for post in posts %}
-    <div class="card feed">
-        <h4>{{ post.created_time }}</h4>
-        <hr>
-        <img src="{{ post.full_picture }}">
-        <p>{{ post.message }}</p>
-        <a class="button" target="_blank" rel="noopener" href="{{ post.link }}">READ MORE</a>
-    </div>
-{% endfor %}
