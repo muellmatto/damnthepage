@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+:root {
+    --color_background: rgb(253,253,255);
+    --color_font: rgb(22,0,40);
+    --color_font: rgb(20,20,20);
+    --color_link: rgb(230,230,230);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+	font-family: 'Bodoni Moda', serif;
+    background: var(--color_background);
+    color: var(--color_font);
+    display: grid;
+    grid-template-areas:
+        ". header ."
+        ". main   ."
+        ". footer .";
+    grid-template-columns: minmax(1rem, auto) minmax(auto, 50rem) minmax(1rem, auto);
+    grid-template-rows: auto auto auto;
+}
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+ul a,
+p a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: inset 0 -0.6rem 0 0 var(--color_link);
+}
+.tag--active,
+ul a:hover,
+p a:hover {
+    background: var(--color_link);
+    color: rgb(100,100,100);
+    text-decoration: line-through;
+}
+header {grid-area: header}
+main {grid-area: main}
+footer {grid-area: footer}
+audio, video, iframe {max-width: 100%}
+
+main article,
+header,
+.tags {
+    /*
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    */
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+main article:last-child {
+    border: none;
+}
+footer {
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+nav ul,
+footer ul,
+.tags,
+.post__tags {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+}
+nav li::after,
+footer li::after,
+.tags li::after,
+.post__tags li::after {
+    content: " | ";
+}
+nav li:last-child::after,
+footer li:last-child::after,
+.tags li:last-child::after,
+.post__tags li:last-child::after {
+    content: none;
+}
+.tags,
+.post__tags {
+    justify-content: flex-end;
+}
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<header>
+    <h1>
+        <a href="/">
+            {{self}}
+        </a>
+    </h1>
+        <nav>
+            <ul>
+                {% for child in self.get_children %}
+                    <li>
+                        <a href="{% pageurl child %}">
+                            {{ child }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            {% if tags %}
+                <ul class="tags">
+                    <li>
+                        filter:
+                    </li>
+                    {% for tag in tags %}
+                        <li>
+                            <a href="{%pageurl self%}?tag={{tag}}"
+                                {% if tag.slug == active_tag %}
+                                    class="tag--active"
+                                {% endif %}
+                            >
+                                {{tag}}
+                            </a>
+                            {% if tag.slug == active_tag %}
+                                <a href="{% pageurl self %}">
+                                    [X]
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </section>
+        <section>
+            {% for post in posts %}
+                <article>
+                    <section>
+                        {{post.content}}
+                    </section>
+                    <section>
+                        <ul class="post__tags">
+                            {% for tag in post.tags.all %}
+                                <li>
+                                    <a href="{%pageurl self%}?tag={{tag}}">
+                                        {{tag}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li>
+                <a href="#">
+                    SPOTIFY
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    BANDCAMP
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    INSTAGRAM
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+{% endblock content %}
